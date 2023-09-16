@@ -1,0 +1,757 @@
+{% extends 'DataManager/common.html' %}
+    {% block menu %}
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <span class="nav-label">Archivi</span>
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Archivi
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item draggable-opener">Piano dei Conti</li>
+                                <li class="menu-item draggable-opener">Clienti</li>
+                                <li class="menu-item draggable-opener">Fornitori</li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Tabelle Contabilità
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Gestione Tabella Attività</li>
+                                        <li class="menu-item">
+                                            <div class="label">
+                                                Gestione Tabelle IVA
+                                                <i class="bx bx-chevron-down"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item draggable-opener">Tabella IVA Acquisti</li>
+                                                <li class="menu-item draggable-opener">Tabella IVA Vendite</li>
+                                                <li class="menu-item draggable-opener">Tabella IVA Corrispettivi</li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item">Progressivi</li>
+                                        <li class="menu-item">Causali di Contabilità</li>
+                                        <li class="menu-item">Codici di Conto Fissi</li>
+                                        <li class="menu-item draggable-opener">Modalità di Pagamento</li>
+                                        <li class="menu-item draggable-opener">Esenzione IVA</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Tabelle Fatturazione
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <div class="label">
+                                                Gestione Tabelle Varie
+                                                <i class="bx bx-chevron-down"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item draggable-opener">Agenti</li>                                               
+                                                <li class="menu-item draggable-opener">Spedizioni</li>                                               
+                                                <li class="menu-item draggable-opener">Porto</li>                                               
+                                                <li class="menu-item draggable-opener">Des. Gruppi Art</li>                                               
+                                                <li class="menu-item draggable-opener">Causali Trasporto</li>                                               
+                                                <li class="menu-item draggable-opener">Zone</li>                                               
+                                                <li class="menu-item draggable-opener">Valute</li>                                               
+                                                <li class="menu-item draggable-opener">Asp. Esteriore</li>                                               
+                                                <li class="menu-item draggable-opener">Cat. Contabili</li>                                               
+                                                <li class="menu-item draggable-opener">Raggr. Fiscali</li>                                               
+                                                <li class="menu-item draggable-opener">Tipi Allegati</li>                                               
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item draggable-opener">Gestione Destinatari Clienti</li>
+                                        <li class="menu-item draggable-opener">Gestione Destinatari Fornitori</li>
+                                        <li class="menu-item draggable-opener">Gestione Tabella Banche</li>
+                                        <li class="menu-item draggable-opener">Gestione Tabella Nazioni</li>
+                                        <li class="menu-item draggable-opener">Gestione Tabella Categorie</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Tabelle Magazzino
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item draggable-opener">Gestione Dipendenti</li>
+                                        <li class="menu-item draggable-opener">Gestione Gruppo</li>
+                                        <li class="menu-item">Gestione Sottogruppo 1</li>
+                                        <li class="menu-item">Gestione Sottogruppo 2</li>
+                                        <li class="menu-item">Gestione Sottogruppo 3</li>
+                                        <li class="menu-item">Gestione Sottogruppo 4</li>
+                                        <li class="menu-item draggable-opener">Gestione Centri di Lavoro</li>
+                                        <li class="menu-item">Gestione Fasi Lavorazioni</li>
+                                        <li class="menu-item">Gestione Fasi Fornitori</li>
+                                        <li class="menu-item">Gestione Fasi Dipendenti</li>
+                                        <li class="menu-item">Gestione Fasi Centri di Lavoro</li>
+                                        <li class="menu-item">Gestione Tabelle Operazioni Varie</li>
+                                        <li class="menu-item">
+                                            <div class="label">
+                                                Gestione Tabelle Interventi
+                                                <i class="bx bx-chevron-down"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">Tariffe</li>
+                                                <li class="menu-item">Tariffe Telefoniche</li>
+                                                <li class="menu-item">Tipi Intervento</li>
+                                                <li class="menu-item">Causali Intervento</li>
+                                                <li class="menu-item">Automezzi</li>
+                                                <li class="menu-item">Richieste Ricambi</li>
+                                                <li class="menu-item">Tipi Spese</li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item">Gestione Prezzi Raggruppanti</li>
+                                        <li class="menu-item">Gestione Cicli di Lavoro Predefiniti</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item draggable-opener">Cambio Codice Conto</li>
+                                <li class="menu-item">Clienti Storici/Presunti</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Stampe Varie
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Piano dei Conti</li>
+                                <li class="menu-item">Clienti/Fornitori</li>
+                                <li class="menu-item">Stampa Rubrica </li>
+                                <li class="menu-item">Clienti/Fornitori </li>
+                                <li class="menu-item">Tabelle Contabilità</li>
+                                <li class="menu-item">Tabelle Fatturazione </li>
+                                <li class="menu-item">Clienti/Fornitori per Zona Nazione, lva, Categoria</li> 
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Stampa Etichette Clienti/Fornitori
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Stampa Etichette Clienti</li>
+                                        <li class="menu-item">Stampa Etichette Fornitori</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">Rubrica Telefonica Clienti/Fornitori </li>
+                                <li class="menu-item">Aziende </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Stampa Associata a Word
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Stampa Clienti Associati a Word</li>
+                                        <li class="menu-item">Stampa Fornitori Associati a Word</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">Ragione Sociale Utente</li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Visualizzazioni Varie
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Visualizzazione Clienti</li>
+                                <li class="menu-item">Visualizzazione Fornitori</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-label">Contabilità</span>
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <div class="label">
+                                Contabilità Generale
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Gestione Dati Contabili
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Caricamento Prima Nota</li>
+                                        <li class="menu-item">Variazione Prima Nota</li>
+                                        <li class="menu-item">Gestione Corrispettivi</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Situazioni Contabili
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Quadratura Contabile</li>
+                                        <li class="menu-item">Analisi Sottoconti</li>
+                                        <li class="menu-item">
+                                            <div class="label">
+                                                Analisi Movimenti IVA
+                                                <i class="bx bx-chevron-down"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">Analisi Movimenti IVA Acquisti</li>
+                                                <li class="menu-item">Analisi Movimenti IVA Vendite</li>
+                                                <li class="menu-item">Stampa Fatture X Aliquota</li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item">Prima Nota</li>
+                                        <li class="menu-item">Partitari Sottoconti</li>
+                                        <li class="menu-item">Bilancio del Periodo</li>
+                                        <li class="menu-item">Simulazione Bilancio di Chiusura</li>
+                                        <li class="menu-item">Controllo incrociato movimenti</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Verticalizzazioni Contabili
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Giornale di Contabilità</li>
+                                        <li class="menu-item">Registri IVA</li>
+                                        <li class="menu-item">Annotazione Periodica IVA</li>
+                                        <li class="menu-item">Allegati IVA Clienti / Fornitori</li>
+                                        <li class="menu-item">Comunicazione Annuale Dati IVA</li>
+                                        <li class="menu-item">Comunicazvone Telematica Spesometro</li>
+                                        <li class="menu-item">Libra Inventario</li>
+                                        <li class="menu-item">Comunicazvone Liquidazioni Periodiche IVA</li>
+                                        <li class="menu-item">Comunicazvone Dati Fatture</li>
+                                        <li class="menu-item">Comunicazione Esterometro</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Chiusura Esercizio
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Bilancio di Chiusura</li>
+                                        <li class="menu-item">Generazione Chiusura Apertura</li>
+                                        <li class="menu-item">Giornale di Chiusura</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gesione Scadenziario
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Scadenziario</li>
+                                <li class="menu-item">Estratto Conto Clienti</li>
+                                <li class="menu-item">Estratto Conto Fornitori</li>
+                                <li class="menu-item">Stampa Scadenziario</li>
+                                <li class="menu-item">Stampa Scadenzvario per Banca</li>
+                                <li class="menu-item">Stampa Scadenziario da DDT</li>
+                                <li class="menu-item">Eliminazione Partite Chiuse</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestoine Cespiti
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Tabella Cespiti</li>
+                                <li class="menu-item">Gestione Cespiti</li>
+                                <li class="menu-item">Visualizzazione Cespiti</li>
+                                <li class="menu-item">Manutenzione Cespiti</li>
+                                <li class="menu-item">Alienazione Cespiti</li>
+                                <li class="menu-item">Ammortamento Anticipato</li>
+                                <li class="menu-item">Stampa Registra Cespiti</li>
+                                <li class="menu-item">Aggiornamento Cantabile</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">Fatture Elettroniche Fornitori</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-label">Fatturazione</span>
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione DDT Lamiera
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione DDT Lamiera</li>
+                                <li class="menu-item">Lista di Controllo DDT Lamiera</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Fatture Differite
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Stampa Fatture Differite Prowisoria</li>
+                                <li class="menu-item">Stampa Fatture Differite</li>
+                                <li class="menu-item">Stampa Fatture Differite Prowisoria Lamiera</li>
+                                <li class="menu-item">Stampa Fatture Differite Lamiera</li>
+                                <li class="menu-item">Aggiornamento Fatture Differite</li>
+                                <li class="menu-item">Annullamento NZ Fattura</li>
+                                <li class="menu-item">Ristampa Fatture Differite</li>
+                                <li class="menu-item">Stampa Fatture Differite CEE Prowisoria</li>
+                                <li class="menu-item">Stampa Fatture Differite CEE</li>
+                                <li class="menu-item">Aggiornamento Fatture Differite CEE</li>
+                                <li class="menu-item">Annullamento NZ Fattura CEE</li>
+                                <li class="menu-item">Ristampa Fatture Differite CEE</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Fatture Immediate
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Fatture Immediate</li>
+                                <li class="menu-item">Stampa Fatture Immediate</li>
+                                <li class="menu-item">Aggiornamento Fatture Immediate</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Note Credito
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Note Credito</li>
+                                <li class="menu-item">Stampa Note Credito</li>
+                                <li class="menu-item">Aggiornamento Note Credito</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Fatture Immediate CEE
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Fatture Immediate CEE</li>
+                                <li class="menu-item">Stampa Fatture Immediate CEE</li>
+                                <li class="menu-item">Aggiornamento Fatture Immediate CEE</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Note Credito CEE
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Note Credito CEE</li>
+                                <li class="menu-item">Stampa Note Credito CEE</li>
+                                <li class="menu-item">Aggiornamento Note Credito CEE</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Movimenti di Vendita
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Movimenti di Vendita</li>
+                                <li class="menu-item">Stampa Movimenti di Vendita</li>
+                                <li class="menu-item">Annullamento Movimenti di Vendita</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Effetti Bancari
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Effetti</li>
+                                <li class="menu-item">Stampa Distinta Effetti</li>
+                                <li class="menu-item">Generazione File RIBA</li>
+                                <li class="menu-item">Annullamento Effetti</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Provvigioni Agenti
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Provvigioni Agenti</li>
+                                <li class="menu-item">Stampa Provvigioni Agenti</li>
+                                <li class="menu-item">Annullamento Provvigioni Agenti</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione DDT
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione DDT</li>
+                                <li class="menu-item">Lista Controllo DDT</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Fatture Piattaforma
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Fatture Piattaforma</li>
+                                <li class="menu-item">Stampa Fatture Piattaforma</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="nav-item">
+                    <span class="nav-label">Magazzino</span>
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Articoli
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item draggable-opener">Gestione Articoli</li>
+                                <li class="menu-item">Copia Articoli</li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Trasfenmento Articoli a Modula
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">su File di Testo</li>
+                                        <li class="menu-item">su Database SQL</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">Aggiornamento Giacenze Articoli</li>
+                                <li class="menu-item">Situazione Articoli</li>
+                                <li class="menu-item">Gestione Prezzi Storici</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Movimentazione Magazzino
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Movimenti Magazzino</li>
+                                <li class="menu-item">Lista Movimenti Magazzino</li>
+                                <li class="menu-item">Scheda Movimenti a Video</li>
+                                <li class="menu-item">Stampa Giornale di Magazzino</li>
+                                <li class="menu-item">Stampa Schede Movimenti</li>
+                                <li class="menu-item">Caricamento Fatturato</li>
+                                <li class="menu-item">Stampa C/TO Visione Clienti/Fornitori</li>
+                                <li class="menu-item">Stampa C/TO Riparazione Clienti/Fornitori</li>
+                                <li class="menu-item">Controllo Movimenti Magazzino con Documenti Fatturazione</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Situazioni di Magazzino
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Stampa Rimanenza Iniziale
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Stampa in Ordine di CODICE ARTICOLO</li>
+                                        <li class="menu-item">Stampa in Ordine di CATEGORIA CONTABILE</li>
+                                        <li class="menu-item">Stampa in Ordine di GRUPPO ARTICOLI</li>
+                                        <li class="menu-item">Stampa in Ordine di FORNITORE</li>
+                                        <li class="menu-item">Stampa in Ordine di RAGGRUPPAMENTO FISCALE</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Stampa Situazione
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Stampa in Ordine di CODICE ARTICOLO</li>
+                                        <li class="menu-item">Stampa in Ordine di CATEGORIA CONTABILE</li>
+                                        <li class="menu-item">Stampa in Ordine di GRUPPO ARTICOLI</li>
+                                        <li class="menu-item">Stampa in Ordine di FORNITORE</li>
+                                        <li class="menu-item">Stampa in Ordine di RAGGRUPPAMENTO FISCALE</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Stampa Disponibilitå
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Stampa in Ordine di CODICE ARTICOLO</li>
+                                        <li class="menu-item">Stampa in Ordine di CATEGORIA CONTABILE</li>
+                                        <li class="menu-item">Stampa in Ordine di GRUPPO ARTICOLI</li>
+                                        <li class="menu-item">Stampa in Ordine di FORNITORE</li>
+                                        <li class="menu-item">Stampa in Ordine di RAGGRUPPAMENTO FISCALE</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">Stampa Sottoscorta</li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Valorizzazione e/o Chiusura
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Stampa in Ordine di CODICE ARTICOLO</li>
+                                        <li class="menu-item">Stampa in Ordine di CATEGORIA CONTABILE</li>
+                                        <li class="menu-item">Stampa in Ordine di GRUPPO ARTICOLI</li>
+                                        <li class="menu-item">Stampa in Ordine di FORNITORE</li>
+                                        <li class="menu-item">Stampa in Ordine di RAGGRUPPAMENTO FISCALE</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Valonzzazvone Articoli in Lavorazione
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Stampa in Ordine di CODICE ARTICOLO</li>
+                                        <li class="menu-item">Stampa in Ordine di CATEGORIA CONTABILE</li>
+                                        <li class="menu-item">Stampa in Ordine di GRUPPO ARTICOLI</li>
+                                        <li class="menu-item">Stampa in Ordine di FORNITORE</li>
+                                        <li class="menu-item">Stampa in Ordine di RAGGRUPPAMENTO FISCALE</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">Stampa Articoli Movimentati</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Listino Aritcoli
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Stampa in Ordine di CODICE ARTICOLO</li>
+                                <li class="menu-item">Stampa in Ordine di CATEGORIA CONTABILE</li>
+                                <li class="menu-item">Stampa in Ordine di GRUPPO ARTICOLI</li>
+                                <li class="menu-item">Stampa in Ordine di FORNITORE</li>
+                                <li class="menu-item">Stampa in Ordine di RAGGRUPPAMENTO FISCALE</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Prezzi Clienti
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item draggable-opener">Gestione Prezzi per Cliente</li>
+                                <li class="menu-item">Stampa Prezzi per Cliente</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Ordini
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Ordini CLIENTI
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Gestione Ordini Clienti</li>
+                                        <li class="menu-item">Visualizzazione Ordini per Cliente</li>
+                                        <li class="menu-item">Visualizzazvone Ordini per Articolo</li>
+                                        <li class="menu-item">Stampa Ordini per Cliente</li>
+                                        <li class="menu-item">Stampa Ordini per Articolo</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Ordini FORNITORI
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Gestione Ordini Fornitori</li>
+                                        <li class="menu-item">Visualizzazione Ordini per Fornitore</li>
+                                        <li class="menu-item">Visualizzazvone Ordini per Articolo</li>
+                                        <li class="menu-item">Stampa Ordini per Fornitore</li>
+                                        <li class="menu-item">Stampa Ordini per Articolo</li>
+                                        <li class="menu-item">Copia Ordini</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Ordini PRODUZIONE
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Gestione Ordini Produzione</li>
+                                        <li class="menu-item">Visualizzazione Ordini per Matricola</li>
+                                        <li class="menu-item">Visualizzazvone Ordini per Articolo</li>
+                                        <li class="menu-item">Stampa Ordini per Matricola</li>
+                                        <li class="menu-item">Stampa Ordini per Articolo</li>
+                                        <li class="menu-item">Gestione Ordini C/TO Lavoro</li>
+                                        <li class="menu-item">Stampa Ordini C/TO Lavoro</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Distinta Base
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Distinta Base</li>
+                                <li class="menu-item">Fattibilità Distinta Base</li>
+                                <li class="menu-item">Avanzamento Distinta Base</li>
+                                <li class="menu-item">Valorizzazione Distinta Base</li>
+                                <li class="menu-item">Valorizzazione Distinta Base x Movimento</li>
+                                <li class="menu-item">Visualizzazvone Cicli di Lavoro</li>
+                                <li class="menu-item">Gestione Cicli Storici</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Lavoraizoni interne
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Lavorazioni Interne</li>
+                                <li class="menu-item">Visualizza Lavorazioni</li>
+                                <li class="menu-item">Stampa Lavorazloni</li>
+                                <li class="menu-item">Gestione Storico Lavorazioni</li>
+                                <li class="menu-item">Visualizzazione Ordini da Chiudere</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">Gestione Inventario</li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Commesse
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Commesse</li>
+                                <li class="menu-item">Visualizza Commesse</li>
+                                <li class="menu-item">Situazvone Commesse</li>
+                                <li class="menu-item">Ricerca Matricole</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">Gestione Lista Ricambi</li>
+                        <li class="menu-item">
+                            <div class="label">
+                                Gestione Interventi
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <ul class="sub-menu">
+                                <li class="menu-item">Gestione Interventi</li>
+                                <li class="menu-item">Gestione Nota Spese</li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Stampe Interventi
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">Stampa x Commessa</li>
+                                        <li class="menu-item">Stampa x Dipendente</li>
+                                        <li class="menu-item">Stampa x Tecnico Esterno</li>
+                                        <li class="menu-item">Stampa x Cliente</li>
+                                        <li class="menu-item">Stampa x Causale Intervento</li>
+                                        <li class="menu-item">Stampa x Tipo Intervento</li>
+                                        <li class="menu-item">Stampa x Data Intervento</li>
+                                        <li class="menu-item">Stampa x Data Evasione</li>
+                                        <li class="menu-item">Stampa Richieste Ricambi</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">Gestione da PDM</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-label">Servizio</span>
+                    <ul class="menu">
+                        <li class="menu-item">Backup Archivi</li>
+                        <li class="menu-item">Ripristino Archivi</li>
+                        <li class="menu-item">Indicizzazione Archivi</li>
+                        <li class="menu-item">Svuotamento Archivi</li>
+                        <li class="menu-item">Formato Pagina</li>
+                        <li class="menu-item">Compattazione Archivi</li>
+                        <li class="menu-item">Gestione Utenti</li>
+                        <li class="menu-item">Blocco Movimenti Magazzino</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-label">Anno Contabile</span>
+                    <ul class="menu">
+                        <li class="menu-item">2009</li>
+                        <li class="menu-item">2010</li>
+                        <li class="menu-item">2011</li>
+                        <li class="menu-item">2012</li>
+                        <li class="menu-item">2013</li>
+                        <li class="menu-item">2014</li>
+                        <li class="menu-item">2015</li>
+                        <li class="menu-item">2016</li>
+                        <li class="menu-item">2017</li>
+                        <li class="menu-item">2018</li>
+                        <li class="menu-item">2019</li>
+                        <li class="menu-item">2020</li>
+                        <li class="menu-item">2021</li>
+                        <li class="menu-item">2022</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-label settings">
+                        <i class='bx bx-cog' ></i>
+                    </div>
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <div class="label">
+                                Sfondo
+                                <i class="bx bx-chevron-down"></i>
+                            </div>
+                            <form class="sub-menu" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <li class="menu-item dpflex alcenter">
+                                    <label for="colorPicker" class="color-picker-button">
+                                        Colore
+                                    </label>
+                                    <input type="color" id="colorPicker" name="color" value="#c8d4fd">
+                                </li>
+                                <li class="menu-item">
+                                    <div class="label">
+                                        Immagine
+                                        <i class="bx bx-chevron-down"></i>
+                                    </div>
+                                    <ul class="sub-menu">
+                                        <div class="menu-item dpflex">
+                                            <label for="imagePicker" class="image-picker-button">
+                                                Scegli
+                                            </label>
+                                            <input type="file" id="imagePicker" name="image">
+                                        </div>
+                                        <div class="menu-item">
+                                            <div id="removeImageBtn">
+                                                Rimuovi
+                                            </div>
+                                        </div>
+                                        <div class="menu-item" id="sizeToggle">
+                                            Ridimensiona
+                                        </div>
+                                    </ul>
+                                </li>
+                                <button type="submit" class="menu-item">
+                                    Salva
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    {{ request.user.username }}
+                    <a href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    {% endblock %}

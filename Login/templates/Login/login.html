@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'infinito/logo.png' %}" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="{% static 'infinito/style.css' %}">
+        <link rel="stylesheet" href="{% static 'infinito/forms.css' %}">
+        <link rel="stylesheet" href="{% static 'infinito/login.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <title>Login</title>
+    </head>
+    <body>
+        {% if form_errors %}
+        <div class="login-error">{{ form_errors }} <i class='bx bx-x' ></i></div>
+        {% endif %}
+        <form class="login" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <div class="input-container">
+                <input type="text" class="input-form" name="username" value="{{ username }}" placeholder=" " required autocomplete="off">
+                <label class="input-name champagne">Nome Utente</label>
+            </div>
+            <div class="input-container">
+                <input type="password" class="input-form" name="password" value="{{ password }}" placeholder=" " required autocomplete="off">
+                <label class="input-name champagne">Password</label>
+            </div>
+        <button type="submit" class="submit">Accedi</button>
+        </form>
+    </body>
+</html>
