@@ -3,9 +3,10 @@ $(document).ready(function(){
     $('.login-error').addClass('popup')
   }
     $(document).on("click", ".login-error i", function(){
-        $('.login-error').removeClass('popup')
+      let popup = $(this).parents('.login-error')
+        popup.removeClass('popup')
         setTimeout(function() {
-            $('.login-error').remove();
+            popup.remove();
           }, 400);
     })
 })

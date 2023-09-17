@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        {% load static %}
+        <script src="{% static 'Login/scripts/login-error.js' %}"></script>
+        <script src="{% static 'Login/scripts/showpw.js' %}"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'infinito/logo.png' %}" />
+        <link rel="stylesheet" href="{% static 'Login/login.css' %}">
+        <title>Login</title>
+    </head>
+    <body>
+        {% for field in form %}
+            {% for error in field.errors %}
+            <div class="login-error">{{ error }} <i class='bx bx-x' ></i></div>
+            {% endfor %}
+        {% endfor %}
+        <div class="form-container">
+            <form class="signup" action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                <h1 class="login-header">Sign Up</h1>
+                <div class="logo"></div>
+                {% for field in form %}
+                    <div class="input-container">
+                        {{field}}
+                        <label class="input-name">{{field.label}}</label>
+                    </div>
+                {% endfor %}
+                <a class="signup-link" href="{% url 'login' %}">Hai già un account? Accedi qui</a>
+            <button type="submit" class="submit">Registrati</button>
+            </form>
+        </div>
+    </body>
+</html>
