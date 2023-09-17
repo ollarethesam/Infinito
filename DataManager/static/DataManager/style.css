@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+html, body{
+    height: 100%;
+}
+.flex-container{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+.flex-container .header{
+    flex: 0 1 auto;
+    background: #7e8aa0;
+}
+.flex-container .content{
+    flex: 1 1 auto;
+    background: #c8d4fd center center/contain no-repeat;
+}
+.cover{
+    background-size: cover;
+}
+ul{
+    list-style: none;
+}
+.minimized-container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 25px;
+}
+.minimized-container .drag-container{
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: none;
+    height: 25px !important;
+    width: fit-content;
+    overflow: hidden;
+    border-radius: 0;
+    border: 1px solid black;
+    box-shadow: none;
+}
+.minimized-container .drag-header{
+    border-radius: unset !important;
+    display: flex;
+    height: 25px !important;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+.minimized-container .drag-name{
+padding: 0 2.5px;
+}
+.minimized-container .drag-close{
+    position: relative !important;
+}
+.last-clicked{
+    z-index: 100;
+}
+.w60xcent{
+    width: 60%;
+}
+
+

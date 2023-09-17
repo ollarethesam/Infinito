@@ -4,12 +4,23 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        {% load static %}
+        <script src="{% static 'DataManager/scripts/menu.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'DataManager/menu.css' %}">
+        <link rel="stylesheet" href="{% static 'DataManager/style.css' %}">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>Infinito</title>
       </head>
 </head>
 <body>
+  <div class="flex-container">
     {%block menu%}
     {%endblock%}
-    <div class="minimized-container"></div>
+    <div class="content">
+      <div class="minimized-container"></div>
+    </div>
+  </div>
   </body>
 </html>

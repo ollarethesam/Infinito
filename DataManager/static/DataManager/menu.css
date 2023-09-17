@@ -1,0 +1,125 @@
+.nav{
+    display: flex;
+    justify-content: left;
+    width: fit-content;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    user-select: none;
+}
+.menu, .sub-menu{
+    box-shadow: 3px 3px 8px #323232;
+    border-radius: 5px;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all 0.1s;
+    padding: 0;
+}
+.menu{
+    left: 0;
+    margin-top: -3px;
+}
+.sub-menu{
+    left: 98%;
+    top: 0;
+}
+.menu-item, .nav-item{
+    white-space: nowrap;
+    padding: 2px 5px;
+    position: relative;
+}
+.nav-label{
+    padding: 2px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    width: 100%;
+}
+.nav-label.open{
+    transition: all 0.1;
+    box-shadow: 1px 1px 10px #444;
+}
+.menu.open,.sub-menu.open{
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.3s;
+}
+.menu.open{
+    margin-top: 3px;
+}
+.sub-menu.open{
+    left: 100.5%;
+}
+.label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: inherit;
+}
+.label i{
+    font-size: 25px;
+    transform: rotate(270deg);
+    transition: all 0.3s;
+}
+.menu-item:hover{
+    background: #ddd;
+}
+.menu-item:first-child{
+    border-radius: 5px 5px 0 0;
+}
+.menu-item:last-child{
+    border-radius: 0 0 5px 5px;
+}
+.rotate{
+    transform: rotate(360deg);
+}
+.settings{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.settings i{
+    font-size: 20px;
+    transition: all 0.3s;
+    border-radius: 50%;
+}
+.nav-label.settings.open{
+    box-shadow: none;
+}
+.nav-label.settings.open i{
+    transform: rotate(90deg);
+}
+#colorPicker, #imagePicker{
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.color-picker-button, .image-picker-button{
+    width: 100%;
+    height: 100%;
+}
+button.menu-item{
+    background: none;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    font-size: 16px;
+}
+l.nav-item:hover ~ .content {
+    backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+}
+
+  
+  
+  
+  
+  
+  
+  
