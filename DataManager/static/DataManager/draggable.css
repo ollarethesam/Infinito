@@ -1,0 +1,46 @@
+.drag-container{
+    border:3px solid grey;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 10px #444;
+    background: #c8d4fd;
+    overflow: visible;
+    position: relative;
+}
+.drag-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid grey;
+    position: relative;
+    user-select: none;
+    z-index: 2000;
+}
+.drag-name{
+    margin: 0 4px;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+.drag-close{
+    display: flex;
+    align-items:  center;
+    font-size: 25px;
+}
+.big{
+    min-width: 700px;
+}
+.bigger{
+    min-width: 1000px;
+}
+.visible{
+    opacity: 1;
+    pointer-events: all;
+}

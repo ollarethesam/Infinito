@@ -5,4 +5,5 @@ from django.urls import reverse
 def menu(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login'))
-    return render(request, 'DataManager/menu.html')
+    else:
+        return render(request, 'DataManager/menu.html')

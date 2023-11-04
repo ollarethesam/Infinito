@@ -20,6 +20,20 @@ html, body{
 .flex-container .content{
     flex: 1 1 auto;
     background: #c8d4fd center center/contain no-repeat;
+    transition: all 0.3s;
+    position: relative;
+}
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherit background color or image from .content */
+}
+.blur{
+    filter: blur(2px);
 }
 .cover{
     background-size: cover;

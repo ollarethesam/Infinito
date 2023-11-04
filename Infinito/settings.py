@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-_%*=31ev#ob#06htv7+fy6155(j(7h#0#0yn%da3w*2wa8@f^=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+TIME_ZONE = 'Europe/Rome'
 
 
 # Application definition
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'Infinito.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Infinito',
+        'NAME': 'infinito',
         'USER': 'root',
         'HOST': 'localhost',
         'PORT': 3306,

@@ -1,0 +1,36 @@
+<form action="{% url url_name %}" method="POST" class="container" target="form_response_iframe">
+    <div class="form-container">
+        {% csrf_token %}
+        <div class="label-container">
+            {% for field in form %}
+                <div class="form-label">{{ field.label }}</div>
+            {% endfor %}
+        </div>
+        <div class="input-container">
+            {% for field in form %}
+                <div class="inline">
+                    {{ field }}
+                    {% if field.name in ddfields %}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                    {% endif %}
+                </div>
+                {% for error in field.errors%}
+                    <p class="error"> {{ error }} </p>
+                {% endfor %}
+            {%endfor %}
+        </div>
+    </div>
+    <div class="inline btn-container">
+        <button type="submit" class="submit-btn" id="submit">Salva</button>
+        <button type="button" class="delete-btn" id="delete">Elimina</button>
+        <button type="button" class="clean-btn" id="clean">Pulisci</button>
+        <div class="arrows-container inline">
+            <button type="button" class="arrows-btn" id="lt"><i class='bx bx-chevron-left'></i></button>
+            <button type="button" class="arrows-btn" id="gt"><i class='bx bx-chevron-right' ></i></button>
+        </div>
+    </div>
+</form>

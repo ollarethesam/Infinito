@@ -5,13 +5,15 @@ $(document).ready(function(){
         $(this).siblings(".nav-item").find(".sub-menu").removeClass("open")
         $(this).children(".menu").addClass("open")
         $(this).children(".nav-label").addClass("open")
+        $('.content::before').addClass('blur')
     });
     $(document).on("mouseenter", ".nav",function(){
         clearTimeout(timeout)
     });
     $(document).on("mouseleave", ".nav",function(){
+        $('.content::before').removeClass('blur')
         timeout = setTimeout(() => {
-            $(".open").removeClass("open")
+            $("nav *").removeClass("open")
         }, 1000);
     });
     $(document).on("mouseleave", ".nav-item",function(){
