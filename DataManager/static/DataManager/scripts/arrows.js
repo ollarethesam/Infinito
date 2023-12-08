@@ -1,9 +1,10 @@
 $(document).ready(function(){
     $(document).on('click', '.arrows-btn', function(){
-        url = $(this).parents('.container').siblings('.drag-header').children('.drag-name').text().split(' ').join("-").replace("à", "a").replace("ò", "o").replace("è", "e")
-        direction = $(this).attr('id')
-        start_value = $(this).parents('.container').find('.pk').val()
-        field = $(this).parents('.container').find('.pk').attr('id').split("_").pop()
+        var form = $(this).closest('.drag-container')
+        var url = form.attr('id')
+        var direction = $(this).attr('class').split(' ').pop()
+        var start_value = form.find('.pk').val()
+        var field = form.find('.pk').attr('class').split(' ')[0]
         $.ajax({
             url: url,
             type: 'GET',
@@ -16,7 +17,18 @@ $(document).ready(function(){
             },
             success: function(response){
                 $.each(response, function(key, value){
-                    $('#id_{0}'.format(key)).val(value)
+                    var input = form.find(".{0}".format(key))
+                    if(input.is('input[type="checkbox"]')){
+                        if (value == true){
+                            input.prop('checked', true)
+                        }
+                        else{
+                            input.prop('checked', false)
+                        }
+                    }
+                    else{
+                        input.val(value)
+                    }
                 })
             }
         })

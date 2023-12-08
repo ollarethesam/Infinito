@@ -7,6 +7,9 @@
     z-index: 10;
     user-select: none;
 }
+.draggable-opener{
+    background: rgb(193, 113, 218);
+}
 .menu, .sub-menu{
     box-shadow: 3px 3px 8px #323232;
     border-radius: 5px;

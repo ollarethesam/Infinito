@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models.banche import Banche
+from django.apps import apps
 # Register your models here.
-
-admin.site.register(Banche)
+models = apps.get_app_config('DataManager').get_models()
+for model in models:
+    admin.site.register(model)

@@ -12,7 +12,7 @@
     box-shadow: 10px 10px 10px #444;
     background: #c8d4fd;
     overflow: visible;
-    position: relative;
+    position: absolute;
 }
 .drag-header{
     display: flex;
@@ -43,4 +43,7 @@
 .visible{
     opacity: 1;
     pointer-events: all;
+}
+.focus{
+    z-index: 9;
 }

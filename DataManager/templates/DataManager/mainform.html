@@ -17,20 +17,58 @@
                             <ul class="dropdown-menu"></ul>
                         </button>
                     {% endif %}
+                    {% if field.name in ddofields %}
+                        {% for key, value in ddofields.items %}
+                            {% if key == field.name %}
+                                <div class="draggable-opener inside-opener {{ value }}">+</div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
-                {% for error in field.errors%}
-                    <p class="error"> {{ error }} </p>
-                {% endfor %}
             {%endfor %}
         </div>
     </div>
     <div class="inline btn-container">
-        <button type="submit" class="submit-btn" id="submit">Salva</button>
-        <button type="button" class="delete-btn" id="delete">Elimina</button>
-        <button type="button" class="clean-btn" id="clean">Pulisci</button>
+        <button type="submit" class="submit-btn">Salva</button>
+        <button type="button" class="delete-btn">Elimina</button>
+        <button type="button" class="clean-btn">Pulisci</button>
         <div class="arrows-container inline">
-            <button type="button" class="arrows-btn" id="lt"><i class='bx bx-chevron-left'></i></button>
-            <button type="button" class="arrows-btn" id="gt"><i class='bx bx-chevron-right' ></i></button>
+            <button type="button" class="arrows-btn lt"><i class='bx bx-chevron-left'></i></button>
+            <button type="button" class="arrows-btn gt"><i class='bx bx-chevron-right' ></i></button>
         </div>
     </div>
 </form>
+<script>
+    $('.dropdown-menu').on('scroll', function(){
+        var element = $(this)[0];
+        if (element.scrollHeight - element.scrollTop == element.clientHeight) {
+            var url = $(this).parents('.drag-container').attr('id')
+            var id = $(this).parents('.dropdown').siblings(".form-control").attr("name")
+            var offset = parseInt($(this).children(':last').attr('class').split(' ').pop().split('-').pop(), 10)
+            var dm = $(this)
+            $.ajax({
+                url: url,
+                type: 'GET',
+                datatype: 'json',
+                data: {
+                    id: id,
+                    offset: offset
+                },
+                success: function(response){
+                    //fill the list with the data from the database
+                    var num = offset + 1;
+                    $.each(response, function(i){
+                        var li = '<li class="inline dropdown-menu-item item-{0}">'.format(num)
+                        var cls_li ='</li>'
+                        $.each(response[i], function(key, value){
+                            li = li + "<div> {0} </div>".format(value)
+                        })
+                        li = li + cls_li
+                        dm.append(li)
+                        num++
+                    })
+                }
+            })
+        }
+    })
+</script>

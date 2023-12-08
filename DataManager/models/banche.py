@@ -10,11 +10,12 @@ class Banche(models.Model):
     codsia = models.CharField(max_length=5)
     iban = models.CharField(max_length=27)
     bic = models.CharField(max_length=11)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date_created = models.DateTimeField(default=datetime.now)
+    user = models.ForeignKey(User, to_field='username', on_delete=models.CASCADE)
+    date_created = models.DateTimeField(default=datetime.now().replace(microsecond=0), editable=False)
 
     class Meta:
         db_table = 'banche'
+        managed = True
 
     def __str__(self):
         return f"{self.codban} - {self.desban}"

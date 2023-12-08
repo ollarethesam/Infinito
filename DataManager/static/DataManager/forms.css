@@ -109,7 +109,7 @@
 .form-control.checkbox{
     width: fit-content;
 }
-.dropdown{
+.dropdown, .inside-opener{
     border-radius: 8px;
     border: none;
     white-space: nowrap;
@@ -121,9 +121,12 @@
     height: 25px;
     min-width: 25px;
 }
+.inside-opener{
+    color: white;
+}
 .dropdown span{
     width: 50%;
-    height: 5%;
+    height: 8%;
     background: #fff;
     border-radius: 2px;
     position: absolute;
@@ -150,7 +153,7 @@
     max-height: 0px;
     min-width: 150px;
     width: fit-content;
-    overflow: auto;
+    overflow: scroll;
     opacity: 0;
     margin-top: -10px;
     border-radius: 5px;
@@ -167,7 +170,7 @@
     left: 75px;
 }
 .dropdown-menu.open{
-    max-height: 150px;
+    max-height: 156px;
     overflow: auto;
     margin-top: 1px;
     opacity: 1;
@@ -217,15 +220,6 @@
     width: inherit;
     min-width: 20px;
 }
-.draggable-opener{
-    border-radius: 8px;
-    border: none;
-    white-space: nowrap;
-    position: relative;
-    height: 25px;
-    min-width: 25px;
-    cursor:default;
-}
 .btn-container{
     margin-top: 10px !important;
     display: flex;
@@ -254,7 +248,7 @@
     background: #e74c3c;
     border: 2px solid #c0392b;
 }
-.clean-btn, .arrows-btn, .dropdown{
+.clean-btn, .arrows-btn, .dropdown, .inside-opener{
     background: #95a5a6;
     border: 2px solid #7f8c8d;
 }
@@ -266,7 +260,7 @@
     background: #f16050;
     border: 2px solid #e74c3c;
 }
-.clean-btn:hover, .arrows-btn:hover, .dropdown:hover{
+.clean-btn:hover, .arrows-btn:hover, .dropdown:hover, .inside-opener:hover{
     background: #aab7b8;
     border: 2px solid #95a5a6;
 }
@@ -278,7 +272,7 @@
     background: #c93221;
     border: 2px solid #af281d;
 }
-.clean-btn:active, .arrows-btn:active, .dropdown:active{
+.clean-btn:active, .arrows-btn:active, .dropdown:active, .inside-opener:active{
     background: #7f8c8d;
     border: 2px solid #6d7980;
 }
