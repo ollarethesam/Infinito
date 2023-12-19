@@ -31,7 +31,7 @@ class BancheForm(ModelForm):
         if len(codban) != 3:
             raise forms.ValidationError("codice banca must be 3 charachters long")
         else:
-         return codban
+            return codban
     def clean_codabi(self, *args, **kwargs):
         codabi = self.cleaned_data.get('codabi')
         if len(codabi) != 5:

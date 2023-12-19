@@ -96,48 +96,6 @@ $(document).ready(function(){
         }
     })
 
-
-    //formfill
-
-
-    $(document).on('click', '.dropdown-menu-item', function(){
-        $(this).parents(".dropdown").children("span").removeClass("open")
-        $(this).parents(".dropdown-menu").removeClass("open")
-        var form = $(this).closest('.drag-container')
-        var dm = $(this).parents('.dropdown-menu')
-        var url = form.attr('id')
-        var key = $(this).children().first().text().trim()
-        var key_id = $(this).parents('.dropdown').siblings(".form-control").attr("name")
-        $.ajax({
-            url: url,
-            type: 'GET',
-            datatype: 'json',
-            data: {
-                key: key,
-                key_id: key_id
-            },
-            success: function(response){
-                $.each(response, function(key, value){
-                    var input = form.find(".{0}".format(key))
-                    if(input.is('input[type="checkbox"]')){
-                        if (value == true){
-                            input.prop('checked', true)
-                        }
-                        else{
-                            input.prop('checked', false)
-                        }
-                    }
-                    else{
-                        input.val(value)
-                    }
-                })
-                dm.removeClass('open')
-                dm.siblings('span').removeClass('open')
-            }
-        })
-    })
-
-
     var is_in = false
     $(document).on("mouseenter", ".dropdown",function(){
         is_in = true

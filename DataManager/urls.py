@@ -28,5 +28,11 @@ urlpatterns = [
     path('Gestione-Centri-di-Lavoro', cenlav, name="cenlav"),
     path('Des-Gruppi-Art', degrar, name="degrar"),
     path('Gestione-Dipendenti', dipend, name="dipend"),
+    path('Tabella-IVA-Corrispettivi', ivacor, name="ivacor"),
     path('Tabella-IVA-Acquisti', ivaacq, name="ivaacq"),
+    path('Porto', porto, name="porto"),
+    path('Raggruppamenti-Fiscali', raggfi, name="raggfi"),
+    path('Spedizioni', spediz, name="spediz"),
+    path('Tipi-Allegati', tipall, name="tipall"),
+    path('Gestione-Prezzi-per-Cliente', liscli, name="liscli"),
 ]

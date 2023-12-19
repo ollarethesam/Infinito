@@ -33,7 +33,6 @@ $(document).ready(function(){
             url = $(this).attr('class').split(' ').pop()
             name = url.split('-').join(' ')
         }
-        console.log(url)
         
         var newDiv = `<div class="drag-container visible focus" id={0}>
                         <div class="drag-header">

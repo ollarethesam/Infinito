@@ -12,12 +12,14 @@ def getkey(dict, value):
     return result
 
 
-def get_form_data(instance):
+def get_form_data(instance, fields=None):
     field_values = {}
-
     # Iterate through the fields of the instance
     for field in instance._meta.fields:
         field_name = field.name
+        if fields is not None and field_name not in fields or field_name == 'date_created':
+            continue
+
         field_value = getattr(instance, field_name)
         # If the field is a ForeignKey, get the related field value
         if isinstance(field, models.ForeignKey) and not isinstance(field, User):
@@ -31,20 +33,29 @@ def get_form_data(instance):
             field_values[field_name] = field_value
     return field_values
 
-def save_or_update(model, modelform, request, pk_val):
+def save_or_update(model, modelform, request, pk_vals):
     save_msg = 'saved'
     instance = None
-    if model.objects.filter(pk=pk_val).exists():
+    if not isinstance(pk_vals, dict):
+        cond = {model._meta.pk.name: pk_vals}
+    else:
+        cond = pk_vals
+    if model.objects.filter(**cond).exists():
+        print(model.objects.filter(**cond).values())
         save_msg = 'updated'
-        instance = get_object_or_404(model, pk=pk_val)
+        instance = get_object_or_404(model, **cond)
     form = modelform(request.POST or None, instance=instance)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.user = request.user
-        instance.save()
-        return JsonResponse({'success': [f'record {instance.pk} {save_msg} succesfully']})
-    return JsonResponse({'errors': [error for field, error_list in form.errors.items() for error in error_list]})
-
+    try:
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
+            return JsonResponse({'success': [f'record {instance.pk} {save_msg} succesfully']})
+        return JsonResponse({'errors': [error for field, error_list in form.errors.items() for error in error_list]})
+    except Exception as e:
+        print(e)
+        return JsonResponse({'errors': [f'{e}']})
+    
 def dropdown(model, id, chars, offset, fields):
     if id and not chars:
         fields_values = list(model.objects.values(*fields).order_by(id)[int(offset):int(offset)+20])
@@ -54,32 +65,47 @@ def dropdown(model, id, chars, offset, fields):
         fields_values = list(model.objects.values(*fields).filter(**cond).order_by(id)[int(offset):int(offset)+20])
         return JsonResponse(fields_values, safe=False)
 
-def formfill(model, key, key_id, keys_list):
+def formfill(model, key, key_id, keys_list, grid=False, grid_keys=None, main=None):
     if key and key_id in keys_list[model]:
         values = get_form_data(model.objects.get(pk=key))
-        return JsonResponse(values)
     elif key and key_id not in keys_list[model]:
         values = getkey(keys_list, key_id).objects.values(*keys_list[getkey(keys_list, key_id)]).filter(pk=key).first()
-        print(values)
-        return JsonResponse(values)
+    if grid and grid_keys and key_id == main:
+        cond = {key_id: key}
+        instances = list(model.objects.filter(**cond))
+        values['grid'] = []
+        for instance in instances:
+            values['grid'].append(get_form_data(instance, fields=grid_keys))
+        print(values['grid'])
+    return JsonResponse(values)
 
-def arrows(model, direction, start_value, field):
+def arrows(model, direction, start_value, field, fields=None):
     first_record = model.objects.values(field).order_by(field).first()[field]
     last_record = model.objects.values(field).order_by(field).last()[field]
     sign = ''
     if direction == 'lt':
         sign = '-'
     if (not start_value or start_value == last_record) and direction == 'gt':
-        values = get_form_data(model.objects.order_by(field).first())
+        values = get_form_data(model.objects.order_by(field).first(), fields=fields)
     elif (not start_value or start_value == first_record) and direction == 'lt':
-        values = get_form_data(model.objects.order_by(field).last())
+        values = get_form_data(model.objects.order_by(field).last(), fields=fields)
     else:
-        values = get_form_data(model.objects.filter(**{f"{field}__{direction}": start_value}).order_by(f"{sign}{field}").first())
+        values = get_form_data(model.objects.filter(**{f"{field}__{direction}": start_value}).order_by(f"{sign}{field}").first(), fields=fields)
     return JsonResponse(values, safe=False)
 
-def delete(model, delcode):
-    if model.objects.filter(pk=delcode).exists():
-        model.objects.get(pk=delcode).delete()
-        return JsonResponse({'success': [f'record {delcode} deleted succesfully']})
+def delete(model, delcode, delkeys=None):
+
+    if not isinstance(delcode, dict):
+        cond = {model._meta.pk.name: delcode}
+    else:
+        cond = delcode
+    print(cond)
+    if model.objects.filter(**cond).exists():
+        try:
+            model.objects.get(**cond).delete()
+            return JsonResponse({'success': [f'record {delcode} deleted succesfully']})
+        except Exception as e:
+            print(e)
+            return JsonResponse({'errors': [f'the record {delcode} is connected to other tables']})
     else:
         return JsonResponse({'errors': [f'record {delcode} doesn\'t exist']})

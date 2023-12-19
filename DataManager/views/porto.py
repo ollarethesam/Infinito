@@ -1,35 +1,28 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from DataManager.forms.DestfoForm import DestfoForm
-from DataManager.models.destfo import Destfo
-from DataManager.models.fornit import Fornit
+from DataManager.forms.PortoForm import PortoForm
+from DataManager.models.porto import Porto
 from django.shortcuts import get_object_or_404
 from ..functions import *
 
-def destfo(request, model=Destfo, modelform=DestfoForm, template='DataManager/mainform.html', url_name='destfo', keys_list={
-    Destfo: ('codest', 'dedest'),
-    Fornit: ('codfor', 'ragsoc') 
-}):
-    
+def porto(request, model=Porto, modelform=PortoForm, template='DataManager/mainform.html', url_name='porto'):
     if request.method == 'POST':   
         pk_val = request.POST[model._meta.pk.name]
         return save_or_update(model, modelform, request, pk_val)
     if request.method == 'GET':
         form = modelform
-        context = {'form': form, 'url_name': url_name, 'ddfields': ('codest', 'dedest', 'codfor', 'ragsoc'), 'ddofields': {'codfor': 'Fornitori'}}
+        context = {'form': form, 'url_name': url_name, 'ddfields': ('codpor', 'despor')}
 
         id = request.GET.get('id')
         offset = request.GET.get('offset')
         chars = request.GET.get('chars')
-        if id and id in keys_list[model]:
-            return dropdown(model, id, chars, offset, keys_list[model])
-        elif id and not id in keys_list[model]:
-            return dropdown(getkey(keys_list, id), id, chars, offset, keys_list[getkey(keys_list, id)])
+        if id:
+            return dropdown(model, id, chars, offset, context['ddfields'])
         
         key = request.GET.get("key")
-        key_id = request.GET.get('key_id')
         if key:
-            return formfill(model, key, key_id, keys_list)
+            values = model.objects.filter(pk=key).values().first()
+            return JsonResponse(values)
         
         direction = request.GET.get('direction')
         start_value = request.GET.get('start_value')
@@ -40,6 +33,5 @@ def destfo(request, model=Destfo, modelform=DestfoForm, template='DataManager/ma
         delcode = request.GET.get('delcode')
         if delcode:
             return delete(model, delcode)
-        
         content = render(request, template, context)
         return HttpResponse(content)

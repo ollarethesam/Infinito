@@ -30,6 +30,13 @@ $(document).ready(function(){
                         input.val(value)
                     }
                 })
+                form.find('.form-control').each(function () {
+                    var lc = $(this).attr('class').split(' ')[0]
+                    if (!(lc in response)){
+                        form.find('.{0}'.format(lc)).val('')
+                        form.find('.{0}'.format(lc)).prop('checked', false)
+                    }
+                })
             }
         })
     })

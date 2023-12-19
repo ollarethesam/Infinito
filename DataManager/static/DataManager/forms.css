@@ -297,7 +297,7 @@
     padding-top: 0;
     margin: 5px;
 }
-.grid-row{
+.title-row, .grid-row{
     justify-content: space-between;
     display: flex;
     max-height: 25px;

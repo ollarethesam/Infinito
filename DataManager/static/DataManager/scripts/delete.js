@@ -2,7 +2,18 @@ import { popup_handler } from "./utils.js";
 $(document).ready(function(){ 
     $(document).on('click', '.delete-btn', function(){
         var url = $(this).parents('.drag-container').attr('id')
-        var delcode = $(this).parents('.container').find('.pk').val()
+        var delcode = {}
+        var pk_list = $(this).parents('.container').find('.pk')
+        if (pk_list.length > 1){
+            $.each(pk_list, function(index, item){
+                delcode[$(item).attr('class').split(' ')[0]] = $(item).val()
+            })
+            delcode = JSON.stringify(delcode)
+        }
+        else{
+            delcode = pk_list.val()
+        }
+        console.log(delcode)
         if(delcode){
             if(confirm('vuoi eliminare il record {0}?'.format(delcode))){
                 $.ajax({

@@ -28,6 +28,15 @@
             {%endfor %}
         </div>
     </div>
+    {% if grid %}
+    <table class="grid">
+        <tr class="title-row">
+            {% for field, title in grid.items %}
+                <th>{{ title }}</th>
+            {% endfor %}
+        </tr>
+    </table>
+    {% endif %}
     <div class="inline btn-container">
         <button type="submit" class="submit-btn">Salva</button>
         <button type="button" class="delete-btn">Elimina</button>
@@ -55,7 +64,6 @@
                     offset: offset
                 },
                 success: function(response){
-                    //fill the list with the data from the database
                     var num = offset + 1;
                     $.each(response, function(i){
                         var li = '<li class="inline dropdown-menu-item item-{0}">'.format(num)
