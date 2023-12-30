@@ -1,4 +1,4 @@
-    
+import { filler } from "./utils.js";
 $(document).ready(function(){
 
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
         var key_id = $(this).parents('.dropdown').siblings(".form-control").attr("name")
         var grid = form.find('.grid')
         var wgrid = false
-        if(grid){
+        if(grid.length != 0){
             wgrid = true
         }
         $.ajax({
@@ -28,32 +28,11 @@ $(document).ready(function(){
                 grid: wgrid
             },
             success: function(response){
-                $.each(response, function(key, value){
-                    var input = form.find(".{0}".format(key))
-                    if(input.is('input[type="checkbox"]')){
-                        if (value == true){
-                            input.prop('checked', true)
-                        }
-                        else{
-                            input.prop('checked', false)
-                        }
-                    }
-                    else{
-                        input.val(value)
-                    }
-                    if(key == 'grid' && grid){
-                        grid.find('.grid-row').remove()
-                        $.each(value, function(index, obj){
-                            row = '<tr class="grid-row {0}"></tr>'.format(index)
-                            $(".grid").append(row)
-                            $.each(obj, function(grid_key, grid_value){
-                                $('.grid-row.{0}'.format(index)).append('<td class="grid-item">{0}</td>'.format(grid_value))
-                            })
-                        })
-                    }
-                })
-                dm.removeClass('open')
-                dm.siblings('span').removeClass('open')
+                filler(response, form, grid)
+                if(dm){
+                    dm.removeClass('open')
+                    dm.siblings('span').removeClass('open')
+                }
             }
         })
     })
@@ -68,6 +47,7 @@ $(document).ready(function(){
         var grid_pk_value = $(this).children().first().text().trim()
         var grid_pk_name = 'codart'
         var main_val = form.find('.main').val()
+        var grid = form.find('.grid')
         $.ajax({
             url: url,
             type: 'GET',
@@ -79,20 +59,42 @@ $(document).ready(function(){
             },
             success: function(response){
                 $.each(response, function(key, value){
-                    var input = form.find(".{0}".format(key))
-                    if(input.is('input[type="checkbox"]')){
-                        if (value == true){
-                            input.prop('checked', true)
-                        }
-                        else{
-                            input.prop('checked', false)
-                        }
-                    }
-                    else{
-                        input.val(value)
-                    }
+                    filler(response, form, grid)
                 })
             }
         })
     })
+})
+
+
+//input form fill
+
+
+$(document).on('input change', '.form-control', function(){
+    var form = $(this).closest('.drag-container')
+    var url = form.attr('id')
+    var key = $(this).val()
+    var key_id = $(this).attr("name")
+    var grid = form.find('.grid')
+    var wgrid = false
+    if(grid.length != 0){
+        wgrid = true
+    }
+    if($(this).siblings('.dropdown').length > 0){
+        $.ajax({
+            url: url,
+            type: 'GET',
+            datatype: 'json',
+            data: {
+                key: key,
+                key_id: key_id,
+                grid: wgrid,
+                from_input: true
+            },
+            success: function(response){
+                filler(response, form, grid)
+
+            }
+        })
+    }
 })

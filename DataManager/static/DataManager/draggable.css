@@ -1,38 +1,35 @@
 .drag-container{
-    border:3px solid grey;
-    border-radius: 10px;
-    opacity: 0;
-    pointer-events: none;
-    width: fit-content;
-    height: fit-content;
+    border:1px solid grey;
+    border-radius: 0.5rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 10px 10px 10px #444;
-    background: #c8d4fd;
-    overflow: visible;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.15);
     position: absolute;
+    transition: font-size 0.1s;
 }
 .drag-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: white;
-    border-radius: 8px 8px 0 0;
+    border-radius: 0.4rem 0.4rem 0 0;
     border-bottom: 1px solid grey;
     position: relative;
-    user-select: none;
-    z-index: 2000;
+    font-size: 1rem;
 }
 .drag-name{
     margin: 0 4px;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    transition: font-size 0.1s;
 }
 .drag-close{
     display: flex;
     align-items:  center;
-    font-size: 25px;
+}
+.drag-close i{
+    font-size: 1.5rem;
 }
 .big{
     min-width: 700px;

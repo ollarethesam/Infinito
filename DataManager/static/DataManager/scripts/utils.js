@@ -32,3 +32,31 @@ export function popup_handler(type, url, response){
         }, 400)
     }, disappear_time)
 }
+
+export function filler(response, form, grid){
+    console.log(response)
+    $.each(response, function(key, value){
+        var input = form.find(".{0}".format(key))
+        if(input.is('input[type="checkbox"]')){
+            if (value == true){
+                input.prop('checked', true)
+            }
+            else{
+                input.prop('checked', false)
+            }
+        }
+        else{
+            input.val(value)
+        }
+        if(key == 'grid' && grid){
+            grid.find('.grid-row').remove()
+            $.each(value, function(index, obj){
+                var row = '<tr class="grid-row {0}"></tr>'.format(index)
+                $(".grid").append(row)
+                $.each(obj, function(grid_key, grid_value){
+                    $('.grid-row.{0}'.format(index)).append('<td class="grid-item">{0}</td>'.format(grid_value))
+                })
+            })
+        }
+    })
+}

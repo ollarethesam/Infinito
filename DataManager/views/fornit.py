@@ -12,7 +12,7 @@ from django.shortcuts import get_object_or_404
 from ..functions import *
 
 def fornit(request, model=Fornit, modelform=FornitForm, template='DataManager/fornit.html', url_name='fornit', keys_list={
-    Fornit: ('codfor', 'ragsoc'),
+    Fornit: ('codfor', 'ragsoc', 'alias'),
     Banche:('codban', 'desban'),
     Modpag:('codpag', 'despag'),
     Zone : ('codzon', 'deszon'),
@@ -32,14 +32,16 @@ def fornit(request, model=Fornit, modelform=FornitForm, template='DataManager/fo
         offset = request.GET.get('offset')
         chars = request.GET.get('chars')
         if id and id in keys_list[model]:
-            return dropdown(model, id, chars, offset, keys_list[model])
+            return dropdown(model, id, chars, offset, keys_list[model][:2])
         elif id and not id in keys_list[model]:
             return dropdown(getkey(keys_list, id), id, chars, offset, keys_list[getkey(keys_list, id)])
         
         key = request.GET.get("key")
         key_id = request.GET.get('key_id')
-        if key:
-            return formfill(model, key, key_id, keys_list)
+        key_id = request.GET.get("key_id")
+        from_input = request.GET.get("from_input")
+        if key and key_id:
+            return formfill(model, key, key_id, keys_list, from_input=from_input)
         
         direction = request.GET.get('direction')
         start_value = request.GET.get('start_value')

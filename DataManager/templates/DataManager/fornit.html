@@ -1,11 +1,12 @@
-<form method="post" class="container">
-    <div class="inline hfc">
+<form method="post" class="container" action="Fornitori">
+    <div class="blur-bg"></div>
+    <div class="inline">
         <div class="form-container">
             {% csrf_token %}
             <div class="label-container">
                 
                 <div class="form-label">{{ form.codfor.label }}</div> 
-                <div class="form-label">{{ form.datagg.label }}</div>
+                
             </div>
             <div class="input-container">
                 <div class="inline">
@@ -17,16 +18,16 @@
                     </button>
                     
                 </div>
-                <div class="inline">
-                    {{ form.datagg }}
-                </div>
+                
             </div>
         </div>
         <div class="form-container">
             <div class="label-container">
-                
                 <div class="form-label">{{ form.ragsoc.label }}</div>
+                <div class="form-label">{{ form.datagg.label }}</div>
                 <div class="form-label">{{ form.indiri.label }}</div>
+                <div class="form-label">{{ form.locali.label }}</div>
+                
             </div>
             <div class="input-container">
                 <div class="inline">
@@ -38,33 +39,22 @@
                     </button>
                     
                 </div> 
+                <div class="inline">{{ form.datagg }}</div>
+                <div class="inline">{{ form.indiri }}</div>
                 <div class="inline">
-                    {{ form.indiri }}
-                </div>
+                    {{ form.locali }}   
+                    <div class="form-label">{{ form.provin.label }}</div>
+                    {{ form.provin }}
+                    <div class="form-label">{{ form.cap.label }}</div>
+                    {{ form.cap }}
+                </div>            
             </div>
         </div>
     </div>
-    <div class="inline hfc">
-        
-        <div class="inline">
-            <div class="form-label">{{ form.locali.label }}</div>
-            {{ form.locali }}
-        </div>
-        <div class="inline">
-            <div class="form-label">{{ form.provin.label }}</div>
-            {{ form.provin }}
-        </div>
-        <div class="inline">
-            <div class="form-label">{{ form.cap.label }}</div>
-            {{ form.cap }}
-        </div>
-    </div>
     <div class="line"></div>
-    <div class="inline hfc">
+    <div class="inline">
         <div class="form-container">
-            {% csrf_token %}
             <div class="label-container">
-                
                 <div class="form-label">{{ form.telef1.label }}</div> 
                 <div class="form-label">{{ form.telef2.label }}</div>
                 <div class="form-label">{{ form.cellul.label }}</div>
@@ -82,9 +72,7 @@
             </div>
         </div>
         <div class="form-container">
-            {% csrf_token %}
             <div class="label-container">
-                
                 <div class="form-label">{{ form.pariva.label }}</div> 
                 <div class="form-label">{{ form.codfis.label }}</div>
                 <div class="form-label">{{ form.fax.label }}</div>
@@ -101,88 +89,87 @@
                 </div> 
             </div>
         </div>
-    </div>
-    <div class="line"></div>
-    <div class="inline hfc sparound">
-        <div class="inline">
-                
-                <div class="form-label">{{ form.storic.label }}</div>
-                {{ form.storic }}
-        </div>
-        <div class="inline">
-                
+        <div class="form-container">
+            <div class="label-container">
                 <div class="form-label">{{ form.spesom.label }}</div>
-                {{ form.spesom }}
-        </div>
-        <div class="inline">
-                
+                <div class="form-label">{{ form.storic.label }}</div>
                 <div class="form-label">{{ form.schcar.label }}</div>
-                {{ form.schcar }}
+            </div>
+            <div class="input-container">
+                <div class="inline">{{ form.spesom }}</div>
+                <div class="inline">{{ form.storic }}</div>
+                <div class="inline">{{ form.schcar }}</div>
+            </div>
         </div>
     </div>
-    <div class="line"></div>
-    <div class="inline hfc">
-        
-        <div class="form-label wfc">{{ form.banapp.label }}</div>
-        {{ form.banapp }}
-    </div>
-    <div class="line"></div>
-    <div class="inline hfc">
-        <div class="block wfc">
-            <div class="inline"> </div>
+    <div class="inline">
+        <div class="block">
             <div class="inline">
                 IBAN:
             </div>
         </div>
-        <div class="block wfc">
-            
-            <div class="form-label wfc">{{ form.pae.label }}</div>
+        <div class="block">
+            <div class="form-label">{{ form.pae.label }}</div>
             {{ form.pae }}
         </div>
-        <div class="block wfc">
-            
-            <div class="form-label wfc">{{ form.cineur.label }}</div>
+        <div class="block">
+            <div class="form-label">{{ form.cineur.label }}</div>
             {{ form.cineur }}
         </div>
-        <div class="vrt-line"></div>
-        <div class="block wfc">
-            
-            <div class="form-label wfc">{{ form.cin.label }}</div>
+        <div class="block">
+            <div class="form-label">{{ form.cin.label }}</div>
             {{ form.cin }}
         </div>
-        <div class="vrt-line"></div>
-        <div class="block wfc">
-            
-            <div class="form-label wfc">{{ form.codabi.label }}</div>
+        <div class="block">
+            <div class="form-label">{{ form.codabi.label }}</div>
             {{ form.codabi }}
         </div>
-        <div class="vrt-line"></div>
-        <div class="block wfc">
-            
-            <div class="form-label wfc">{{ form.codcab.label }}</div>
+        <div class="block">
+            <div class="form-label">{{ form.codcab.label }}</div>
             {{ form.codcab }}
         </div>
-        <div class="vrt-line"></div>
-        <div class="block wfc">
-            
-            <div class="form-label wfc">{{ form.conto.label }}</div>
+        <div class="block">
+            <div class="form-label">{{ form.conto.label }}</div>
             {{ form.conto }}
         </div>
     </div>
-    <div class="line"></div>
-    <div class="form-container">
-        <div class="label-container">
-            
-            <div class="form-label wfc">{{ form.codpag.label }}</div>
-            <div class="form-label wfc">{{ form.codzon.label }}</div>
-            <div class="form-label wfc">{{ form.codiva.label }}</div>
-            <div class="form-label wfc">{{ form.codcat.label }}</div>
-            <div class="form-label wfc">{{ form.codnaz.label }}</div>
-            <div class="form-label wfc">{{ form.codban.label }}</div>
-            <div class="form-label wfc">{{ form.staest.label }}</div>
+    <div class="inline">
+        <div class="form-container">
+            <div class="label-container">
+                <div class="form-label">{{ form.banapp.label }}</div>
+                <div class="form-label">{{ form.tipfor.label }}</div>
+                <div class="form-label">{{ form.email.label }}</div>
+                <div class="form-label">{{ form.sito.label }}</div>
+                <div class="form-label">{{ form.alias.label }}</div>
+                <div class="form-label">{{ form.regfis.label }}</div>
+            </div>
+            <div class="input-container">
+                <div class="inline">{{ form.banapp }}</div>
+                <div class="inline">{{ form.tipfor }}</div>
+                <div class="inline">{{ form.email }}</div>
+                <div class="inline">{{ form.sito }}</div>
+                <div class="inline">
+                    {{ form.alias }}
+                    <button type="button" class="dropdown">
+                        <span id="left"></span>
+                        <span id="right"></span>
+                        <ul class="dropdown-menu"></ul>
+                    </button>
+                </div>
+                <div class="inline">{{ form.regfis }}</div>
+            </div>
         </div>
-        <div class="input-container">
-            <div class="inline">
+        <div class="form-container">
+            <div class="label-container">
+                <div class="form-label">{{ form.codpag.label }}</div>
+                <div class="form-label">{{ form.codzon.label }}</div>
+                <div class="form-label">{{ form.codiva.label }}</div>
+                <div class="form-label">{{ form.codcat.label }}</div>
+                <div class="form-label">{{ form.codnaz.label }}</div>
+                <div class="form-label">{{ form.codban.label }}</div>
+                <div class="form-label">{{ form.staest.label }}</div>
+            </div>
+            <div class="input-container">
                 <div class="inline">
                     {{ form.codpag }}
                     <button type="button" class="dropdown">
@@ -190,20 +177,14 @@
                         <span id="right"></span>
                         <ul class="dropdown-menu"></ul>
                     </button>
-                    
-                </div>
-                <div class="inline w100">
                     {{ form.despag }}
                     <button type="button" class="dropdown">
                         <span id="left"></span>
                         <span id="right"></span>
                         <ul class="dropdown-menu"></ul>
                     </button>
-                    
+                    <div class="draggable-opener inside-opener Modalita-di-Pagamento">+</div>
                 </div>
-                <div class="draggable-opener inside-opener Modalita-di-Pagamento">+</div>
-            </div>
-            <div class="inline">
                 <div class="inline">
                     {{ form.codzon }}
                     <button type="button" class="dropdown">
@@ -211,20 +192,14 @@
                         <span id="right"></span>
                         <ul class="dropdown-menu"></ul>
                     </button>
-                    
-                </div>
-                <div class="inline w100">
                     {{ form.deszon }}
                     <button type="button" class="dropdown">
                         <span id="left"></span>
                         <span id="right"></span>
                         <ul class="dropdown-menu"></ul>
                     </button>
-                    
+                    <div class="draggable-opener inside-opener Zone">+</div>
                 </div>
-                <div class="draggable-opener inside-opener Zone">+</div>
-            </div>
-            <div class="inline">
                 <div class="inline">
                     {{ form.codiva }}
                     <button type="button" class="dropdown">
@@ -232,154 +207,93 @@
                         <span id="right"></span>
                         <ul class="dropdown-menu"></ul>
                     </button>
-                    
-                </div>
-                <div class="inline w100">
                     {{ form.desiva }}
                     <button type="button" class="dropdown">
                         <span id="left"></span>
                         <span id="right"></span>
                         <ul class="dropdown-menu"></ul>
                     </button>
-                    
+                    <div class="draggable-opener inside-opener Tabella-IVA-Acquisti">+</div>
                 </div>
-                <div class="draggable-opener inside-opener Tabella-IVA-Acquisti">+</div>
-            </div>
-            <div class="inline">
                 <div class="inline">
-                    {{ form.codcat }}
-                    <button type="button" class="dropdown">
-                        <span id="left"></span>
-                        <span id="right"></span>
-                        <ul class="dropdown-menu"></ul>
-                    </button>
-                    
+                        {{ form.codcat }}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                        {{ form.descat }}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                    <div class="draggable-opener inside-opener Gestione-Tabella-Categorie">+</div>
                 </div>
-                <div class="inline w100">
-                    {{ form.descat }}
-                    <button type="button" class="dropdown">
-                        <span id="left"></span>
-                        <span id="right"></span>
-                        <ul class="dropdown-menu"></ul>
-                    </button>
-                    
-                </div>
-                <div class="draggable-opener inside-opener Gestione-Tabella-Categorie">+</div>
-            </div>
-            <div class="inline">
                 <div class="inline">
-                    {{ form.codnaz }}
-                    <button type="button" class="dropdown">
-                        <span id="left"></span>
-                        <span id="right"></span>
-                        <ul class="dropdown-menu"></ul>
-                    </button>
-                    
+                        {{ form.codnaz }}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                        {{ form.desnaz }}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                    <div class="draggable-opener inside-opener Gestione-Tabella-Nazioni">+</div>
                 </div>
-                <div class="inline w100">
-                    {{ form.desnaz }}
-                    <button type="button" class="dropdown">
-                        <span id="left"></span>
-                        <span id="right"></span>
-                        <ul class="dropdown-menu"></ul>
-                    </button>
-                    
-                </div>
-                <div class="draggable-opener inside-opener Gestione-Tabella-Nazioni">+</div>
-            </div>
-            <div class="inline">
                 <div class="inline">
-                    {{ form.codban }}
-                    <button type="button" class="dropdown">
-                        <span id="left"></span>
-                        <span id="right"></span>
-                        <ul class="dropdown-menu"></ul>
-                    </button>
-                    
+                        {{ form.codban }}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                        {{ form.desban }}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                    <div class="draggable-opener inside-opener Gestione-Tabella-Banche">+</div>
                 </div>
-                <div class="inline w100">
-                    {{ form.desban }}
-                    <button type="button" class="dropdown">
-                        <span id="left"></span>
-                        <span id="right"></span>
-                        <ul class="dropdown-menu"></ul>
-                    </button>
-                    
-                </div>
-                <div class="draggable-opener inside-opener Gestione-Tabella-Banche">+</div>
-            </div>
-            <div class="inline">
                 <div class="inline">
-                    {{ form.staest }}
-                    <button type="button" class="dropdown">
-                        <span id="left"></span>
-                        <span id="right"></span>
-                        <ul class="dropdown-menu"></ul>
-                    </button>
-                    
+                        {{ form.staest }}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                        {{ form.desest }}
+                        <button type="button" class="dropdown">
+                            <span id="left"></span>
+                            <span id="right"></span>
+                            <ul class="dropdown-menu"></ul>
+                        </button>
+                    <div class="draggable-opener inside-opener Stati-Esteri">+</div>
                 </div>
-                <div class="inline w100">
-                    {{ form.desest }}
-                    <button type="button" class="dropdown">
-                        <span id="left"></span>
-                        <span id="right"></span>
-                        <ul class="dropdown-menu"></ul>
-                    </button>
-                    
-                </div>
-                <div class="draggable-opener inside-opener Stati-Esteri">+</div>
             </div>
         </div>
     </div>
-    <div class="line"></div>
-    <div class="form-container">
-        <div class="label-container">
-            <div class="form-label wfc">{{ form.tipfor.label }}</div>
-            <div class="form-label wfc">{{ form.email.label }}</div>
-            <div class="form-label wfc">{{ form.sito.label }}</div>
-            <div class="form-label wfc">{{ form.alias.label }}</div>
-            <div class="form-label wfc">{{ form.regfis.label }}</div>
-        </div>
-        <div class="input-container">
-            <div class="inline">
-                {{ form.tipfor }}
-            </div>
-            <div class="inline">
-                {{ form.email }}
-            </div>
-            <div class="inline">
-                {{ form.sito }}
-            </div>
-            <div class="inline">
-                {{ form.alias }}
-                <button type="button" class="dropdown">
-                    <span id="left"></span>
-                    <span id="right"></span>
-                    <ul class="dropdown-menu"></ul>
-                </button>
-                
-            </div>
-            <div class="inline">
-                {{ form.regfis }}
-            </div>
-        </div>
-    </div>
-    <div class="block hfc difbg">
-        <div class="inline hfc">
+    <div class="block difbg">
+        <div class="inline">
             <div class="inline">
                 <div class="form-label spcenter">
                     {{ form.proimp.label }}
                 </div>
                 {{ form.proimp }}
             </div>
-            <div class="vrt-line"></div>
+            
             <div class="inline">
                 <div class="form-label spcenter">
                     {{ form.proiva.label }}
                 </div>
                 {{ form.proiva }}
             </div>
-            <div class="vrt-line"></div>
+            
             <div class="inline">
                 <div class="form-label spcenter">
                     {{ form.pronim.label }}
@@ -387,21 +301,21 @@
                 {{ form.pronim }}
             </div>
         </div>
-        <div class="inline hfc">
+        <div class="inline">
             <div class="inline">
                 <div class="form-label spcenter">
                     {{ form.proese.label }}
                 </div>
                 {{ form.proese }}
             </div>
-            <div class="vrt-line"></div>
+            
             <div class="inline">
                 <div class="form-label spcenter">
                     {{ form.numfat.label }}
                 </div>
                 {{ form.numfat }}
             </div>
-            <div class="vrt-line"></div>
+            
             <div class="inline">
                 <div class="form-label spcenter">
                     {{ form.nunocr.label }}

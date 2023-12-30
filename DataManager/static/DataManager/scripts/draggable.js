@@ -15,15 +15,15 @@ $(document).ready(function(){
             }
             function handle_mouseup(e){
                 $(document)
-                .off('mousemove', handle_dragging)
-                .off('mouseup', handle_mouseup);
+                .off('mousemove touchmove', handle_dragging)
+                .off('mouseup touchend', handle_mouseup);
             }
             $(document)
-            .on('mouseup', handle_mouseup)
-            .on('mousemove', handle_dragging);
+            .on('mouseup touchend', handle_mouseup)
+            .on('mousemove touchmove', handle_dragging);
         }
     }
-    $(document).on("mousedown", '.content > .drag-container', handle_mousedown);
+    $(document).on("mousedown touchstart", '.content > .drag-container', handle_mousedown);
     
     $(document).on("click", ".draggable-opener, .inside-opener", function(){
         $('.drag-container').removeClass('focus')
@@ -33,6 +33,12 @@ $(document).ready(function(){
             url = $(this).attr('class').split(' ').pop()
             name = url.split('-').join(' ')
         }
+        if($('.minimized-container').find('#{0}'.format(url)).length){
+            $(".content").append($('.minimized-container').find('#{0}'.format(url)))
+            $('.content').find('#{0}'.format(url)).css({"width": "fit-content"})
+            $('.content').find('#{0}'.format(url)).find('.blur-bg').css({'display': 'flex'})
+        }   
+
         
         var newDiv = `<div class="drag-container visible focus" id={0}>
                         <div class="drag-header">
@@ -66,10 +72,12 @@ $(document).ready(function(){
         $(".minimized-container").append($(this).parents(".drag-container"))
         var dHeaderWidth = $(this).parents(".drag-header").width()
         $(this).parents(".drag-container").css({"width": dHeaderWidth})
+        $(this).parents(".drag-container").find('.blur-bg').css({'display': 'none'})
     })
     $(document).on("click", ".minimized-container > .drag-container .minimize", function(){
         $(".content").append($(this).parents(".drag-container"))
         $(this).parents(".drag-container").css({"width": "fit-content"})
+        $(this).parents(".drag-container").find('.blur-bg').css({'display': 'flex'})
     })
 })
 

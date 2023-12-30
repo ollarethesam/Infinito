@@ -20,9 +20,10 @@ def nazion(request, model=Nazion, modelform=NazionForm, template='DataManager/ma
             return dropdown(model, id, chars, offset, context['ddfields'])
         
         key = request.GET.get("key")
-        if key:
-            values = model.objects.filter(pk=key).values().first()
-            return JsonResponse(values)
+        key_id = request.GET.get("key_id")
+        from_input = request.GET.get("from_input")
+        if key and key_id:
+            return formfill(model, key, key_id, {model: context['ddfields']}, from_input=from_input)
         
         direction = request.GET.get('direction')
         start_value = request.GET.get('start_value')

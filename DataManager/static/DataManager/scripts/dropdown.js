@@ -45,7 +45,9 @@ $(document).ready(function(){
                 if(response.length == 0){
                     dm.append(
                         `<li class="inline dropdown-menu-item">
-                            Nessun dato
+                            <div>
+                                Nessun dato
+                            </div>
                         </li>`);
                     }
             }
@@ -88,7 +90,9 @@ $(document).ready(function(){
                     if(response.length == 0){
                         dm.append(
                             `<li class="inline dropdown-menu-item">
-                                Nessun risultato
+                                <div>
+                                    Nessun risultato
+                                </div>
                             </li>`);
                         }
                 }

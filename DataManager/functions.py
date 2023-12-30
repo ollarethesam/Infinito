@@ -41,11 +41,11 @@ def save_or_update(model, modelform, request, pk_vals):
     else:
         cond = pk_vals
     if model.objects.filter(**cond).exists():
-        print(model.objects.filter(**cond).values())
         save_msg = 'updated'
         instance = get_object_or_404(model, **cond)
     form = modelform(request.POST or None, instance=instance)
     try:
+
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = request.user
@@ -65,33 +65,52 @@ def dropdown(model, id, chars, offset, fields):
         fields_values = list(model.objects.values(*fields).filter(**cond).order_by(id)[int(offset):int(offset)+20])
         return JsonResponse(fields_values, safe=False)
 
-def formfill(model, key, key_id, keys_list, grid=False, grid_keys=None, main=None):
-    if key and key_id in keys_list[model]:
-        values = get_form_data(model.objects.get(pk=key))
-    elif key and key_id not in keys_list[model]:
-        values = getkey(keys_list, key_id).objects.values(*keys_list[getkey(keys_list, key_id)]).filter(pk=key).first()
-    if grid and grid_keys and key_id == main:
+def formfill(model, key, key_id, keys_list, grid=False, grid_keys=None, main=None, from_input=False):
+    try:
         cond = {key_id: key}
-        instances = list(model.objects.filter(**cond))
-        values['grid'] = []
-        for instance in instances:
-            values['grid'].append(get_form_data(instance, fields=grid_keys))
-        print(values['grid'])
-    return JsonResponse(values)
+        print(cond)
+        if key and key_id in keys_list[model]:
+            if from_input:
+                values = get_form_data(model.objects.get(**cond))
+            else:
+                values = get_form_data(model.objects.get(pk=key))
+        elif key and key_id not in keys_list[model]:
+            values = getkey(keys_list, key_id).objects.values(*keys_list[getkey(keys_list, key_id)]).filter(pk=key).first()
+        if grid and grid_keys and key_id == main:
+            instances = list(model.objects.filter(**cond))
+            values['grid'] = []
+            for instance in instances:
+                values['grid'].append(get_form_data(instance, fields=grid_keys))
+        print(values)
+        return JsonResponse(values)
+    except model.DoesNotExist as e:
+        print(e, type(e))
+        return JsonResponse({'grid':{}})
+    except TypeError as e:
+        print(e, type(e))
+        return JsonResponse({'grid':{}})
 
-def arrows(model, direction, start_value, field, fields=None):
+def arrows(model, direction, start_value, field, fields=None, grid=False, grid_keys=None, main=None):
     first_record = model.objects.values(field).order_by(field).first()[field]
     last_record = model.objects.values(field).order_by(field).last()[field]
     sign = ''
     if direction == 'lt':
         sign = '-'
     if (not start_value or start_value == last_record) and direction == 'gt':
-        values = get_form_data(model.objects.order_by(field).first(), fields=fields)
+        instance = model.objects.order_by(field).first()
     elif (not start_value or start_value == first_record) and direction == 'lt':
-        values = get_form_data(model.objects.order_by(field).last(), fields=fields)
+        instance = model.objects.order_by(field).last()
     else:
-        values = get_form_data(model.objects.filter(**{f"{field}__{direction}": start_value}).order_by(f"{sign}{field}").first(), fields=fields)
-    return JsonResponse(values, safe=False)
+        instance = model.objects.filter(**{f"{field}__{direction}": start_value}).order_by(f"{sign}{field}").first()
+    values = get_form_data(instance, fields)
+    if grid and grid_keys:
+            cond = {main: getattr(instance, main, None)}
+            instances = list(model.objects.filter(**cond))
+            values['grid'] = []
+            for instance in instances:
+                values['grid'].append(get_form_data(instance, fields=grid_keys))
+            print(values['grid'])
+    return JsonResponse(values)
 
 def delete(model, delcode, delkeys=None):
 

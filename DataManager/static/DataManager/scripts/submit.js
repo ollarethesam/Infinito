@@ -2,20 +2,26 @@ import { popup_handler } from "./utils.js";
 $(document).ready(function() {
     $(document).on('submit', 'form', function(event) {
         event.preventDefault();
-        var formDataArray = $(this).serializeArray();
+        var formData = new FormData(this);
         $(this).find(':checkbox').each(function() {
-            var index = formDataArray.findIndex(item => item.name === this.name);
-            if (index !== -1) {
-                formDataArray[index].value = this.checked ? 'on' : 'off';
-            }
+            formData.set($(this).attr('name'), this.checked);
         });
-        var formData = Array.from(formDataArray);
-        var url = $(this).parents('.drag-container').attr('id')
+        var url = $(this).attr('action')
+        if (!(url.startsWith('/Login'))){
+            url = url.split('/').pop()
+        }
+        if ($('.content').css('background-size') == 'cover' && url.startsWith('/Login')) {
+            formData.append('resize', true)
+        }
         $.ajax({
             type: 'POST',
             url: url, 
             data: formData,
+            contentType: false,
+            processData: false,
+            cache: false,
             success: function(response) {
+                console.log(response)
                 if(response['errors']){
                     popup_handler('errors', url, response)
                 }

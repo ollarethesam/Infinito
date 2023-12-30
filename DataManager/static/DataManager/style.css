@@ -5,7 +5,11 @@
     box-sizing: border-box;
     font-family: 'Poppins';
 }
-html, body{
+html{
+    height: 100%;
+    font-size: 16px;
+}
+body{
     height: 100%;
 }
 .flex-container{
@@ -19,24 +23,11 @@ html, body{
 }
 .flex-container .content{
     flex: 1 1 auto;
-    background: #c8d4fd center center/contain no-repeat;
-    transition: all 0.3s;
+    transition: all 0.1s;
     position: relative;
 }
-.content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit; /* Inherit background color or image from .content */
-}
-.blur{
-    filter: blur(2px);
-}
-.cover{
-    background-size: cover;
+.content.cover{
+    background-size: cover !important;
 }
 ul{
     list-style: none;
@@ -83,5 +74,71 @@ padding: 0 2.5px;
 .w60xcent{
     width: 60%;
 }
+@media (max-width: 1080px) {
+    html{
+        font-size: 12px;
+    }
+}
+/* @media (max-width: 1080px) {
+    html{
+        font-size: 13px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 14px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 15px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 16px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 17px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 18px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 19px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 20px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 21px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 22px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 23px;
+    }
+}
+@media (max-width: 1080px) {
+    html{
+        font-size: 24px;
+    }
+} */
+
 
 

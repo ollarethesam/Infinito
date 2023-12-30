@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from Login.models import CustomUser
 from datetime import datetime
 
 class Modpag(models.Model):
@@ -14,7 +14,7 @@ class Modpag(models.Model):
     scocas = models.CharField(max_length=5)
     gifisc = models.CharField(max_length=3)
     modpag = models.CharField(max_length=11)
-    user = models.ForeignKey(User, to_field='username', on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
     date_created = models.DateTimeField(default=datetime.now().replace(microsecond=0), editable=False)
 
     class Meta:

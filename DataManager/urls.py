@@ -1,5 +1,5 @@
 from importlib import *
-from django.urls import path
+from django.urls import path, include
 from .views.__init__ import __all__
 for i in __all__:
     exec(f'from .views.{i} import {i}')

@@ -19,12 +19,12 @@ class BancheForm(ModelForm):
         }
         widgets = {
             'codban': forms.TextInput(attrs={'class':'codban form-control l3 pk', 'autocomplete': 'off', 'id': False}),
-            'desban': forms.TextInput(attrs={'class':'desban form-control', 'autocomplete': 'off', 'id': False}),
-            'codabi': forms.TextInput(attrs={'class':'codabi form-control l4', 'autocomplete': 'off', 'id': False}),
-            'codcab': forms.TextInput(attrs={'class':'codcab form-control l4', 'autocomplete': 'off', 'id': False}),
-            'codsia': forms.TextInput(attrs={'class':'codsia form-control l4', 'autocomplete': 'off', 'id': False}),
-            'iban':   forms.TextInput(attrs={'class':'iban form-control long', 'autocomplete': 'off', 'id': False}),
-            'bic':    forms.TextInput(attrs={'class':'bic form-control medium', 'autocomplete': 'off', 'id': False}),
+            'desban': forms.TextInput(attrs={'class':'desban form-control l30', 'autocomplete': 'off', 'id': False}),
+            'codabi': forms.TextInput(attrs={'class':'codabi form-control l5', 'autocomplete': 'off', 'id': False}),
+            'codcab': forms.TextInput(attrs={'class':'codcab form-control l5', 'autocomplete': 'off', 'id': False}),
+            'codsia': forms.TextInput(attrs={'class':'codsia form-control l5', 'autocomplete': 'off', 'id': False}),
+            'iban':   forms.TextInput(attrs={'class':'iban form-control l27', 'autocomplete': 'off', 'id': False}),
+            'bic':    forms.TextInput(attrs={'class':'bic form-control l11', 'autocomplete': 'off', 'id': False}),
         }
     def clean_codban(self, *args, **kwargs):
         codban = self.cleaned_data.get('codban')

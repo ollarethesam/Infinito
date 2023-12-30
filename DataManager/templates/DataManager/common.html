@@ -9,10 +9,10 @@
         {% load static %}
         <script src="{% static 'DataManager/scripts/menu.js' %}"></script>
         <script src="{% static 'DataManager/scripts/draggable.js' %}"></script>
-        <script src="{% static 'DataManager/scripts/arrows.js' %}"></script>
+        <script type='module' src="{% static 'DataManager/scripts/arrows.js' %}"></script>
         <script src="{% static 'DataManager/scripts/clean.js' %}"></script>
         <script src="{% static 'DataManager/scripts/dropdown.js' %}"></script>
-        <script src="{% static 'DataManager/scripts/formfill.js' %}"></script>
+        <script type='module' src="{% static 'DataManager/scripts/formfill.js' %}"></script>
         <script src="{% static 'DataManager/scripts/background.js' %}"></script>
         <script type='module'src="{% static 'DataManager/scripts/submit.js' %}"></script>
         <script type='module'src="{% static 'DataManager/scripts/delete.js' %}"></script>
@@ -23,6 +23,27 @@
         <link rel="stylesheet" href="{% static 'DataManager/forms.css' %}">
         <link rel="stylesheet" href="{% static 'DataManager/style.css' %}">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            :root {
+              --color: {{request.user.bg_color|default:'#c8d4fd'}};
+              {% if request.user.bg_image %}
+              --img-url: url('{{ request.user.bg_image.url }}')
+              {% else %}
+              --img-url: '';
+              {% endif %}
+            }
+            .content{
+              background-color: var(--color);
+              background-image: var(--img-url);
+              background-position: center center;
+              {% if request.user.image_resize %}
+                  background-size: cover;
+              {% else %}
+                  background-size: contain;
+              {% endif %}
+              background-repeat: no-repeat;
+            }
+        </style>
         <title>Infinito</title>
       </head>
 </head>

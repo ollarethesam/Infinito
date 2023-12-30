@@ -711,13 +711,13 @@
                                 Sfondo
                                 <i class="bx bx-chevron-down"></i>
                             </div>
-                            <form class="sub-menu" method="POST" enctype="multipart/form-data">
+                            <form action="{% url 'bg' %}" class="sub-menu" method="POST">
                                 {% csrf_token %}
                                 <li class="menu-item dpflex alcenter">
                                     <label for="colorPicker" class="color-picker-button">
                                         Colore
                                     </label>
-                                    <input type="color" id="colorPicker" name="color" value="#c8d4fd">
+                                    <input type="color" id="colorPicker" name="color" value="">
                                 </li>
                                 <li class="menu-item">
                                     <div class="label">

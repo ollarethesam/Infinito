@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from Login.models import CustomUser
 from datetime import datetime
 from .banche import Banche
 from .modpag import Modpag
@@ -32,7 +32,7 @@ class Client(models.Model):
     email  = models.CharField(max_length=40)
     sito   = models.CharField(max_length=40)
     codfis = models.CharField(max_length=16)
-    pariva = models.CharField(max_length=20)
+    pariva = models.CharField(max_length=11)
     banapp = models.CharField(max_length=40)
     fido   = models.IntegerField()
     codpag = models.ForeignKey(Modpag, to_field='codpag', on_delete=models.CASCADE)
@@ -64,7 +64,7 @@ class Client(models.Model):
     annass = models.CharField(max_length=4)
     coduni = models.CharField(max_length=7)
     splpay = models.CharField(max_length=1)
-    user = models.ForeignKey(User, to_field='username', on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
     date_created = models.DateTimeField(default=datetime.now().replace(microsecond=0), editable=False)
 
     class Meta:

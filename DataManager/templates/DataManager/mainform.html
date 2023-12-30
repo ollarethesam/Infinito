@@ -1,4 +1,5 @@
 <form action="{% url url_name %}" method="POST" class="container" target="form_response_iframe">
+    <div class="blur-bg"></div>
     <div class="form-container">
         {% csrf_token %}
         <div class="label-container">
@@ -32,7 +33,7 @@
     <table class="grid">
         <tr class="title-row">
             {% for field, title in grid.items %}
-                <th>{{ title }}</th>
+                <th class="grid-item">{{ title }}</th>
             {% endfor %}
         </tr>
     </table>

@@ -27,5 +27,8 @@ $(document).ready(function(){
     $(document).on("mouseleave",".menu-item",function(){
         $(this).children(".label").children("i").css({"transform":"rotate(270deg)"})
     });
+    $(document).on("click",".content",function(){
+        $('nav .open').removeClass('open')
+    });
 });
 
