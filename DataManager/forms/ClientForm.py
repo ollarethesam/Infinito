@@ -117,7 +117,7 @@ class ClientForm(ModelForm):
             'codfis' : forms.TextInput(attrs={'class':'codfis form-control l16', 'autocomplete': 'off', 'id': False}),
             'pariva' : forms.TextInput(attrs={'class':'pariva form-control l11', 'autocomplete': 'off', 'id': False}),
             'banapp' : forms.TextInput(attrs={'class':'banapp form-control', 'autocomplete': 'off', 'id': False}),
-            'fido'   : forms.NumberInput(attrs={'class':'fido form-control', 'autocomplete': 'off','step':'0.01', 'id': False}),
+            'fido'   : forms.NumberInput(attrs={'class':'fido form-control l5 ', 'autocomplete': 'off','step':'0.01', 'id': False}),
             'codpag' : forms.TextInput(attrs={'class':'codpag form-control fk l3', 'autocomplete': 'off', 'id': False}),
             'codzon' : forms.TextInput(attrs={'class':'codzon form-control fk l3', 'autocomplete': 'off', 'id': False}),
             'sconto' : forms.NumberInput(attrs={'class':'sconto form-control', 'autocomplete': 'off','step':'0.01', 'id': False}),

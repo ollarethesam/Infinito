@@ -68,7 +68,6 @@ def dropdown(model, id, chars, offset, fields):
 def formfill(model, key, key_id, keys_list, grid=False, grid_keys=None, main=None, from_input=False):
     try:
         cond = {key_id: key}
-        print(cond)
         if key and key_id in keys_list[model]:
             if from_input:
                 values = get_form_data(model.objects.get(**cond))
@@ -81,7 +80,6 @@ def formfill(model, key, key_id, keys_list, grid=False, grid_keys=None, main=Non
             values['grid'] = []
             for instance in instances:
                 values['grid'].append(get_form_data(instance, fields=grid_keys))
-        print(values)
         return JsonResponse(values)
     except model.DoesNotExist as e:
         print(e, type(e))

@@ -35,9 +35,7 @@ def client(request, model=Client, modelform=ClientForm, template='DataManager/cl
         id = request.GET.get('id')
         offset = request.GET.get('offset')
         chars = request.GET.get('chars')
-        if id and id in keys_list[model]:
-            return dropdown(model, id, chars, offset, keys_list[model][2:])
-        elif id and not id in keys_list[model]:
+        if id:
             return dropdown(getkey(keys_list, id), id, chars, offset, keys_list[getkey(keys_list, id)])
         
         key = request.GET.get("key")
