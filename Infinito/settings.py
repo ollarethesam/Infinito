@@ -86,13 +86,9 @@ WSGI_APPLICATION = 'Infinito.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Sql1765910_1',
-        'USER': 'Sql1765910',
-        'HOST': '89.46.111.129',
-        'PORT': 3306,
-        'PASSWORD': 'Lucidaz10#',
+'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
