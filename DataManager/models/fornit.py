@@ -1,6 +1,5 @@
 from django.db import models
 from Login.models import CustomUser
-from datetime import datetime
 from DataManager.models.banche import Banche
 from DataManager.models.nazion import Nazion
 from DataManager.models.catego import Catego
@@ -45,7 +44,7 @@ class Fornit(models.Model):
     alias  = models.CharField(max_length=24)
     regfis = models.CharField(max_length=4)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
-    date_created = models.DateTimeField(default=datetime.now().replace(microsecond=0), editable=False)
+    date_created = models.DateTimeField(editable=False)
 
 
     class Meta:

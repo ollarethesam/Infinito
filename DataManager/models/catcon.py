@@ -1,6 +1,5 @@
 from django.db import models
 from Login.models import CustomUser
-from datetime import datetime
 from .piacon import Piacon
 
 class Catcon(models.Model):
@@ -8,7 +7,7 @@ class Catcon(models.Model):
     descat = models.CharField(max_length=50, unique=True)
     codpia = models.ForeignKey(Piacon, to_field='codpia', on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
-    date_created = models.DateTimeField(default=datetime.now().replace(microsecond=0), editable=False)
+    date_created = models.DateTimeField(editable=False)
 
     class Meta:
         managed = True

@@ -31,7 +31,6 @@ class PiaconForm(ModelForm):
         if not re.search(r'\d{5,}$', codpia):
             raise forms.ValidationError("il codice conto deve finire con 5 numeri consecutivi")
         if not(codpia.endswith('00000')):
-                print(f'{codpia[4:]}00000')
                 if Piacon.objects.filter(pk=f'{codpia[:4]}00000').exists():
                     return codpia
                 else:

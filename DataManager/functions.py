@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 def getkey(dict, value):
     result = None
@@ -45,10 +46,10 @@ def save_or_update(model, modelform, request, pk_vals):
         instance = get_object_or_404(model, **cond)
     form = modelform(request.POST or None, instance=instance)
     try:
-
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = request.user
+            instance.date_created = datetime.now()
             instance.save()
             return JsonResponse({'success': [f'record {instance.pk} {save_msg} succesfully']})
         return JsonResponse({'errors': [error for field, error_list in form.errors.items() for error in error_list]})

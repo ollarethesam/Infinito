@@ -89,7 +89,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Sql1765910_1',
-        'USER': '16543950@aruba.it',
+        'USER': 'Sql1765910',
         'HOST': '89.46.111.129',
         'PORT': 3306,
         'PASSWORD': 'Lucidaz10#',

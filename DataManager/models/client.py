@@ -1,6 +1,5 @@
 from django.db import models
 from Login.models import CustomUser
-from datetime import datetime
 from .banche import Banche
 from .modpag import Modpag
 from .zone import Zone
@@ -65,7 +64,7 @@ class Client(models.Model):
     coduni = models.CharField(max_length=7)
     splpay = models.CharField(max_length=1)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
-    date_created = models.DateTimeField(default=datetime.now().replace(microsecond=0), editable=False)
+    date_created = models.DateTimeField(editable=False)
 
     class Meta:
         db_table = 'client'
