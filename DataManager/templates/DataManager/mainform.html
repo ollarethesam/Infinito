@@ -1,5 +1,4 @@
 <form action="{% url url_name %}" method="POST" class="container" target="form_response_iframe">
-    <div class="blur-bg"></div>
     <div class="form-container">
         {% csrf_token %}
         <div class="label-container">
@@ -50,19 +49,20 @@
 </form>
 <script>
     $('.dropdown-menu').on('scroll', function(){
-        var element = $(this)[0];
-        if (element.scrollHeight - element.scrollTop == element.clientHeight) {
+        if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight-10) {
             var url = $(this).parents('.drag-container').attr('id')
             var id = $(this).parents('.dropdown').siblings(".form-control").attr("name")
-            var offset = parseInt($(this).children(':last').attr('class').split(' ').pop().split('-').pop(), 10)
+            var offset = parseInt($(this).children(':last').attr('class').split(' ').pop().split('-').pop(), 10)+1
             var dm = $(this)
+            var chars = $(this).find('.dropdown-search-bar').val()
             $.ajax({
                 url: url,
                 type: 'GET',
                 datatype: 'json',
                 data: {
                     id: id,
-                    offset: offset
+                    offset: offset,
+                    chars: chars
                 },
                 success: function(response){
                     var num = offset + 1;

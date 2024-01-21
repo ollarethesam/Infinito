@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'Infinito.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'infinito',
-        'USER': 'root',
-        'HOST': 'localhost',
+        'NAME': 'Sql1765910_1',
+        'USER': '16543950@aruba.it',
+        'HOST': '89.46.111.129',
         'PORT': 3306,
-        'PASSWORD': '',
+        'PASSWORD': 'Lucidaz10#',
     }
 }
 

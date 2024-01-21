@@ -7,10 +7,10 @@ from DataManager.models.modpag import Modpag
 class ModpagForm(ModelForm):
     class Meta:
         TIPPAG = [
-        ("BB", "Bonifico Bancario"),
+        ("B", "Bonifico Bancario"),
         ("D", "Diretto"),
-        ("PP", "Pareggio Partita"),
-        ("RB", "Ricevuta Bancaria"),
+        ("P", "Pareggio Partita"),
+        ("R", "Ricevuta Bancaria"),
         ("T", "Tratta"),
         ]
         TIPSCA = [
@@ -31,7 +31,7 @@ class ModpagForm(ModelForm):
         ("04", "MP04-Contanti Presso Tesoreria"),
         ("05", "MP05-Bonifico"),
         ("06", "MP06-Valigia Cambiario"),
-        ("0N", "MP07-Bollettino Bancario"),
+        ("07", "MP07-Bollettino Bancario"),
         ("08", "MP08-Carta Di Pagamento"),
         ("09", "MP09-RID"),
         ("10", "MP10-RID Utente"),

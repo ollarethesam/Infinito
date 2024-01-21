@@ -23,11 +23,23 @@ body{
 }
 .flex-container .content{
     flex: 1 1 auto;
-    transition: all 0.1s;
     position: relative;
 }
 .content.cover{
     background-size: cover !important;
+}
+.content > .blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    transition: background-color 0.3s;
+}
+.content >.blur.on{
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
 }
 ul{
     list-style: none;

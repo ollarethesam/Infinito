@@ -19,7 +19,8 @@ def piacon(request, model=Piacon, modelform=PiaconForm, template='DataManager/ma
         if model.objects.filter(pk=pk_val).exists():
             save_msg = 'updated'
             instance = get_object_or_404(model, pk=pk_val)
-            conabi_instance = Conabi.objects.get(pk=pk_val)
+            if Conabi.objects.filter(pk=pk_val).exists():
+                conabi_instance = Conabi.objects.get(pk=pk_val)
         form = modelform(request.POST or None, instance=instance)
         if form.is_valid():
             if conabi_instance:
@@ -28,15 +29,14 @@ def piacon(request, model=Piacon, modelform=PiaconForm, template='DataManager/ma
             instance = form.save(commit=False)
             instance.user = request.user
             if not Conabi.objects.filter(pk=pk_val).exists():
-                conabi = Conabi(codcon=instance.codpia, descon=instance.despia, user=request.user)
-                conabi.save()
+                if not(str(instance.codpia).endswith('00000')):
+                    conabi = Conabi(codcon=instance.codpia, descon=instance.despia, user=request.user)
+                    conabi.save()
+            if not form.cleaned_data['decoab'] and form.cleaned_data['codcon']:
+                conabi = Conabi.objects.get(pk=request.POST['codcon'])
+                instance.codcon = conabi
             else:
-                print(form.cleaned_data)
-                if not form.cleaned_data['decoab'] and form.cleaned_data['codcon']:
-                    conabi = Conabi.objects.get(pk=request.POST['codcon'])
-                    instance.codcon = conabi
-                else:
-                    instance.codcon = None
+                instance.codcon = None
             instance.save()
             return JsonResponse({'success': [f'record {instance.pk} {save_msg} succesfully']})
         return JsonResponse({'errors': [error for field, error_list in form.errors.items() for error in error_list]})

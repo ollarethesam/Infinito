@@ -72,12 +72,10 @@ $(document).ready(function(){
         $(".minimized-container").append($(this).parents(".drag-container"))
         var dHeaderWidth = $(this).parents(".drag-header").width()
         $(this).parents(".drag-container").css({"width": dHeaderWidth})
-        $(this).parents(".drag-container").find('.blur-bg').css({'display': 'none'})
     })
     $(document).on("click", ".minimized-container > .drag-container .minimize", function(){
         $(".content").append($(this).parents(".drag-container"))
         $(this).parents(".drag-container").css({"width": "fit-content"})
-        $(this).parents(".drag-container").find('.blur-bg').css({'display': 'flex'})
     })
 })
 

@@ -5,13 +5,13 @@ $(document).ready(function(){
         $(this).siblings(".nav-item").find(".sub-menu").removeClass("open")
         $(this).children(".menu").addClass("open")
         $(this).children(".nav-label").addClass("open")
-        $('.content::before').addClass('blur')
+        $('.content > .blur').addClass('on')
     });
     $(document).on("mouseenter", ".nav",function(){
         clearTimeout(timeout)
     });
     $(document).on("mouseleave", ".nav",function(){
-        $('.content::before').removeClass('blur')
+        $('.content > .blur').removeClass('on')
         timeout = setTimeout(() => {
             $("nav *").removeClass("open")
         }, 1000);

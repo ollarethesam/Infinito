@@ -43,6 +43,13 @@
               {% endif %}
               background-repeat: no-repeat;
             }
+            .container{
+              background-color: var(--color);
+              box-shadow: 0 12px 24px {{ text_color }}4d, 0 6px 12px {{ text_color }}26;
+            }
+            p, .form-label, table *{
+              color: {{ text_color }};
+            }
         </style>
         <title>Infinito</title>
       </head>
@@ -52,6 +59,7 @@
     {%block menu%}
     {%endblock%}
     <div class="content">
+      <div class="blur"></div>
       <div class="minimized-container"></div>
     </div>
   </div>

@@ -1,8 +1,7 @@
 from django.core.management.base import BaseCommand
 from ...models.banche import Banche  # Import your Banche model
-from django.contrib.auth.models import User
+from Login.models import CustomUser
 from faker import Faker
-from datetime import datetime
 import random
 
 class Command(BaseCommand):
@@ -12,12 +11,12 @@ class Command(BaseCommand):
         fake = Faker()
 
         # Get all users in the database
-        users = User.objects.all()
+        users = CustomUser.objects.all()
 
         for i in range(999):
             # Generate random data for the Banche model
             random_instance = Banche(
-                codban=str(i).zfill(3),
+                codban=fake.random_string(digits=3),
                 desban=str(i).zfill(5),
                 codabi=fake.random_number(digits=5),
                 codcab=fake.random_number(digits=5),
