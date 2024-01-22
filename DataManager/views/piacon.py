@@ -28,10 +28,9 @@ def piacon(request, model=Piacon, modelform=PiaconForm, template='DataManager/ma
                 conabi_instance.save()
             instance = form.save(commit=False)
             instance.user = request.user
-            instance.date_created = datetime.now()
             if not Conabi.objects.filter(pk=pk_val).exists():
                 if not(str(instance.codpia).endswith('00000')):
-                    conabi = Conabi(codcon=instance.codpia, descon=instance.despia, user=request.user, date_created=datetime.now())
+                    conabi = Conabi(codcon=instance.codpia, descon=instance.despia, user=request.user)
                     conabi.save()
             if not form.cleaned_data['decoab'] and form.cleaned_data['codcon']:
                 conabi = Conabi.objects.get(pk=request.POST['codcon'])

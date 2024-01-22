@@ -64,7 +64,8 @@ class Client(models.Model):
     coduni = models.CharField(max_length=7)
     splpay = models.CharField(max_length=1)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
-    date_created = models.DateTimeField(editable=False)
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = 'client'

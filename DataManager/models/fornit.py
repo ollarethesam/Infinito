@@ -44,7 +44,8 @@ class Fornit(models.Model):
     alias  = models.CharField(max_length=24)
     regfis = models.CharField(max_length=4)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
-    date_created = models.DateTimeField(editable=False)
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
 
 
     class Meta:

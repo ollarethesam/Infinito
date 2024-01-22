@@ -49,7 +49,6 @@ def save_or_update(model, modelform, request, pk_vals):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = request.user
-            instance.date_created = datetime.now()
             instance.save()
             return JsonResponse({'success': [f'record {instance.pk} {save_msg} succesfully']})
         return JsonResponse({'errors': [error for field, error_list in form.errors.items() for error in error_list]})
