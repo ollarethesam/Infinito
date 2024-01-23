@@ -126,3 +126,9 @@ class FornitForm(ModelForm):
             'alias' : forms.TextInput(attrs={'class':'alias form-control', 'autocomplete': 'off', 'id': False}),
             'regfis': forms.Select(attrs={'class':'regfis form-control', 'autocomplete': 'off', 'id': False}, choices=REGFIS),
         }
+    def clean_codfor(self, *args, **kwargs):
+        codfor = self.cleaned_data.get('codfor')
+        if len(codfor) != 5:
+            raise forms.ValidationError("Il codice fornitore deve essre lungo 5 caratteri")
+        else:
+            return codfor

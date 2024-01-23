@@ -26,39 +26,33 @@ class BancheForm(ModelForm):
             'iban':   forms.TextInput(attrs={'class':'iban form-control l27', 'autocomplete': 'off', 'id': False}),
             'bic':    forms.TextInput(attrs={'class':'bic form-control l11', 'autocomplete': 'off', 'id': False}),
         }
-    def clean_codban(self, *args, **kwargs):
-        codban = self.cleaned_data.get('codban')
-        if len(codban) != 3:
-            raise forms.ValidationError("codice banca must be 3 charachters long")
-        else:
-            return codban
     def clean_codabi(self, *args, **kwargs):
         codabi = self.cleaned_data.get('codabi')
         if len(codabi) != 5:
-            raise forms.ValidationError("codabi must be 5 charachters long")
+            raise forms.ValidationError("il codice ABI deve essere lungo 5 caratteri")
         else:
             return codabi
     def clean_codcab(self, *args, **kwargs):
         codcab = self.cleaned_data.get('codcab')
         if len(codcab) != 5:
-            raise forms.ValidationError("codcab must be 5 charachters long")
+            raise forms.ValidationError("il codice CAB deve essere lungo 5 caratteri")
         else:
             return codcab
     def clean_codsia(self, *args, **kwargs):
         codsia = self.cleaned_data.get('codsia')
         if len(codsia) != 5:
-            raise forms.ValidationError("codsia must be 5 charachters long")
+            raise forms.ValidationError("il codice SIA deve essere lungo 5 caratteri")
         else:
             return codsia
     def clean_iban(self, *args, **kwargs):
         iban = self.cleaned_data.get('iban')
         if len(iban) != 27:
-            raise forms.ValidationError("iban must be 27 charachters long")
+            raise forms.ValidationError("L'iban deve essere lungo 27 caratteri")
         else:
             return iban
     def clean_bic(self, *args, **kwargs):
         bic = self.cleaned_data.get('bic')
         if len(bic) != 11:
-            raise forms.ValidationError("bic must be 11 charachters long")
+            raise forms.ValidationError("il codice BIC deve essere lungo 11 caratteri")
         else:
             return bic

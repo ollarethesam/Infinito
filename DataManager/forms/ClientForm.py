@@ -153,5 +153,10 @@ class ClientForm(ModelForm):
             'coduni' : forms.TextInput(attrs={'class':'coduni form-control short', 'autocomplete': 'off', 'id': False}),
             'splpay' : forms.Select(attrs={'class':'splpay form-control short', 'autocomplete': 'off', 'id': False}, choices=SPLPAY),
         }
-
+    def clean_codcli(self, *args, **kwargs):
+        codcli = self.cleaned_data.get('codcli')
+        if len(codcli) != 5:
+            raise forms.ValidationError("Il codice cliente deve essre lungo 5 caratteri")
+        else:
+            return codcli
         
