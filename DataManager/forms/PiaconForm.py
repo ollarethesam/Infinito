@@ -25,6 +25,8 @@ class PiaconForm(ModelForm):
     def clean_codpia(self):
         codpia = self.cleaned_data.get('codpia')
         # Check if codpia starts with a number between 1 and 4
+        if len(codpia) != 9:
+            raise forms.ValidationError("Il codice conto deve essere lungo 9 caratteri")
         if not re.match(r'^[1-4]', codpia):
             raise forms.ValidationError("Il codice conto deve iniziare con un numero tra 1 e 4")
         # Check if codpia ends in at least 5 consecutive numbers
