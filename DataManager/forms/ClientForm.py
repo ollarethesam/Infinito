@@ -156,7 +156,7 @@ class ClientForm(ModelForm):
     def clean_codcli(self, *args, **kwargs):
         codcli = self.cleaned_data.get('codcli')
         if len(codcli) != 5:
-            raise forms.ValidationError("Il codice cliente deve essre lungo 5 caratteri")
+            raise forms.ValidationError("Il codice cliente deve essere lungo 5 caratteri")
         else:
             return codcli
         
