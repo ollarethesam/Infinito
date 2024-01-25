@@ -1,3 +1,4 @@
+{% load get_next_field %}
 <form action="{% url url_name %}" method="POST" class="container" target="form_response_iframe">
     <div class="form-container">
         {% csrf_token %}
@@ -18,8 +19,8 @@
                                 <ul class="dropdown-menu"></ul>
                             </button>
                         {% endif %}
-                        {% with next_field=form|slice:":forloop.counter"|last %}
-                            {% if not next_field.label %}
+                        {% with next_field=form|get_next_field:field %}
+                            {% if nex_field and not next_field.label %}
                                 {{ next_field }}
                             {% endif %}
                         {% endwith %}
