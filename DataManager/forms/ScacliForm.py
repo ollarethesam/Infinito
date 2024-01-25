@@ -6,9 +6,9 @@ from DataManager.models.scacli import Scacli
 
 class ScacliForm(ModelForm):
     ragsoc = forms.CharField(required=False, label='Ragione Sociale', widget=forms.TextInput(attrs={'class':'ragsoc form-control', 'id': False}))
-    desval = forms.CharField(required=False, label='Descrizione', widget=forms.TextInput(attrs={'class':'desval form-control', 'id': False}))
-    despag = forms.CharField(required=False, label='Descrizione', widget=forms.TextInput(attrs={'class':'despag form-control', 'id': False}))
-    desban = forms.CharField(required=False, label='Descrizione', widget=forms.TextInput(attrs={'class':'desban form-control', 'id': False}))
+    desval = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'desval form-control', 'id': False}))
+    despag = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'despag form-control', 'id': False}))
+    desban = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'desban form-control', 'id': False}))
 
     class Meta:
         TIPPAG = [
