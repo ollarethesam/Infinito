@@ -121,6 +121,7 @@
 }
 .inside-opener{
     color: white;
+    cursor: pointer;
 }
 .dropdown span{
     width: 0.5rem;
