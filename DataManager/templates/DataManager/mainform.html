@@ -20,7 +20,7 @@
                             </button>
                         {% endif %}
                         {% with next_field=form|get_next_field:field %}
-                            {% if next_field and not next_field.label %}
+                            {% if not next_field.label %}
                                 {{ next_field }}
                             {% endif %}
                         {% endwith %}
