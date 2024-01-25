@@ -28,7 +28,7 @@ class ScacliForm(ModelForm):
             ('N', 'Nota Credito')
         ]
         model = Scacli
-        fields = ["numpro", "codcli", 'ragsoc', "tipdoc", "datdoc", "numfat", "descri", "impfat", "imppag", "codval", 'desval' "codpag", 'despag', "cambio", "datsca", "pagato", "codban", 'desban', "tippag"]
+        fields = ["numpro", "codcli", 'ragsoc', "tipdoc", "datdoc", "numfat", "descri", "impfat", "imppag", "codval", 'desval', "codpag", 'despag', "cambio", "datsca", "pagato", "codban", 'desban', "tippag"]
         labels = {
             'numpro': 'Numero Progressivo',
             'codcli': 'Codice Cliente',
