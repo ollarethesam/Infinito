@@ -19,9 +19,10 @@
                             </button>
                         {% endif %}
                         {% with next_field=form|slice:":forloop.counter"|last %}
-                        {% if not next_field.label %}
-                            {{ next_field }}
-                        {% endif %}
+                            {% if not next_field.label %}
+                                {{ next_field }}
+                            {% endif %}
+                        {% endwith %}
                         {% if field.name in ddofields %}
                             {% for key, value in ddofields.items %}
                                 {% if key == field.name %}
