@@ -6,7 +6,7 @@ from .modpag import Modpag
 from .banche import Banche
 
 class Scacli(models.Model):
-    numpro = models.IntegerField(auto_increment=True, primary_key=True)
+    numpro = models.IntegerField(auto_created=True, primary_key=True)
     codcli = models.ForeignKey(Client, to_field='codcli', on_delete=models.CASCADE)
     tipdoc = models.CharField(max_length=1)
     datdoc = models.DateTimeField()
