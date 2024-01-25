@@ -35,5 +35,5 @@ urlpatterns = [
     path('Spedizioni', spediz, name="spediz"),
     path('Tipi-Allegati', tipall, name="tipall"),
     path('Gestione-Prezzi-per-Cliente', liscli, name="liscli"),
-    path('Gestione-Scadenziario-Clienti', scacli, name="liscli"),
+    path('Gestione-Scadenziario-Clienti', scacli, name="scacli"),
 ]
