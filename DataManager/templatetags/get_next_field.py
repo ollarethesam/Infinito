@@ -9,4 +9,5 @@ def get_next_field(form, current_field):
         current_index = list(form_fields).index((current_field.name, current_field))
         return form[current_index + 1]
     except (ValueError, IndexError):
+        print(form_fields)
         return None
