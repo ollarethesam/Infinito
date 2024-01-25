@@ -21,7 +21,7 @@
                         {% endif %}
                         {% with next_field=form.fields|get_next_field:field.name %}
                             {% if not next_field.label %}
-                                {{ next_field }}
+                                {{ form.next_field }}
                             {% endif %}
                         {% endwith %}
                         {% if field.name in ddofields %}
