@@ -6,4 +6,5 @@ register = template.Library()
 def get_next_field(form, current_field):
     form_fields = list(form)
     current_index = form_fields.index(current_field)
-    return form[form_fields[current_index + 1]]
+    print(current_index)
+    return current_index
