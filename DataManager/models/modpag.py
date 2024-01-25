@@ -2,7 +2,7 @@ from django.db import models
 from Login.models import CustomUser
 
 class Modpag(models.Model):
-    codpag = models.CharField(max_length=3, primary_key=True)
+    codpag = models.CharField(max_length=4, primary_key=True)
     despag = models.CharField(max_length=40, unique=True)
     tippag = models.CharField(max_length=40)
     numrat = models.CharField(max_length=3)

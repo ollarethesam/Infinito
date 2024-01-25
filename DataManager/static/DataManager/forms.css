@@ -388,6 +388,9 @@
 .l5{
     width: 4.2rem;
 }
+.l7{
+    width: 5rem;
+}
 .l9{
     width: 7.2rem;
 }
@@ -409,9 +412,15 @@
 .l16{
     width: 12.3rem
 }
+.l18{
+    width: 14rem;
+}
 .l27{
     width: 20.3rem;
 }
 .l30{
     width: 24rem;
+}
+.l35{
+    width: 27rem;
 }
