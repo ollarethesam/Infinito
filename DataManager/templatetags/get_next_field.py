@@ -10,4 +10,4 @@ def get_next_field(form, field):
         next_field_name = keys[index + 1]
         return form[next_field_name]
     except (ValueError, IndexError):
-        return None
+        return ''

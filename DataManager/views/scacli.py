@@ -32,7 +32,7 @@ def scacli(request, model=Scacli, modelform=ScacliForm, template='DataManager/ma
                                                                     'despag',
                                                                     'codban',
                                                                     'desban'),
-                                                        'ddofield': {'codcli': 'Clienti',
+                                                        'ddofields': {'codcli': 'Clienti',
                                                                      'codban': 'Gestione-Tabella-Banche',
                                                                      'codpag': 'Modalita-di-Pagamento',
                                                                      'codval': 'Valute',
