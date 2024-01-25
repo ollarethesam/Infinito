@@ -32,13 +32,11 @@
                                 {% endfor %}
                             {% endif %}
                         </div>
-                        {% if field.label %}
-                            {% if not forloop.last %}
-                                {% if not form[forloop.counter].label %}
-                                    {% with prev_label=field.label %}
-                                        </div>
-                                    {% endwith %}
-                                {% endif %}
+                        {% if not forloop.last %}
+                            {% if not form|slice:":forloop.counter"|last.label %}
+                                {% with prev_label=field.label %}
+                                    </div>
+                                {% endwith %}
                             {% endif %}
                         {% endif %}
                     {% endif %}
