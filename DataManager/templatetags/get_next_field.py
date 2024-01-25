@@ -3,11 +3,12 @@ from django import template
 register = template.Library()
 
 @register.filter
-def get_next_field(form, current_field):
+def get_next_field(form_fields, current_field_name):
+    form_keys = list(form_fields.keys())
     try:
-        form_fields = form.fields.items()
-        current_index = list(form_fields).index((current_field.name, current_field))
-        return form[current_index + 1]
+        current_index = form_keys.index(current_field_name)
+        next_field_name = form_keys[current_index + 1]
+        return form_fields[next_field_name]
     except (ValueError, IndexError):
-        print(form_fields)
+        print(next_field_name)
         return None
