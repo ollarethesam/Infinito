@@ -1,39 +1,37 @@
 <form action="{% url url_name %}" method="POST" class="container" target="form_response_iframe">
     <div class="form-container">
         {% csrf_token %}
+        <div class="label-container">
+            {% for field in form %}
+                <div class="form-label">{{ field.label }}</div>
+            {% endfor %}
+        </div>
         <div class="input-container">
-            {% with prev_label="" %}
-                {% for field in form %}
-                    {% if field.label %}
-                        <div class="inline">
-                            {{ field }}
-                            {% if field.name in ddfields %}
-                                <button type="button" class="dropdown">
-                                    <span id="left"></span>
-                                    <span id="right"></span>
-                                    <ul class="dropdown-menu"></ul>
-                                </button>
-                            {% endif %}
-                            {% if field.name in ddofields %}
-                                {% for key, value in ddofields.items %}
-                                    {% if key == field.name %}
-                                        <div class="draggable-opener inside-opener {{ value }}">+</div>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                        {% if not forloop.last %}
-                            {% with next_field=form|slice:":forloop.counter"|last %}
-                                {% if next_field.label %}
-                                    {% with prev_label=field.label %}
-                                        </div>
-                                    {% endwith %}
-                                {% endif %}
-                            {% endwith %}
+            {% for field in form %}
+                {% if field.label %}
+                    <div class="inline">
+                        {{ field }}
+                        {% if field.name in ddfields %}
+                            <button type="button" class="dropdown">
+                                <span id="left"></span>
+                                <span id="right"></span>
+                                <ul class="dropdown-menu"></ul>
+                            </button>
                         {% endif %}
-                    {% endif %}
-                {% endfor %}
-            {% endwith %}
+                        {% with next_field=form|slice:":forloop.counter"|last %}
+                        {% if not next_field.label %}
+                            {{ next_field }}
+                        {% endif %}
+                        {% if field.name in ddofields %}
+                            {% for key, value in ddofields.items %}
+                                {% if key == field.name %}
+                                    <div class="draggable-opener inside-opener {{ value }}">+</div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {%endfor %}
         </div>
     </div>
     {% if grid %}
@@ -55,7 +53,6 @@
         </div>
     </div>
 </form>
-
 <script>
     $('.dropdown-menu').on('scroll', function(){
         if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight-10) {
