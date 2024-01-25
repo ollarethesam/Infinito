@@ -19,9 +19,9 @@
                                 <ul class="dropdown-menu"></ul>
                             </button>
                         {% endif %}
-                        {% with next_field=form.fields|get_next_field:field.name %}
+                        {% with next_field=form|get_next_field:field %}
                             {% if not next_field.label %}
-                                {{ form.next_field }}
+                                {{ next_field }}
                             {% endif %}
                         {% endwith %}
                         {% if field.name in ddofields %}

@@ -28,7 +28,7 @@ class ScacliForm(ModelForm):
             ('N', 'Nota Credito')
         ]
         model = Scacli
-        fields = ["numpro", "codcli", 'ragsoc', "tipdoc", "datdoc", "numfat", "impfat", "imppag", "codval", 'desval', "codpag", 'despag', "cambio", "datsca", "pagato", "codban", 'desban', "tippag"]
+        fields = ["numpro", 'descri', "codcli", 'ragsoc', "tipdoc", "datdoc", "numfat", "impfat", "imppag", "codval", 'desval', "codpag", 'despag', "cambio", "datsca", "pagato", "codban", 'desban', "tippag"]
         labels = {
             'numpro': 'Numero Progressivo',
             'codcli': 'Codice Cliente',
@@ -61,5 +61,5 @@ class ScacliForm(ModelForm):
             'datsca': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datsca form-control l9', 'autocomplete': 'off', 'id': False}),
             'pagato': forms.Select(attrs={'class':'pagato form-control l7', 'autocomplete': 'off', 'id': False}, choices=PAGATO),
             'codban': forms.TextInput(attrs={'class':'codban form-control l3', 'autocomplete': 'off', 'id': False}),
-            'tippag': forms.Select(attrs={'class':'tippag form-control l18', 'autocomplete': 'off', 'id': False}, choices=TIPPAG),
+            'tippag': forms.Select(attrs={'class':'tippag form-control l11', 'autocomplete': 'off', 'id': False}, choices=TIPPAG),
         }
