@@ -118,10 +118,10 @@
     justify-content: center;
     height: 1.4rem;
     aspect-ratio: 1/1;
+    cursor: pointer;
 }
 .inside-opener{
     color: white;
-    cursor: pointer;
 }
 .dropdown span{
     width: 0.5rem;
