@@ -10,6 +10,7 @@ from .valute import Valute
 from .client import Client
 
 def scacli(request, model=Scacli, modelform=ScacliForm, template='DataManager/mainform.html', url_name='scacli', keys_list={
+    Scacli: ('numpro', 'descri'),
     Client: ('codcli', 'ragsoc'),
     Banche:('codban', 'desban'),
     Modpag:('codpag', 'despag'),
