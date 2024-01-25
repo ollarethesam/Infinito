@@ -119,7 +119,7 @@ class FornitForm(ModelForm):
             'staest': forms.TextInput(attrs={'class':'staest form-control l2', 'autocomplete': 'off', 'id': False}),
             'cognom': forms.TextInput(attrs={'class':'cognom form-control', 'autocomplete': 'off', 'id': False}),
             'nome'  : forms.TextInput(attrs={'class':'nome form-control', 'autocomplete': 'off', 'id': False}),
-            'datnas': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datnas form-control l9', 'autocomplete': 'off', 'id': False}),
+            'datnas': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datnas form-control', 'autocomplete': 'off', 'id': False}),
             'tipfor': forms.Select(attrs={'class':'tipfor form-control', 'autocomplete': 'off', 'id': False}, choices=TIPFOR),
             'spesom': forms.CheckboxInput(attrs={'class':'spesom form-control checkbox', 'autocomplete': 'off', 'id': False}),
             'schcar': forms.CheckboxInput(attrs={'class':'schcar form-control checkbox', 'autocomplete': 'off', 'id': False}),
