@@ -1,22 +1,10 @@
-{% load ctt %}
-
 <form action="{% url url_name %}" method="POST" class="container" target="form_response_iframe">
     <div class="form-container">
         {% csrf_token %}
-        <div class="label-container">
-            {% for field in form %}
-                {% if field.label %}
-                    <div class="form-label">{{ field.label }}</div>
-                {% endif %}
-            {% endfor %}
-        </div>
         <div class="input-container">
             {% with prev_label="" %}
                 {% for field in form %}
                     {% if field.label %}
-                        {% if prev_label and not field.label %}
-                            </div><div class="inline">
-                        {% endif %}
                         <div class="inline">
                             {{ field }}
                             {% if field.name in ddfields %}
@@ -35,7 +23,7 @@
                             {% endif %}
                         </div>
                         {% if not forloop.last %}
-                            {% with next_field=form|get_next_field:forloop.counter %}
+                            {% with next_field=form|slice:":forloop.counter"|last %}
                                 {% if next_field.label %}
                                     {% with prev_label=field.label %}
                                         </div>
