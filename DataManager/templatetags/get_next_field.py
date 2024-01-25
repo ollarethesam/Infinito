@@ -4,12 +4,10 @@ register = template.Library()
 
 @register.filter
 def get_next_field(form, current_field):
-    print(current_field)
     try:
         form_fields = list(form)
         current_index = form_fields.index(current_field)
-        print(current_index)
+        print(form_fields)
         return form[form_fields[current_index + 1]]
     except (ValueError, IndexError) as e:
-        print(e)
         return None
