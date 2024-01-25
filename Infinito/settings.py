@@ -52,7 +52,7 @@ STATICFILES_FINDERS = [
 AUTH_USER_MODEL = 'Login.CustomUser'
 
 MIDDLEWARE = [
-    'django.middleware.static.StaticFilesMiddleware',
+    'django.contrib.staticfiles.middleware.StaticFilesMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
