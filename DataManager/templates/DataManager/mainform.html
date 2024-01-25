@@ -1,3 +1,5 @@
+{% load your_custom_template_tags %}
+
 <form action="{% url url_name %}" method="POST" class="container" target="form_response_iframe">
     <div class="form-container">
         {% csrf_token %}
@@ -33,7 +35,7 @@
                             {% endif %}
                         </div>
                         {% if not forloop.last %}
-                            {% if not form|slice:":forloop.counter"|last.label %}
+                            {% if not field_has_label for field|get_prev_field:forloop.counter %}
                                 {% with prev_label=field.label %}
                                     </div>
                                 {% endwith %}
