@@ -22,7 +22,21 @@ def scacli(request, model=Scacli, modelform=ScacliForm, template='DataManager/ma
         return save_or_update(model, modelform, request, pk_val)
     if request.method == 'GET':
         form = modelform
-        context = {'form': form, 'url_name': url_name, 'ddfields': ('numpro', 'descri', 'codcli', 'ragsoc', 'codval', 'desval', 'codpag', 'despag', 'codban', 'desban')}
+        context = {'form': form, 'url_name': url_name, 'ddfields': ('numpro',
+                                                                    'descri',
+                                                                    'codcli',
+                                                                    'ragsoc',
+                                                                    'codval',
+                                                                    'desval',
+                                                                    'codpag',
+                                                                    'despag',
+                                                                    'codban',
+                                                                    'desban'),
+                                                        'ddofield': {'codcli': 'Clienti',
+                                                                     'codban': 'Gestione-Tabella-Banche',
+                                                                     'codpag': 'Modalita-di-Pagamento',
+                                                                     'codval': 'Valute',
+                                                                     }}
 
         id = request.GET.get('id')
         offset = request.GET.get('offset')

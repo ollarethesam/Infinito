@@ -22,6 +22,13 @@
                         {% with next_field=form|get_next_field:field %}
                             {% if not next_field.label %}
                                 {{ next_field }}
+                                {% if next_field.name in ddfields %}
+                                    <button type="button" class="dropdown">
+                                        <span id="left"></span>
+                                        <span id="right"></span>
+                                        <ul class="dropdown-menu"></ul>
+                                    </button>
+                                {% endif %}
                             {% endif %}
                         {% endwith %}
                         {% if field.name in ddofields %}
