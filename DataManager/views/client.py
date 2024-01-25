@@ -13,7 +13,7 @@ from .nazion import Nazion
 from .catego import Catego
 from .ivaven import Ivaven
 
-def client(request, model=Client, modelform=ClientForm, template='DataManager/client.html', url_name='client', keys_list={
+def client(request, model=Client, modelform=ClientForm, template='DataManager/mainform.html', url_name='client', keys_list={
     Client: ('codcli', 'ragsoc'),
     Banche:('codban', 'desban'),
     Modpag:('codpag', 'despag'),
