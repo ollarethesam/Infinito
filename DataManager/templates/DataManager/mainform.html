@@ -3,29 +3,47 @@
         {% csrf_token %}
         <div class="label-container">
             {% for field in form %}
-                <div class="form-label">{{ field.label }}</div>
+                {% if field.label %}
+                    <div class="form-label">{{ field.label }}</div>
+                {% endif %}
             {% endfor %}
         </div>
         <div class="input-container">
-            {% for field in form %}
-                <div class="inline">
-                    {{ field }}
-                    {% if field.name in ddfields %}
-                        <button type="button" class="dropdown">
-                            <span id="left"></span>
-                            <span id="right"></span>
-                            <ul class="dropdown-menu"></ul>
-                        </button>
-                    {% endif %}
-                    {% if field.name in ddofields %}
-                        {% for key, value in ddofields.items %}
-                            {% if key == field.name %}
-                                <div class="draggable-opener inside-opener {{ value }}">+</div>
+            {% with prev_label="" %}
+                {% for field in form %}
+                    {% if field.label %}
+                        {% if prev_label and not field.label %}
+                            </div><div class="inline">
+                        {% endif %}
+                        <div class="inline">
+                            {{ field }}
+                            {% if field.name in ddfields %}
+                                <button type="button" class="dropdown">
+                                    <span id="left"></span>
+                                    <span id="right"></span>
+                                    <ul class="dropdown-menu"></ul>
+                                </button>
                             {% endif %}
-                        {% endfor %}
+                            {% if field.name in ddofields %}
+                                {% for key, value in ddofields.items %}
+                                    {% if key == field.name %}
+                                        <div class="draggable-opener inside-opener {{ value }}">+</div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        {% if field.label %}
+                            {% if not forloop.last %}
+                                {% if not form[forloop.counter].label %}
+                                    {% with prev_label=field.label %}
+                                        </div>
+                                    {% endwith %}
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
                     {% endif %}
-                </div>
-            {%endfor %}
+                {% endfor %}
+            {% endwith %}
         </div>
     </div>
     {% if grid %}
@@ -47,6 +65,7 @@
         </div>
     </div>
 </form>
+
 <script>
     $('.dropdown-menu').on('scroll', function(){
         if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight-10) {
