@@ -35,11 +35,13 @@
                             {% endif %}
                         </div>
                         {% if not forloop.last %}
-                            {% if not field_has_label for field|get_prev_field:forloop.counter %}
-                                {% with prev_label=field.label %}
-                                    </div>
-                                {% endwith %}
-                            {% endif %}
+                            {% with next_field=form|get_next_field:forloop.counter %}
+                                {% if next_field.label %}
+                                    {% with prev_label=field.label %}
+                                        </div>
+                                    {% endwith %}
+                                {% endif %}
+                            {% endwith %}
                         {% endif %}
                     {% endif %}
                 {% endfor %}
