@@ -8,7 +8,7 @@ class ClientForm(ModelForm):
     despag = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'despag form-control greybg', 'readonly': True, 'id': False}))
     deszon = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'deszon form-control greybg', 'readonly': True, 'id': False}))
     desiva = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desiva form-control greybg', 'readonly': True, 'id': False}))
-    datric = forms.CharField(required = False,label='', widget=forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datric form-control greybg', 'autocomplete': 'off', 'readonly': True, 'id': False}))
+    datric = forms.CharField(required = False,label='', widget=forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datric form-control greybg l9', 'autocomplete': 'off', 'readonly': True, 'id': False}))
     desval = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desval form-control greybg', 'readonly': True, 'id': False}))
     descat = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'descat form-control greybg', 'readonly': True, 'id': False}))
     desnaz = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desnaz form-control greybg', 'readonly': True, 'id': False}))
@@ -132,8 +132,8 @@ class ClientForm(ModelForm):
             'cin'    : forms.TextInput(attrs={'class':'cin form-control l1', 'autocomplete': 'off', 'id': False}),
             'conto'  : forms.TextInput(attrs={'class':'conto form-control l12', 'autocomplete': 'off', 'id': False}),
             'codcat' : forms.TextInput(attrs={'class':'codcat form-control fk l2', 'autocomplete': 'off', 'id': False}),
-            'chiusf' : forms.DateInput(format='%d-%m', attrs={'type':'date', 'class':'chiusf  form-control', 'autocomplete': 'off', 'id': False}),
-            'chiust' : forms.DateInput(format='%d-%m', attrs={'type':'date', 'class':'chiust  form-control', 'autocomplete': 'off', 'id': False}),
+            'chiusf' : forms.DateInput(format='%d-%m', attrs={'type':'date', 'class':'chiusf  form-control l9', 'autocomplete': 'off', 'id': False}),
+            'chiust' : forms.DateInput(format='%d-%m', attrs={'type':'date', 'class':'chiust  form-control l9', 'autocomplete': 'off', 'id': False}),
             'nome'   : forms.TextInput(attrs={'class':'nome form-control', 'autocomplete': 'off', 'id': False}),
             'spese'  : forms.CheckboxInput(attrs={'class':'spese form-control checkbox', 'autocomplete': 'off', 'required': False, 'id': False}),
             'storic' : forms.CheckboxInput(attrs={'class':'storic form-control checkbox', 'autocomplete': 'off', 'required': False, 'id': False}),
@@ -142,7 +142,7 @@ class ClientForm(ModelForm):
             'cognom' : forms.TextInput(attrs={'class':'cognom form-control', 'autocomplete': 'off', 'id': False}),
             'comnas' : forms.TextInput(attrs={'class':'comnas form-control', 'autocomplete': 'off', 'id': False}),
             'pronas' : forms.TextInput(attrs={'class':'pronas form-control', 'autocomplete': 'off', 'id': False}),
-            'datnas' : forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datnas  form-control', 'autocomplete': 'off', 'id': False}),
+            'datnas' : forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datnas  form-control l9', 'autocomplete': 'off', 'id': False}),
             'tipfor' : forms.Select(attrs={'class':'tipfor form-control', 'autocomplete': 'off', 'id': False}, choices=TIPFOR),
             'alias'  : forms.TextInput(attrs={'class':'alias form-control', 'autocomplete': 'off', 'id': False}),
             'tipcli' : forms.TextInput(attrs={'class':'tipcli form-control short', 'autocomplete': 'off', 'id': False}),

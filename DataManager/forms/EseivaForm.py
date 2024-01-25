@@ -16,5 +16,5 @@ class EseivaForm(ModelForm):
         widgets = {
             'codese': forms.TextInput(attrs={'class':'codese form-control pk l3', 'autocomplete': 'off', 'id': False}),
             'riccli': forms.TextInput(attrs={'class':'riccli form-control l3', 'autocomplete': 'off', 'id': False}),
-            'datric': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datric form-control', 'autocomplete': 'off', 'id': False}),
+            'datric': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datric form-control l9', 'autocomplete': 'off', 'id': False}),
         }
