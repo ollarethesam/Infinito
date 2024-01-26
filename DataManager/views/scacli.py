@@ -68,9 +68,9 @@ def scacli(request, model=Scacli, modelform=ScacliForm, template='DataManager/ma
 
         nr = request.GET.get('nr')
         if nr:
-            try:
+            if model.objects.last() is not None:
                 last_numpro = int(model.objects.last().pk)+1
-            except:
+            else:
                 last_numpro = 1
             return JsonResponse({'nr': last_numpro})
         content = render(request, template, context)
