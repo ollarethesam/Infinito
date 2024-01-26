@@ -5,7 +5,7 @@ from django.forms import ModelForm
 from DataManager.models.scacli import Scacli
 
 def get_last_numpro():
-        if Scacli.objects.last().exists():
+        if Scacli.objects.last():
             return Scacli.objects.last().pk
         else:
             return 1
