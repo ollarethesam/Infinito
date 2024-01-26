@@ -11,6 +11,7 @@ $(document).ready(function(){
                 nr: numpro_request
             },
             success: function(response){
+                console.log(response)
                form.find('.numpro').val(response['nr'])
             }
         })
