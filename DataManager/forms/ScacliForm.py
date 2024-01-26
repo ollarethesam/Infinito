@@ -47,7 +47,7 @@ class ScacliForm(ModelForm):
             'tippag': 'Tipo Pagamento',
         }
         widgets = {
-            'numpro': forms.TextInput(attrs={'class':'numpro form-control pk l7', 'autocomplete': 'off', 'id': False}),
+            'numpro': forms.TextInput(attrs={'value': Scacli.objects.last().pk, 'class':'numpro form-control pk l7', 'autocomplete': 'off', 'id': False}),
             'codcli': forms.TextInput(attrs={'class':'codcli form-control l5', 'autocomplete': 'off', 'id': False}),
             'tipdoc': forms.Select(attrs={'class':'tipdoc form-control l9', 'autocomplete': 'off', 'id': False}, choices=TIPDOC),
             'datdoc': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datdoc form-control l9', 'autocomplete': 'off', 'id': False}),
