@@ -6,7 +6,7 @@ from DataManager.models.scacli import Scacli
 
 def get_last_numpro():
         try:
-            return Scacli.objects.last().numpro
+            return int(Scacli.objects.last().numpro)+1
         except:
             return 1
 
