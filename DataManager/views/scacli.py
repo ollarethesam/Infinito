@@ -67,7 +67,9 @@ def scacli(request, model=Scacli, modelform=ScacliForm, template='DataManager/ma
         
 
         nr = request.GET.get('nr')
+        print(nr)
         if nr:
+            print(nr)
             last_numpro = model.objects.last().pk
             print(last_numpro)
             return JsonResponse({'nr': last_numpro})
