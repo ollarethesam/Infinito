@@ -70,7 +70,7 @@ def scacli(request, model=Scacli, modelform=ScacliForm, template='DataManager/ma
         print(nr)
         if nr:
             print(nr)
-            last_numpro = model.objects.last().pk
+            last_numpro = int(model.objects.last().pk)+1
             print(last_numpro)
             return JsonResponse({'nr': last_numpro})
         content = render(request, template, context)
