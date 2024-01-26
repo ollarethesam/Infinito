@@ -71,7 +71,7 @@ class ScacliForm(ModelForm):
         }
     def clean_numpro(self, *args, **kwargs):
         numpro = self.cleaned_data.get('numpro')
-        if numpro != get_last_numpro():
+        if numpro > get_last_numpro():
             raise forms.ValidationError(f"Numero progressivo sbagliato, usare {get_last_numpro()}")
         else:
             return numpro
