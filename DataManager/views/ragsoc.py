@@ -8,7 +8,7 @@ from .ivaven import Ivaven
 from .ivaacq import Ivaacq
 from .piacon import Piacon
 
-def ragsoc(request, model=Ragsoc, modelform=RagsocForm, template='DataManager/mainform.html', url_name='ragsoc', keys_list={
+def ragsoc(request, model=Ragsoc, modelform=RagsocForm, template='DataManager/ragsoc.html', url_name='ragsoc', keys_list={
     Ragsoc: ('codcli', 'ragsoc'),
     Ivaven:('codiva', 'desiva'), 
     Ivaacq:('codiva', 'desiva'),
