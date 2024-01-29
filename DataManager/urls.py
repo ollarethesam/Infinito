@@ -36,4 +36,5 @@ urlpatterns = [
     path('Tipi-Allegati', tipall, name="tipall"),
     path('Gestione-Prezzi-per-Cliente', liscli, name="liscli"),
     path('Gestione-Scadenziario-Clienti', scacli, name="scacli"),
+    path('Ragione-Sociale-Utente', ragsoc, name="ragsoc"),
 ]
