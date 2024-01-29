@@ -39,7 +39,6 @@ class Fornit(models.Model):
     storic = models.BooleanField()
     staest = models.CharField(max_length=3, null=True, blank=True)
     tipfor = models.IntegerField(null=True, blank=True)
-    spesom = models.BooleanField()
     schcar = models.BooleanField()
     copfat = models.BooleanField(default=False)
     noncon = models.BooleanField(default=False)
