@@ -164,7 +164,7 @@ class RagsocForm(ModelForm):
             'corven': forms.TextInput(attrs={'class':'corven form-control l2', 'autocomplete': 'off', 'id': False}),
             'art10' : forms.TextInput(attrs={'class':'art10 form-control l2', 'autocomplete': 'off', 'id': False}),
             'ditind': forms.CheckboxInput(attrs={'class':'ditind form-control checkbox', 'autocomplete': 'off', 'id': False}),
-            'sesso' : forms.Select(attrs={'class':'sesso form-control l5', 'autocomplete': 'off', 'id': False}, choices=SESSO),
+            'sesso' : forms.Select(attrs={'class':'sesso form-control l7', 'autocomplete': 'off', 'id': False}, choices=SESSO),
             'datnas': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datnas form-control l9', 'autocomplete': 'off', 'id': False}),
             'comnas': forms.TextInput(attrs={'class':'comnas form-control l35', 'autocomplete': 'off', 'id': False}),
             'pronas': forms.TextInput(attrs={'class':'pronas form-control l2', 'autocomplete': 'off', 'id': False}),
