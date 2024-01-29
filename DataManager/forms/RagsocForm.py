@@ -177,7 +177,7 @@ class RagsocForm(ModelForm):
             'iban'  : forms.TextInput(attrs={'class':'iban form-control l27', 'autocomplete': 'off', 'id': False}),
             'cofiin': forms.TextInput(attrs={'class':'cofiin form-control l16', 'autocomplete': 'off', 'id': False}),
             'iscain': forms.TextInput(attrs={'class':'iscain form-control l5', 'autocomplete': 'off', 'id': False}),
-            'compre': forms.Select(attrs={'class':'compre form-control l5', 'autocomplete': 'off', 'id': False}, choices=COMPRE),
+            'compre': forms.Select(attrs={'class':'compre form-control l10', 'autocomplete': 'off', 'id': False}, choices=COMPRE),
             'cofiso': forms.TextInput(attrs={'class':'cofiso form-control l16', 'autocomplete': 'off', 'id': False}),
             'codatt': forms.TextInput(attrs={'class':'codatt form-control l6', 'autocomplete': 'off', 'id': False}),
             'gescor': forms.CheckboxInput(attrs={'class':'gescor form-control checkbox', 'autocomplete': 'off', 'id': False}),
