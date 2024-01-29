@@ -45,7 +45,7 @@ class FornitForm(ModelForm):
         ("19", "RF19-Regime Forfettario"),
         ]
         model = Fornit
-        fields = ['codfor', 'ragsoc', 'datagg', 'indiri', 'locali', 'provin', 'cap', 'codfis', 'pariva', 'telef1', 'telef2', 'cellul', 'fax', 'email', 'sito', 'codpag', 'pae', 'cineur', 'cin', 'conto', 'codabi', 'codcab', 'banapp', 'codnaz', 'codiva', 'codcat', 'codzon', 'codban', 'storic', 'staest', 'tipfor', 'schcar', 'alias', 'regfis', 'despag', 'deszon', 'desiva', 'descat', 'desnaz', 'desban']
+        fields = ['codfor', 'ragsoc', 'datagg', 'indiri', 'locali', 'provin', 'cap', 'codfis', 'pariva', 'telef1', 'telef2', 'cellul', 'fax', 'email', 'sito','copfat', 'noncon', 'codpag', 'pae', 'cineur', 'cin', 'conto', 'codabi', 'codcab', 'banapp', 'codnaz', 'codiva', 'codcat', 'codzon', 'codban', 'storic', 'staest', 'tipfor', 'schcar', 'alias', 'regfis', 'despag', 'deszon', 'desiva', 'descat', 'desnaz', 'desban']
         labels = {
             'codfor': 'Codice Fornitore',
             'ragsoc': 'Ragione Sociale',
