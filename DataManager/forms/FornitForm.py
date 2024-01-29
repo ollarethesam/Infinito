@@ -81,6 +81,8 @@ class FornitForm(ModelForm):
             'nome'  : 'Nome',
             'datnas': 'Data di Nascita',
             'tipfor': 'Tipo Fornitura',
+            'copfat': 'Copia Fattura',
+            'noncon': 'Non Considerare',
             'spesom': 'Esclusione Da Spesometro',
             'schcar': 'Scheda Carburante',
             'alias' : 'Alias',
