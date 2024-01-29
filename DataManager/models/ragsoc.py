@@ -39,8 +39,8 @@ class Ragsoc(models.Model):
     isrepr = models.CharField(max_length=2, null=True, blank=True)
     isrenu = models.CharField(max_length=6, null=True, blank=True)
     capsoc = models.DecimalField(max_digits=10, decimal_places=2)
-    socuni = models.CharField(2, null=True, blank=True)
-    staliq = models.CharField(2, null=True, blank=True)
+    socuni = models.CharField(max_length=2, null=True, blank=True)
+    staliq = models.CharField(max_length=2, null=True, blank=True)
 
     maclit = models.ForeignKey(Piacon, to_field='codpia', on_delete=models.CASCADE, null=True, blank=True, related_name='maclit')
     macles = models.ForeignKey(Piacon, to_field='codpia', on_delete=models.CASCADE, null=True, blank=True, related_name='macles')
