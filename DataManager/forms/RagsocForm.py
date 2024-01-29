@@ -181,7 +181,7 @@ class RagsocForm(ModelForm):
             'cofiso': forms.TextInput(attrs={'class':'cofiso form-control l16', 'autocomplete': 'off', 'id': False}),
             'codatt': forms.TextInput(attrs={'class':'codatt form-control l6', 'autocomplete': 'off', 'id': False}),
             'gescor': forms.CheckboxInput(attrs={'class':'gescor form-control checkbox', 'autocomplete': 'off', 'id': False}),
-            'regfis': forms.Select(attrs={'class':'regfis form-control l5', 'autocomplete': 'off', 'id': False}, choices=REGFIS),
+            'regfis': forms.Select(attrs={'class':'regfis form-control l35', 'autocomplete': 'off', 'id': False}, choices=REGFIS),
             'isrepr': forms.TextInput(attrs={'class':'isrepr form-control l2', 'autocomplete': 'off', 'id': False}),
             'isrenu': forms.TextInput(attrs={'class':'isrenu form-control l6', 'autocomplete': 'off', 'id': False}),
             'capsoc': forms.TextInput(attrs={'class':'capsoc form-control l15', 'autocomplete': 'off', 'id': False}),
