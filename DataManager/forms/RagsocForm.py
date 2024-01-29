@@ -185,7 +185,7 @@ class RagsocForm(ModelForm):
             'isrepr': forms.TextInput(attrs={'class':'isrepr form-control l2', 'autocomplete': 'off', 'id': False}),
             'isrenu': forms.TextInput(attrs={'class':'isrenu form-control l6', 'autocomplete': 'off', 'id': False}),
             'capsoc': forms.TextInput(attrs={'class':'capsoc form-control l15', 'autocomplete': 'off', 'id': False}),
-            'socuni': forms.Select(attrs={'class':'socuni form-control l10', 'autocomplete': 'off', 'id': False}, choices=SOCUNI),
+            'socuni': forms.Select(attrs={'class':'socuni form-control l9', 'autocomplete': 'off', 'id': False}, choices=SOCUNI),
             'staliq': forms.Select(attrs={'class':'staliq form-control l15', 'autocomplete': 'off', 'id': False}, choices=STALIQ),
             'maclit': forms.TextInput(attrs={'class':'maclit form-control l9', 'autocomplete': 'off', 'id': False}),
             'macles': forms.TextInput(attrs={'class':'macles form-control l9', 'autocomplete': 'off', 'id': False}),
