@@ -41,6 +41,8 @@ class Fornit(models.Model):
     tipfor = models.IntegerField(null=True, blank=True)
     spesom = models.BooleanField()
     schcar = models.BooleanField()
+    copfat = models.BooleanField()
+    noncon = models.BooleanField()
     alias  = models.CharField(max_length=24, null=True, blank=True)
     regfis = models.CharField(max_length=4, null=True, blank=True)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)

@@ -123,6 +123,8 @@ class FornitForm(ModelForm):
             'tipfor': forms.Select(attrs={'class':'tipfor form-control', 'autocomplete': 'off', 'id': False}, choices=TIPFOR),
             'spesom': forms.CheckboxInput(attrs={'class':'spesom form-control checkbox', 'autocomplete': 'off', 'id': False}),
             'schcar': forms.CheckboxInput(attrs={'class':'schcar form-control checkbox', 'autocomplete': 'off', 'id': False}),
+            'copfat': forms.CheckboxInput(attrs={'class':'copfat form-control checkbox', 'autocomplete': 'off', 'id': False}),
+            'noncon': forms.CheckboxInput(attrs={'class':'noncon form-control checkbox', 'autocomplete': 'off', 'id': False}),
             'alias' : forms.TextInput(attrs={'class':'alias form-control', 'autocomplete': 'off', 'id': False}),
             'regfis': forms.Select(attrs={'class':'regfis form-control', 'autocomplete': 'off', 'id': False}, choices=REGFIS),
         }
