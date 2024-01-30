@@ -18,7 +18,7 @@ def get_form_data(instance, fields=None):
     # Iterate through the fields of the instance
     for field in instance._meta.fields:
         field_name = field.name
-        if fields is not None and field_name not in fields or field_name == 'date_created':
+        if fields is not None and field_name not in fields or field_name == 'date_created' or field_name == 'last_modified':
             continue
 
         field_value = getattr(instance, field_name)
