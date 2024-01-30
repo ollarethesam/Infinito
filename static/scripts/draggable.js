@@ -56,6 +56,7 @@ $(document).ready(function(){
                 url: url,
                 success: function (data) {
                     $("#{0}".format(url)).append(data);
+                    $("#{0}".format(url)).find('.clean').trigger('click')
                 },
                 error: function () {
                     $("#{0}".format(url)).append("Failed to load content.");
