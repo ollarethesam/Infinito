@@ -85,7 +85,7 @@ class ScaforForm(ModelForm):
             'imppag': forms.NumberInput(attrs={'class':'imppag form-control l13', 'autocomplete': 'off', 'id': False}),
             'codval': forms.TextInput(attrs={'class':'codval form-control l3', 'autocomplete': 'off', 'id': False}),
             'codpag': forms.TextInput(attrs={'class':'codpag form-control l4', 'autocomplete': 'off', 'id': False}),
-            'modpag': forms.Select(attrs={'class':'modpag form-control l4', 'autocomplete': 'off', 'id': False}, choices=MODPAG),
+            'modpag': forms.Select(attrs={'class':'modpag form-control l27', 'autocomplete': 'off', 'id': False}, choices=MODPAG),
             'cambio': forms.NumberInput(attrs={'class':'cambio form-control l11', 'autocomplete': 'off', 'id': False}),
             'datsca': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datsca form-control l9', 'autocomplete': 'off', 'id': False}),
             'pagato': forms.Select(attrs={'class':'pagato form-control l7', 'autocomplete': 'off', 'id': False}, choices=PAGATO),
