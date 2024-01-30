@@ -104,3 +104,10 @@ class ScaforForm(ModelForm):
                 raise forms.ValidationError(f"Numero progressivo sbagliato, usare {1}")
             else:
                 return numpro
+    def clean_imppag(self, *args, **kwargs):
+        impfat = self.cleaned_data.get('impfat')
+        imppag = self.cleaned_data.get('imppag')
+        if imppag > impfat:
+            raise forms.ValidationError(f"L'importo da pagare non può essere superiore all'importo della fattura")
+        else:
+            return imppag 
