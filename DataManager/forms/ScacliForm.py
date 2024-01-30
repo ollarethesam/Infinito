@@ -28,7 +28,6 @@ class ScacliForm(ModelForm):
             ('N', 'Nota Credito')
         ]
         MODPAG = [
-            ('', ''),
             ("MP01", "MP01-Contanti"),
             ("MP02", "MP02-Assengno"),
             ("MP03", "MP03-Assengno Circolare"),
