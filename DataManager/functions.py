@@ -89,6 +89,7 @@ def formfill(model, key, key_id, keys_list, grid=False, grid_keys=None, main=Non
         return JsonResponse({'grid':{}})
 
 def arrows(model, direction, start_value, field, fields=None, grid=False, grid_keys=None, main=None):
+    print(grid_keys)
     first_record = model.objects.values(field).order_by(field).first()[field]
     last_record = model.objects.values(field).order_by(field).last()[field]
     sign = ''
