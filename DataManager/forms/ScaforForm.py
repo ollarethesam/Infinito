@@ -109,5 +109,7 @@ class ScaforForm(ModelForm):
         imppag = self.cleaned_data.get('imppag')
         if imppag > impfat:
             raise forms.ValidationError(f"L'importo da pagare non può essere superiore all'importo della fattura")
+        elif imppag < 0 or impfat < 0:
+            raise forms.ValidationError(f"Gli importi non possono essere negativi")
         else:
             return imppag 
