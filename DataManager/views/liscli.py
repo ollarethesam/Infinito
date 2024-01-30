@@ -61,7 +61,6 @@ def liscli(request, model=Liscli, modelform=LiscliForm, template='DataManager/ma
             return arrows(model, direction, start_value, field, fields=keys_list[getkey(keys_list, main)], grid=grid, grid_keys=grid_keys, main=main)
                 
         delcode = request.GET.get('delcode')
-        print(f'delcode: {delcode}')
         if delcode:
             return delete(model, delcode)
         

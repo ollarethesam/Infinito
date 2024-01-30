@@ -12,7 +12,6 @@ def getkey(dict, value):
             result = i
     return result
 
-
 def get_form_data(instance, fields=None):
     field_values = {}
     # Iterate through the fields of the instance
@@ -108,16 +107,13 @@ def arrows(model, direction, start_value, field, fields=None, grid=False, grid_k
             values['grid'] = []
             for instance in instances:
                 values['grid'].append(get_form_data(instance, fields=grid_keys))
-            print(values['grid'])
     return JsonResponse(values)
 
 def delete(model, delcode, delkeys=None):
-
     if not isinstance(delcode, dict):
         cond = {model._meta.pk.name: delcode}
     else:
         cond = delcode
-    print(cond)
     if model.objects.filter(**cond).exists():
         try:
             model.objects.get(**cond).delete()
