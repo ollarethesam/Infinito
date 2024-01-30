@@ -12,7 +12,7 @@ class Modpag(models.Model):
     escmes = models.CharField(max_length=40)
     scocas = models.CharField(max_length=5, null=True, blank=True)
     gifisc = models.CharField(max_length=3, null=True, blank=True)
-    modpag = models.CharField(max_length=11)
+    modpag = models.CharField(max_length=4)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)

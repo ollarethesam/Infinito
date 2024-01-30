@@ -1,16 +1,17 @@
 from django.db import models
 from Login.models import CustomUser
-from .client import Client
+from .fornit import Fornit
 from .valute import Valute
 from .modpag import Modpag
 from .banche import Banche
 
-class Scacli(models.Model):
+class Scafor(models.Model):
     numpro = models.IntegerField(auto_created=True, primary_key=True)
-    codcli = models.ForeignKey(Client, to_field='codcli', on_delete=models.CASCADE)
+    codfor = models.ForeignKey(Fornit, to_field='codfor', on_delete=models.CASCADE)
     tipdoc = models.CharField(max_length=1)
     datdoc = models.DateField()
-    numfat = models.CharField(max_length=5)
+    protoc = models.IntegerField()
+    numfat = models.CharField(max_length=15)
     descri = models.CharField(max_length=35)
     impfat = models.DecimalField(max_digits=11, decimal_places=2)
     imppag = models.DecimalField(max_digits=11, decimal_places=2)
@@ -28,4 +29,4 @@ class Scacli(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'scacli'
+        db_table = 'scafor'

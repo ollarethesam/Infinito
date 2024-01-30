@@ -2,15 +2,15 @@ from email.policy import default
 from signal import raise_signal
 from django import forms
 from django.forms import ModelForm
-from DataManager.models.scacli import Scacli
+from DataManager.models.scafor import Scafor
 
 def get_last_numpro():
-        if Scacli.objects.last() is not None:
-            return int(Scacli.objects.last().pk) + 1
+        if Scafor.objects.last() is not None:
+            return int(Scafor.objects.last().pk) + 1
         else:
             return 1
 
-class ScacliForm(ModelForm):
+class ScaforForm(ModelForm):
     ragsoc = forms.CharField(required=False, label='Ragione Sociale', widget=forms.TextInput(attrs={'class':'ragsoc form-control', 'id': False}))
     desval = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'desval form-control', 'id': False}))
     despag = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'despag form-control', 'id': False}))
@@ -58,19 +58,21 @@ class ScacliForm(ModelForm):
             ("MP21", "MP21-SEPA Direct Debit B2B"),
             ("MP22", "MP22-Trattenuta su Somme Già Riscosse"),
         ]
-        model = Scacli
-        fields = ["numpro", 'descri', "codcli", 'ragsoc', "tipdoc", "datdoc", "numfat", "impfat", "imppag", "codval", 'desval', "codpag", 'despag', 'modpag', "cambio", "datsca", "pagato", "codban", 'desban', "tippag"]
+        model = Scafor
+        fields = ["numpro", 'descri', "codcli", 'ragsoc', "tipdoc", "datdoc", 'protoc', "numfat", "impfat", "imppag", "codval", 'desval', "codpag", 'despag', 'modpag' "cambio", "datsca", "pagato", "codban", 'desban', "tippag"]
         labels = {
             'numpro': 'Numero Progressivo',
             'codcli': 'Codice Cliente',
             'tipdoc': 'Tipo Documento',
             'datdoc': 'Data Documento',
+            'protoc': 'Numero Protocollo',
             'numfat': 'Numero Fattura',
             'descri': 'Descrizione',
             'impfat': 'Importo Fattura',
             'imppag': 'Importo da Pagare',
             'codval': 'Codice Valuta',
             'codpag': 'Codice Pagamento',
+            'modpag': 'Modalità Pagamento',
             'cambio': 'Cambio',
             'datsca': 'Data Scadenza',
             'pagato': 'Pagato',
@@ -82,12 +84,14 @@ class ScacliForm(ModelForm):
             'codcli': forms.TextInput(attrs={'class':'codcli form-control l5', 'autocomplete': 'off', 'id': False}),
             'tipdoc': forms.Select(attrs={'class':'tipdoc form-control l9', 'autocomplete': 'off', 'id': False}, choices=TIPDOC),
             'datdoc': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datdoc form-control l9', 'autocomplete': 'off', 'id': False}),
+            'protoc': forms.NumberInput(attrs={'class':'protoc form-control l5', 'autocomplete': 'off', 'id': False}),
             'numfat': forms.NumberInput(attrs={'class':'numfat form-control l5', 'autocomplete': 'off', 'id': False}),
             'descri': forms.TextInput(attrs={'class':'descri form-control l35', 'autocomplete': 'off', 'id': False}),
             'impfat': forms.NumberInput(attrs={'class':'impfat form-control l13', 'autocomplete': 'off', 'id': False}),
             'imppag': forms.NumberInput(attrs={'class':'imppag form-control l13', 'autocomplete': 'off', 'id': False}),
             'codval': forms.TextInput(attrs={'class':'codval form-control l3', 'autocomplete': 'off', 'id': False}),
             'codpag': forms.TextInput(attrs={'class':'codpag form-control l4', 'autocomplete': 'off', 'id': False}),
+            'modpag': forms.Select(attrs={'class':'modpag form-control l4', 'autocomplete': 'off', 'id': False}, choices=MODPAG),
             'cambio': forms.NumberInput(attrs={'class':'cambio form-control l11', 'autocomplete': 'off', 'id': False}),
             'datsca': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datsca form-control l9', 'autocomplete': 'off', 'id': False}),
             'pagato': forms.Select(attrs={'class':'pagato form-control l7', 'autocomplete': 'off', 'id': False}, choices=PAGATO),
