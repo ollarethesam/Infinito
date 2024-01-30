@@ -28,4 +28,4 @@ class Scacli(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'scacli'
+        db_table = 'scaden'
