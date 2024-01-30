@@ -43,6 +43,7 @@ def liscli(request, model=Liscli, modelform=LiscliForm, template='DataManager/ma
         grid = request.GET.get('grid')
         if key:
             grid_keys = tuple(context['grid'].keys())
+            print(grid_keys)
             return formfill(model, key, key_id, keys_list, grid=grid, grid_keys=grid_keys, main=main)
         
         grid_pk_value = request.GET.get('grid_pk_value')
