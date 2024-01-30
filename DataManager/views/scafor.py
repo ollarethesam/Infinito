@@ -7,11 +7,11 @@ from ..functions import *
 from .banche import Banche
 from .modpag import Modpag
 from .valute import Valute
-from .client import Client
+from .fornit import Fornit
 
 def scafor(request, model=Scafor, modelform=ScaforForm, template='DataManager/mainform.html', url_name='scafor', keys_list={
     Scafor: ('numpro', 'descri'),
-    Client: ('codcli', 'ragsoc'),
+    Fornit: ('codfor', 'ragsoc'),
     Banche:('codban', 'desban'),
     Modpag:('codpag', 'despag'),
     Valute:('codval', 'desval'),
