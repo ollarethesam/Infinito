@@ -31,7 +31,7 @@ def get_form_data(instance, fields=None):
                 field_values.update({f"{key}": value for key, value in related_field_values.items() if not field_name == 'user' })
         else:
             field_values[field_name] = field_value
-            print(field_values)
+    print(field_values)
     return field_values
 
 def save_or_update(model, modelform, request, pk_vals):
