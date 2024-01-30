@@ -74,5 +74,5 @@ class ModpagForm(ModelForm):
             'escmes': forms.Select(attrs={'class':'escmes form-control', 'autocomplete': 'off', 'id': False}, choices=ESCMES),
             'scocas': forms.NumberInput(attrs={'class':'scocas form-control', 'autocomplete': 'off', 'id': False}),
             'gifisc': forms.NumberInput(attrs={'class':'gifisc form-control', 'autocomplete': 'off', 'id': False}),
-            'modpag': forms.Select(attrs={'class':'modpag form-control', 'autocomplete': 'off', 'id': False}, choices=MODPAG),
+            'modpag': forms.Select(attrs={'class':'modpag form-control l27', 'autocomplete': 'off', 'id': False}, choices=MODPAG),
         }
