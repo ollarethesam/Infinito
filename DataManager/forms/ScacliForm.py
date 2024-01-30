@@ -43,7 +43,7 @@ class ScacliForm(ModelForm):
             ("MP12", "MP12-RIBA"),
             ("MP13", "MP13-MAV"),
             ("MP14", "MP14-Quietanza Erario"),
-            ("MP15", "MP15-Giroconto su COnti di Contabilità Speciale"),
+            ("MP15", "MP15-Giroconto su Conti di Contabilità Speciale"),
             ("MP16", "MP16-Domiciliazione Bancaria"),
             ("MP17", "MP17-Domiciliazione Postale"),
             ("MP18", "MP18-Bollettino di C/C Postale"),

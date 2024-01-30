@@ -53,7 +53,7 @@ class ScaforForm(ModelForm):
             ("MP22", "MP22-Trattenuta su Somme Già Riscosse"),
         ]
         model = Scafor
-        fields = ["numpro", 'descri', "codfor", 'ragsoc', "tipdoc", "datdoc", 'protoc', "numfat", "impfat", "imppag", "codval", 'desval', "codpag", 'despag', 'modpag', "cambio", "datsca", "pagato", "codban", 'desban', "tippag"]
+        fields = ["numpro", 'descri', "codfor", 'ragsoc', "tipdoc", "datdoc", 'protoc', "numfat", "impfat", "imppag", "codval", 'desval', "codpag", 'despag', "cambio", "datsca", "pagato", "codban", 'desban', "tippag", 'modpag']
         labels = {
             'numpro': 'Numero Progressivo',
             'codfor': 'Codice Fornitore',
