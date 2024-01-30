@@ -62,7 +62,7 @@ class ScaforForm(ModelForm):
         fields = ["numpro", 'descri', "codfor", 'ragsoc', "tipdoc", "datdoc", 'protoc', "numfat", "impfat", "imppag", "codval", 'desval', "codpag", 'despag', 'modpag', "cambio", "datsca", "pagato", "codban", 'desban', "tippag"]
         labels = {
             'numpro': 'Numero Progressivo',
-            'codcli': 'Codice Cliente',
+            'codfor': 'Codice Fornitore',
             'tipdoc': 'Tipo Documento',
             'datdoc': 'Data Documento',
             'protoc': 'Numero Protocollo',
@@ -81,7 +81,7 @@ class ScaforForm(ModelForm):
         }
         widgets = {
             'numpro': forms.TextInput(attrs={'value': get_last_numpro(), 'class':'numpro form-control pk l7', 'autocomplete': 'off', 'id': False}),
-            'codcli': forms.TextInput(attrs={'class':'codcli form-control l5', 'autocomplete': 'off', 'id': False}),
+            'codfor': forms.TextInput(attrs={'class':'codfor form-control l5', 'autocomplete': 'off', 'id': False}),
             'tipdoc': forms.Select(attrs={'class':'tipdoc form-control l9', 'autocomplete': 'off', 'id': False}, choices=TIPDOC),
             'datdoc': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datdoc form-control l9', 'autocomplete': 'off', 'id': False}),
             'protoc': forms.NumberInput(attrs={'class':'protoc form-control l5', 'autocomplete': 'off', 'id': False}),
