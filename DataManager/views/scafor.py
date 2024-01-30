@@ -10,8 +10,8 @@ from .valute import Valute
 from .fornit import Fornit
 
 def scafor(request, model=Scafor, modelform=ScaforForm, template='DataManager/mainform.html', url_name='scafor', keys_list={
-    Scafor: ('numpro', 'descri'),
-    Fornit: ('codfor', 'ragsoc'),
+    Scafor:('numpro', 'descri'),
+    Fornit:('codfor', 'ragsoc'),
     Banche:('codban', 'desban'),
     Modpag:('codpag', 'despag'),
     Valute:('codval', 'desval'),
