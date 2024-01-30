@@ -4,11 +4,11 @@ from django import forms
 from django.forms import ModelForm
 from DataManager.models.scafor import Scafor
 
-def get_last_numpro():
-        if Scafor.objects.last() is not None:
-            return int(Scafor.objects.last().pk) + 1
-        else:
-            return 1
+# def get_last_numpro():
+#         if Scafor.objects.last() is not None:
+#             return int(Scafor.objects.last().pk) + 1
+#         else:
+#             return 1
 
 class ScaforForm(ModelForm):
     ragsoc = forms.CharField(required=False, label='Ragione Sociale', widget=forms.TextInput(attrs={'class':'ragsoc form-control', 'id': False}))
@@ -80,7 +80,7 @@ class ScaforForm(ModelForm):
             'tippag': 'Tipo Pagamento',
         }
         widgets = {
-            'numpro': forms.TextInput(attrs={'value': get_last_numpro(), 'class':'numpro form-control pk l7', 'autocomplete': 'off', 'id': False}),
+            'numpro': forms.TextInput(attrs={'value': 1, 'class':'numpro form-control pk l7', 'autocomplete': 'off', 'id': False}),
             'codcli': forms.TextInput(attrs={'class':'codcli form-control l5', 'autocomplete': 'off', 'id': False}),
             'tipdoc': forms.Select(attrs={'class':'tipdoc form-control l9', 'autocomplete': 'off', 'id': False}, choices=TIPDOC),
             'datdoc': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datdoc form-control l9', 'autocomplete': 'off', 'id': False}),
@@ -100,7 +100,7 @@ class ScaforForm(ModelForm):
         }
     def clean_numpro(self, *args, **kwargs):
         numpro = self.cleaned_data.get('numpro')
-        if numpro > get_last_numpro():
-            raise forms.ValidationError(f"Numero progressivo sbagliato, usare {get_last_numpro()}")
+        if numpro > 1:
+            raise forms.ValidationError(f"Numero progressivo sbagliato, usare {1}")
         else:
             return numpro
