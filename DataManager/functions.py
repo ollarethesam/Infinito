@@ -29,7 +29,7 @@ def get_form_data(instance, fields=None):
                 # Recursively call the function for the related instance
                 related_field_values = get_form_data(related_instance)
                 # Update the main dictionary with the related field values
-                field_values.update({f"{key}": value for key, value in related_field_values.items() if not field_name == 'user'})
+                field_values.update({f"{key}": value for key, value in related_field_values.items() if not field_name == 'user' or not field_name == 'date_created' or not field_name == 'last_modified' })
         else:
             field_values[field_name] = field_value
     return field_values
