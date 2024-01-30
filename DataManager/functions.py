@@ -79,6 +79,7 @@ def formfill(model, key, key_id, keys_list, grid=False, grid_keys=None, main=Non
             values['grid'] = []
             for instance in instances:
                 values['grid'].append(get_form_data(instance, fields=grid_keys))
+                print(values['grid'].keys())
         return JsonResponse(values)
     except model.DoesNotExist as e:
         print(e, type(e))
