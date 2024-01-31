@@ -289,8 +289,21 @@
     justify-content: center;
 }
 .grid-container{
-    max-height: 10rem;
-    overflow-y: scroll;
+    max-height: 20rem;
+    overflow-y: auto;
+}
+.grid-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.grid-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.grid-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
 }
 .grid{
     background: #d1ecff81;
@@ -300,6 +313,7 @@
     border-radius: 0.5rem ;
     border: 1px solid black;
     overflow: hidden;
+    width: 100%;
 }
 /* Apply a border to the right of all but the last column */
 .grid th:not(:last-child),
