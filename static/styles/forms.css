@@ -177,15 +177,11 @@
 }
 .dropdown-menu::-webkit-scrollbar, .grid-container::-webkit-scrollbar{
     border-radius: 1rem;
-    width: 0.4rem;
+    width: 0.5rem;
 }
 .dropdown-menu::-webkit-scrollbar-thumb, .grid-container::-webkit-scrollbar-thumb{
     border-radius: 1rem;
     background: #888;
-    box-shadow: 
-        -0.15rem -0.15rem 0.25rem #555 inset, 
-        0.15rem 0.15rem 0.25rem #fff inset;
-    width: 0.2rem;
 }
 .dropdown-menu::-webkit-scrollbar-thumb-button, .grid-container::-webkit-scrollbar-thumb-button{
     height: 0.2rem;
