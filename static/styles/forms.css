@@ -188,6 +188,9 @@
     width: 0.2rem;
     background: #000;
 }
+.dropdown-menu::-webkit-scrollbar-track, .grid-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 .dropdown-menu .inline:first-child{
     border-radius: 0.25rem 0.25rem 0 0;
 }
