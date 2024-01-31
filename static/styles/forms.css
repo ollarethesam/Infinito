@@ -175,11 +175,11 @@
     pointer-events: all;
     transition: max-height 0.3s, overflow 0.4s, margin-top 0.3s;
 }
-.dropdown-menu::-webkit-scrollbar{
+.dropdown-menu::-webkit-scrollbar, .grid-container::-webkit-scrollbar{
     border-radius: 1rem;
     width: 0.4rem;
 }
-.dropdown-menu::-webkit-scrollbar-thumb{
+.dropdown-menu::-webkit-scrollbar-thumb, .grid-container::-webkit-scrollbar-thumb{
     border-radius: 1rem;
     background: #888;
     box-shadow: 
@@ -187,7 +187,7 @@
         0.15rem 0.15rem 0.25rem #fff inset;
     width: 0.2rem;
 }
-.dropdown-menu::-webkit-scrollbar-thumb-button{
+.dropdown-menu::-webkit-scrollbar-thumb-button, .grid-container::-webkit-scrollbar-thumb-button{
     height: 0.2rem;
     width: 0.2rem;
     background: #000;
@@ -291,20 +291,6 @@
 .grid-container{
     max-height: 20rem;
     overflow-y: auto;
-}
-.grid-container::-webkit-scrollbar {
-    width: 12px;
-}
-
-.grid-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 8px;
-}
-
-.grid-container::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-    border: 1px solid #f1f1f1;
 }
 .grid{
     background: #d1ecff81;
