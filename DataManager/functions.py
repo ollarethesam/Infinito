@@ -13,7 +13,6 @@ def getkey(dict, value):
     return result
 
 def get_form_data(instance, fields=None):
-    print(fields)
     field_values = {}
     # Iterate through the fields of the instance
     for field in instance._meta.fields:

@@ -288,6 +288,10 @@
     align-items: center;
     justify-content: center;
 }
+.grid-container{
+    max-height: 10rem;
+    overflow-y: scroll;
+}
 .grid{
     background: #d1ecff81;
     margin-top: 0.5rem;
@@ -323,7 +327,8 @@
     background-color: rgba(107, 107, 107, 0.5)
 }
 .grid-item{
-    padding: 0.2rem
+    padding: 0 0.2rem;
+    font-size: 0.9rem;
 }
 .section-title{
     display: flex;

@@ -44,13 +44,15 @@
         </div>
     </div>
     {% if grid %}
-    <table class="grid">
-        <tr class="title-row">
-            {% for field, title in grid.items %}
-                <th class="grid-item">{{ title }}</th>
-            {% endfor %}
-        </tr>
-    </table>
+    <div class="grid-container">
+        <table class="grid">
+            <tr class="title-row">
+                {% for field, title in grid.items %}
+                    <th class="grid-item">{{ title }}</th>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
     {% endif %}
     <div class="inline btn-container">
         <button type="submit" class="submit-btn">Salva</button>
