@@ -1,14 +1,14 @@
 from django.db import models
 from Login.models import CustomUser
-from artico import Artico
-from client import Client
-from fornit import Fornit
-from caumag import Caumag
-from ordfor import Ordfor
-from ordcli import Ordcli
-from ordpro import Ordpro
-from fasi import Fasi
-from commes import Commes
+from .artico import Artico
+from .client import Client
+from .fornit import Fornit
+from .caumag import Caumag
+from .ordfor import Ordfor
+from .ordcli import Ordcli
+from .ordpro import Ordpro
+from .fasi import Fasi
+from .commes import Commes
 from Infinito.settings import DECVAL, DECPRE, DECQUA
 
 class Movmag(models.Model):
