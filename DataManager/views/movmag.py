@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from DataManager.forms.MovmagForm import MovmagForm
-from models.movmag import Movmag
-from models.caumag import Caumag
-from models.client import Client
-from models.fornit import Fornit
-from models.artico import Artico
-from models.commes import Commes
+from DataManager.models.movmag import Movmag
+from DataManager.models.caumag import Caumag
+from DataManager.models.client import Client
+from DataManager.models.fornit import Fornit
+from DataManager.models.artico import Artico
+from DataManager.models.commes import Commes
 from django.shortcuts import get_object_or_404
 from ..functions import *
 
