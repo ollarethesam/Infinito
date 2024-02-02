@@ -11,7 +11,7 @@ class Ordcli(models.Model):
     
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['nuorfo', 'anorfo'], name='ordcli_sk')
+            models.UniqueConstraint(fields=['nuorcl', 'anorcl'], name='ordcli_sk')
         ]
         managed = True
         db_table = 'ordcli'
