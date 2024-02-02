@@ -39,4 +39,5 @@ urlpatterns = [
     path('Gestione-Scadenziario-Fornitori', scafor, name="scafor"),
     path('Ragione-Sociale-Utente', ragsoc, name="ragsoc"),
     path('Gestione-Movimenti-Magazzino', movmag, name="movmag"),
+    path('Gestione-Causali-Magazzino', caumag, name="caumag"),
 ]

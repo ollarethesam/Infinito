@@ -4,14 +4,14 @@ from DataManager.forms.ClientForm import ClientForm
 from DataManager.models.client import Client
 from django.shortcuts import get_object_or_404
 from ..functions import *
-from .banche import Banche
-from .modpag import Modpag
-from .zone import   Zone
-from .eseiva import Eseiva
-from .valute import Valute
-from .nazion import Nazion
-from .catego import Catego
-from .ivaven import Ivaven
+from DataManager.models.banche import Banche
+from DataManager.models.modpag import Modpag
+from DataManager.models.zone import   Zone
+from DataManager.models.eseiva import Eseiva
+from DataManager.models.valute import Valute
+from DataManager.models.nazion import Nazion
+from DataManager.models.catego import Catego
+from DataManager.models.ivaven import Ivaven
 
 def client(request, model=Client, modelform=ClientForm, template='DataManager/client.html', url_name='client', keys_list={
     Client: ('codcli', 'ragsoc'),

@@ -2,6 +2,7 @@ from django.db import models
 from Login.models import CustomUser
 
 class Ordpro(models.Model):
+    id = models.AutoField(primary_key=True)
     nuorpr = models.CharField(max_length=10)
     anorpr = models.CharField(max_length=10)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
