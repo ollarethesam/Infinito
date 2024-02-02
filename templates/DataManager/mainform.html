@@ -20,7 +20,7 @@
                             </button>
                         {% endif %}
                         {% with next_field=form|get_next_field:field %}
-                            {% if not next_field.label %}
+                            {% while not next_field.label %}
                                 {{ next_field }}
                                 {% if next_field.name in ddfields %}
                                     <button type="button" class="dropdown">
@@ -29,7 +29,7 @@
                                         <ul class="dropdown-menu"></ul>
                                     </button>
                                 {% endif %}
-                            {% endif %}
+                            {% endwhile %}
                         {% endwith %}
                         {% if field.name in ddofields %}
                             {% for key, value in ddofields.items %}
