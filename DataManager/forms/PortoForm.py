@@ -13,6 +13,6 @@ class PortoForm(ModelForm):
             'despor': 'Descrizione',
         }
         widgets = {
-            'codpor': forms.TextInput(attrs={'class':'codpor form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'despor': forms.TextInput(attrs={'class':'despor form-control', 'autocomplete': 'off', 'id': False})
+            'codpor': forms.TextInput(attrs={'class':'codpor Porto form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'despor': forms.TextInput(attrs={'class':'despor Porto form-control', 'autocomplete': 'off', 'id': False})
         }

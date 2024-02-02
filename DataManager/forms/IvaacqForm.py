@@ -31,11 +31,11 @@ class IvaacqForm(ModelForm):
             'esclip': 'Escluso da Lipe',
         }
         widgets = {
-            'codiva': forms.TextInput(attrs={'codiva class':'form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'desiva': forms.TextInput(attrs={'desiva class':'form-control', 'autocomplete': 'off', 'id': False}),
-            'aliquo': forms.TextInput(attrs={'aliquo class':'form-control', 'autocomplete': 'off', 'id': False}),
-            'indetr': forms.TextInput(attrs={'indetr class':'form-control', 'autocomplete': 'off', 'id': False}),
-            'indagg': forms.Select(attrs={'indagg class':'form-control', 'autocomplete': 'off', 'id': False}, choices=INDAGG),
-            'natura': forms.Select(attrs={'natura class':'form-control', 'autocomplete': 'off', 'id': False}, choices=NATURA),
-            'esclip': forms.CheckboxInput(attrs={'esclip class':'form-control checkbox', 'autocomplete': 'off', 'id': False})
+            'codiva': forms.TextInput(attrs={'codiva class':'codiva Ivaacq form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'desiva': forms.TextInput(attrs={'desiva class':'desiva Ivaacq form-control', 'autocomplete': 'off', 'id': False}),
+            'aliquo': forms.TextInput(attrs={'aliquo class':'aliquo form-control', 'autocomplete': 'off', 'id': False}),
+            'indetr': forms.TextInput(attrs={'indetr class':'indetr form-control', 'autocomplete': 'off', 'id': False}),
+            'indagg': forms.Select(attrs={'indagg class':'indagg form-control', 'autocomplete': 'off', 'id': False}, choices=INDAGG),
+            'natura': forms.Select(attrs={'natura class':'natura form-control', 'autocomplete': 'off', 'id': False}, choices=NATURA),
+            'esclip': forms.CheckboxInput(attrs={'esclip class':'esclip form-control checkbox', 'autocomplete': 'off', 'id': False})
         }

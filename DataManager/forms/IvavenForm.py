@@ -30,8 +30,8 @@ class IvavenForm(ModelForm):
             'esclip': 'Escluso da Lipe',
         }
         widgets = {
-            'codiva': forms.TextInput(attrs={'class':'codiva form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'desiva': forms.TextInput(attrs={'class':'desiva form-control', 'autocomplete': 'off', 'id': False}),
+            'codiva': forms.TextInput(attrs={'class':'codiva Ivaven form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'desiva': forms.TextInput(attrs={'class':'desiva Ivaven form-control', 'autocomplete': 'off', 'id': False}),
             'aliquo': forms.TextInput(attrs={'class':'aliquo form-control', 'autocomplete': 'off', 'id': False}),
             'indagg': forms.Select(attrs={'class':'indagg form-control', 'autocomplete': 'off', 'id': False}, choices=INDAGG),
             'natura': forms.Select(attrs={'class':'natura form-control', 'autocomplete': 'off', 'id': False}, choices=NATURA),

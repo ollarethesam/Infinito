@@ -38,4 +38,5 @@ urlpatterns = [
     path('Gestione-Scadenziario-Clienti', scacli, name="scacli"),
     path('Gestione-Scadenziario-Fornitori', scafor, name="scafor"),
     path('Ragione-Sociale-Utente', ragsoc, name="ragsoc"),
+    path('Gestione-Movimenti-Magazzino', movmag, name="movmag"),
 ]

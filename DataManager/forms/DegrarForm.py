@@ -13,6 +13,6 @@ class DegrarForm(ModelForm):
             'desgar': 'Descrizione',
         }
         widgets = {
-            'codgar': forms.TextInput(attrs={'class':'codgar form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'desgar': forms.TextInput(attrs={'class':'desgar form-control', 'autocomplete': 'off', 'id': False})
+            'codgar': forms.TextInput(attrs={'class':'codgar Degrar form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'desgar': forms.TextInput(attrs={'class':'desgar Degrar form-control', 'autocomplete': 'off', 'id': False})
         }

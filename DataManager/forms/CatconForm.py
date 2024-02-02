@@ -15,7 +15,7 @@ class CatconForm(ModelForm):
             'codpia': 'Codice Conto',
         }
         widgets = {
-            'codcat': forms.TextInput(attrs={'class':'codcat form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'descat': forms.TextInput(attrs={'class':'descat form-control', 'autocomplete': 'off', 'id': False}),
+            'codcat': forms.TextInput(attrs={'class':'codcat Catcon form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'descat': forms.TextInput(attrs={'class':'descat Catcon form-control', 'autocomplete': 'off', 'id': False}),
             'codpia': forms.TextInput(attrs={'class':'codpia form-control l6', 'autocomplete': 'off', 'id': False})
         }

@@ -13,6 +13,6 @@ class RaggfiForm(ModelForm):
             'desrag': 'Descrizione',
         }
         widgets = {
-            'codrag': forms.TextInput(attrs={'class':'codrag form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'desrag': forms.TextInput(attrs={'class':'desrag form-control', 'autocomplete': 'off', 'id': False}),
+            'codrag': forms.TextInput(attrs={'class':'codrag Raggfi form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'desrag': forms.TextInput(attrs={'class':'desrag Raggfi form-control', 'autocomplete': 'off', 'id': False}),
         }

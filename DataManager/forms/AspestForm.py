@@ -13,6 +13,6 @@ class AspestForm(ModelForm):
             'desasp': 'Descrizione',
         }
         widgets = {
-            'codasp': forms.TextInput(attrs={'class':'codasp form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'desasp': forms.TextInput(attrs={'class':'desasp form-control', 'autocomplete': 'off', 'id': False}),
+            'codasp': forms.TextInput(attrs={'class':'codasp Aspest form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'desasp': forms.TextInput(attrs={'class':'desasp Aspest form-control', 'autocomplete': 'off', 'id': False}),
         }

@@ -15,8 +15,8 @@ class ValuteForm(ModelForm):
             'valcam': 'Valore Cambio'
         }
         widgets = {
-            'codval': forms.TextInput(attrs={'class':'codval form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'desval': forms.TextInput(attrs={'class':'desval form-control', 'autocomplete': 'off', 'id': False}),
+            'codval': forms.TextInput(attrs={'class':'codval Valute form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'desval': forms.TextInput(attrs={'class':'desval Valute form-control', 'autocomplete': 'off', 'id': False}),
             'simval': forms.TextInput(attrs={'class':'simval form-control', 'autocomplete': 'off', 'id': False}),
             'valcam': forms.TextInput(attrs={'class':'valcam form-control', 'autocomplete': 'off', 'id': False})
         }

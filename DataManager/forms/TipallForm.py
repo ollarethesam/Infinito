@@ -13,6 +13,6 @@ class TipallForm(ModelForm):
             'destal': 'Descrizione',
         }
         widgets = {
-            'codtal': forms.TextInput(attrs={'class':'codtal form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'destal': forms.TextInput(attrs={'class':'destal form-control', 'autocomplete': 'off', 'id': False}),
+            'codtal': forms.TextInput(attrs={'class':'codtal Tipall form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'destal': forms.TextInput(attrs={'class':'destal Tipall form-control', 'autocomplete': 'off', 'id': False}),
         }

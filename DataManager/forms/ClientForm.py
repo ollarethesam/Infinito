@@ -5,14 +5,14 @@ from django.forms import ModelForm
 from DataManager.models.client import Client
 
 class ClientForm(ModelForm):
-    despag = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'despag form-control greybg', 'readonly': True, 'id': False}))
-    deszon = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'deszon form-control greybg', 'readonly': True, 'id': False}))
-    desiva = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desiva form-control greybg', 'readonly': True, 'id': False}))
-    datric = forms.CharField(required = False,label='', widget=forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datric form-control greybg', 'autocomplete': 'off', 'readonly': True, 'id': False}))
-    desval = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desval form-control greybg', 'readonly': True, 'id': False}))
-    descat = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'descat form-control greybg', 'readonly': True, 'id': False}))
-    desnaz = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desnaz form-control greybg', 'readonly': True, 'id': False}))
-    desban = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desban form-control greybg', 'readonly': True, 'id': False}))
+    despag = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'despag Modpag form-control greybg', 'readonly': True, 'id': False}))
+    deszon = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'deszon Zone form-control greybg', 'readonly': True, 'id': False}))
+    desiva = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desiva Ivaven form-control greybg', 'readonly': True, 'id': False}))
+    datric = forms.CharField(required = False,label='', widget=forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datric Eseiva form-control greybg', 'autocomplete': 'off', 'readonly': True, 'id': False}))
+    desval = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desval Valute form-control greybg', 'readonly': True, 'id': False}))
+    descat = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'descat Nazion form-control greybg', 'readonly': True, 'id': False}))
+    desnaz = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desnaz Catego form-control greybg', 'readonly': True, 'id': False}))
+    desban = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desban Banche form-control greybg', 'readonly': True, 'id': False}))
     desest = forms.CharField(required = False,label='', widget=forms.TextInput(attrs={'class':'desest form-control greybg', 'readonly': True, 'id': False}))
     proimp = forms.CharField(required = False,label='Prog. Imponibile', widget=forms.TextInput(attrs={'class':'proimp form-control alright greybg', 'readonly': True, 'id': False}))
     proiva = forms.CharField(required = False,label='Prog. Iva', widget=forms.TextInput(attrs={'class':'proiva form-control alright greybg', 'readonly': True, 'id': False}))
@@ -118,26 +118,26 @@ class ClientForm(ModelForm):
             'pariva' : forms.TextInput(attrs={'class':'pariva form-control l11', 'autocomplete': 'off', 'id': False}),
             'banapp' : forms.TextInput(attrs={'class':'banapp form-control', 'autocomplete': 'off', 'id': False}),
             'fido'   : forms.NumberInput(attrs={'class':'fido form-control l5 ', 'autocomplete': 'off','step':'0.01', 'id': False}),
-            'codpag' : forms.TextInput(attrs={'class':'codpag form-control fk l3', 'autocomplete': 'off', 'id': False}),
-            'codzon' : forms.TextInput(attrs={'class':'codzon form-control fk l3', 'autocomplete': 'off', 'id': False}),
+            'codpag' : forms.TextInput(attrs={'class':'codpag Modpag form-control fk l3', 'autocomplete': 'off', 'id': False}),
+            'codzon' : forms.TextInput(attrs={'class':'codzon Zone form-control fk l3', 'autocomplete': 'off', 'id': False}),
             'sconto' : forms.NumberInput(attrs={'class':'sconto form-control', 'autocomplete': 'off','step':'0.01', 'id': False}),
-            'codiva' : forms.TextInput(attrs={'class':'codiva form-control fk l2', 'autocomplete': 'off', 'id': False}),
-            'codese' : forms.TextInput(attrs={'class':'codese form-control fk l4', 'autocomplete': 'off', 'id': False}),
+            'codiva' : forms.TextInput(attrs={'class':'codiva Ivaven form-control fk l2', 'autocomplete': 'off', 'id': False}),
+            'codese' : forms.TextInput(attrs={'class':'codese Eseiva form-control fk l4', 'autocomplete': 'off', 'id': False}),
             'codcab' : forms.TextInput(attrs={'class':'codcab form-control l4', 'autocomplete': 'off', 'id': False}),
             'codabi' : forms.TextInput(attrs={'class':'codabi form-control l5', 'autocomplete': 'off', 'id': False}),
-            'codval' : forms.TextInput(attrs={'class':'codval form-control fk l3', 'autocomplete': 'off', 'id': False}),
-            'codnaz' : forms.TextInput(attrs={'class':'codnaz form-control fk l2', 'autocomplete': 'off', 'id': False}),
+            'codval' : forms.TextInput(attrs={'class':'codval Valute form-control fk l3', 'autocomplete': 'off', 'id': False}),
+            'codnaz' : forms.TextInput(attrs={'class':'codnaz Nazion form-control fk l2', 'autocomplete': 'off', 'id': False}),
             'paese'  : forms.TextInput(attrs={'class':'paese form-control l2', 'autocomplete': 'off', 'id': False}),
             'cineur' : forms.TextInput(attrs={'class':'cineur form-control l2', 'autocomplete': 'off', 'id': False}),
             'cin'    : forms.TextInput(attrs={'class':'cin form-control l1', 'autocomplete': 'off', 'id': False}),
             'conto'  : forms.TextInput(attrs={'class':'conto form-control l12', 'autocomplete': 'off', 'id': False}),
-            'codcat' : forms.TextInput(attrs={'class':'codcat form-control fk l2', 'autocomplete': 'off', 'id': False}),
+            'codcat' : forms.TextInput(attrs={'class':'codcat Catego form-control fk l2', 'autocomplete': 'off', 'id': False}),
             'chiusf' : forms.DateInput(format='%d-%m', attrs={'type':'date', 'class':'chiusf  form-control', 'autocomplete': 'off', 'id': False}),
             'chiust' : forms.DateInput(format='%d-%m', attrs={'type':'date', 'class':'chiust  form-control', 'autocomplete': 'off', 'id': False}),
             'nome'   : forms.TextInput(attrs={'class':'nome form-control', 'autocomplete': 'off', 'id': False}),
             'spese'  : forms.CheckboxInput(attrs={'class':'spese form-control checkbox', 'autocomplete': 'off', 'required': False, 'id': False}),
             'storic' : forms.CheckboxInput(attrs={'class':'storic form-control checkbox', 'autocomplete': 'off', 'required': False, 'id': False}),
-            'codban' : forms.TextInput(attrs={'class':'codban form-control fk l3', 'autocomplete': 'off', 'id': False}),
+            'codban' : forms.TextInput(attrs={'class':'codban Banche form-control fk l3', 'autocomplete': 'off', 'id': False}),
             'staest' : forms.TextInput(attrs={'class':'staest form-control l2', 'autocomplete': 'off', 'id': False}),
             'cognom' : forms.TextInput(attrs={'class':'cognom form-control', 'autocomplete': 'off', 'id': False}),
             'comnas' : forms.TextInput(attrs={'class':'comnas form-control', 'autocomplete': 'off', 'id': False}),

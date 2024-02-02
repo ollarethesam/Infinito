@@ -1,15 +1,13 @@
 from django.db import models
 from Login.models import CustomUser
-from Infinito.settings import DECVAL, DECPRE, DECQUA
 
-class Artico(models.Model):
-    codart = models.CharField(primary_key=True, max_length=16)
-    desart = models.CharField(max_length=40)
-    prezzo = models.DecimalField(max_digits=10, decimal_places=DECPRE)
+class Fasi(models.Model):
+    codfas = models.CharField(max_length=10)
+    desfas = models.CharField(max_length=10)
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-
+    
     class Meta:
         managed = True
-        db_table = 'artico'
+        db_table = 'fasi'

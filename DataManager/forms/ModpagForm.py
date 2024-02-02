@@ -64,8 +64,8 @@ class ModpagForm(ModelForm):
             'modpag': 'Modalità Pagamento',
         }
         widgets = {
-            'codpag': forms.TextInput(attrs={'class':'codpag form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'despag': forms.TextInput(attrs={'class':'despag form-control', 'autocomplete': 'off', 'id': False}),
+            'codpag': forms.TextInput(attrs={'class':'codpag Modpag form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'despag': forms.TextInput(attrs={'class':'despag Modpag form-control', 'autocomplete': 'off', 'id': False}),
             'tippag': forms.Select(attrs={'class':'tippag form-control', 'autocomplete': 'off', 'id': False}, choices=TIPPAG),
             'numrat': forms.NumberInput(attrs={'class':'numrat form-control', 'autocomplete': 'off', 'id': False}),
             'giosca': forms.NumberInput(attrs={'class':'giosca form-control', 'autocomplete': 'off', 'id': False}),

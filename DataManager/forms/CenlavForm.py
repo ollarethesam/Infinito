@@ -13,6 +13,6 @@ class CenlavForm(ModelForm):
             'descen': 'Descrizione Gruppo',
         }
         widgets = {
-            'codcen': forms.TextInput(attrs={'class':'codcen form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'descen': forms.TextInput(attrs={'class':'descen form-control', 'autocomplete': 'off', 'id': False}),
+            'codcen': forms.TextInput(attrs={'class':'codcen Cenlav form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'descen': forms.TextInput(attrs={'class':'descen Cenlav form-control', 'autocomplete': 'off', 'id': False}),
         }

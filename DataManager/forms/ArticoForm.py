@@ -14,7 +14,7 @@ class ArticoForm(ModelForm):
             'prezzo': 'Prezzo'
         }
         widgets = {
-            'codart': forms.TextInput(attrs={'class':'codart form-control pk l16', 'autocomplete': 'off', 'id': False}),
-            'desart': forms.TextInput(attrs={'class':'desart form-control', 'autocomplete': 'off', 'id': False}),
+            'codart': forms.TextInput(attrs={'class':'codart Artico form-control pk l16', 'autocomplete': 'off', 'id': False}),
+            'desart': forms.TextInput(attrs={'class':'desart Artico form-control', 'autocomplete': 'off', 'id': False}),
             'prezzo': forms.NumberInput(attrs={'class':'prezzo form-control short', 'autocomplete': 'off', 'step':'0.0001', 'value':'0.0000', 'id': False})
         }

@@ -5,12 +5,12 @@ from django.forms import ModelForm
 from DataManager.models.fornit import Fornit
 
 class FornitForm(ModelForm):
-    despag = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'despag form-control', 'readonly': True, 'id': False}))
-    deszon = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'deszon form-control', 'readonly': True, 'id': False}))
-    desiva = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'desiva form-control', 'readonly': True, 'id': False}))
-    descat = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'descat form-control', 'readonly': True, 'id': False}))
-    desnaz = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'desnaz form-control', 'readonly': True, 'id': False}))
-    desban = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'desban form-control', 'readonly': True, 'id': False}))
+    despag = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'despag Modpag form-control', 'readonly': True, 'id': False}))
+    deszon = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'deszon Nazion form-control', 'readonly': True, 'id': False}))
+    desiva = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'desiva Ivaacq form-control', 'readonly': True, 'id': False}))
+    descat = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'descat Catego form-control', 'readonly': True, 'id': False}))
+    desnaz = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'desnaz Zone form-control', 'readonly': True, 'id': False}))
+    desban = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'desban Banche form-control', 'readonly': True, 'id': False}))
     desest = forms.CharField(required = False, label='', widget=forms.TextInput(attrs={'class':'desest form-control', 'readonly': True, 'id': False}))
     proimp = forms.CharField(required = False, label='Prog. Imponibile', widget=forms.TextInput(attrs={'class':'proimp form-control alright greybg', 'readonly': True, 'id': False}))
     proiva = forms.CharField(required = False, label='Prog. Iva', widget=forms.TextInput(attrs={'class':'proiva form-control alright greybg', 'readonly': True, 'id': False}))
@@ -104,7 +104,7 @@ class FornitForm(ModelForm):
             'fax'   : forms.TextInput(attrs={'class':'fax form-control l15', 'autocomplete': 'off', 'id': False}),
             'email' : forms.TextInput(attrs={'class':'email form-control', 'autocomplete': 'off', 'id': False}),
             'sito'  : forms.TextInput(attrs={'class':'sito form-control', 'autocomplete': 'off', 'id': False}),
-            'codpag': forms.TextInput(attrs={'class':'codpag form-control fk l3', 'autocomplete': 'off', 'id': False}),
+            'codpag': forms.TextInput(attrs={'class':'codpag Modpag form-control fk l3', 'autocomplete': 'off', 'id': False}),
             'pae'   : forms.TextInput(attrs={'class':'pae form-control l2', 'autocomplete': 'off', 'id': False}), 
             'cineur': forms.TextInput(attrs={'class':'cineur form-control l2', 'autocomplete': 'off', 'id': False}),
             'cin'   : forms.TextInput(attrs={'class':'cin form-control l1', 'autocomplete': 'off', 'id': False}),
@@ -112,11 +112,11 @@ class FornitForm(ModelForm):
             'codabi': forms.TextInput(attrs={'class':'codabi form-control l5', 'autocomplete': 'off', 'id': False}),
             'codcab': forms.TextInput(attrs={'class':'codcab form-control l4', 'autocomplete': 'off', 'id': False}),
             'banapp': forms.TextInput(attrs={'class':'banapp form-control', 'autocomplete': 'off', 'id': False}),
-            'codnaz': forms.TextInput(attrs={'class':'codnaz form-control fk l2', 'autocomplete': 'off', 'id': False}),
-            'codiva': forms.TextInput(attrs={'class':'codiva form-control fk l2', 'autocomplete': 'off', 'id': False}),
-            'codcat': forms.TextInput(attrs={'class':'codcat form-control fk l2', 'autocomplete': 'off', 'id': False}),
-            'codzon': forms.TextInput(attrs={'class':'codzon form-control fk l3', 'autocomplete': 'off', 'id': False}),
-            'codban': forms.TextInput(attrs={'class':'codban form-control fk l3', 'autocomplete': 'off', 'id': False}),
+            'codnaz': forms.TextInput(attrs={'class':'codnaz Nazion form-control fk l2', 'autocomplete': 'off', 'id': False}),
+            'codiva': forms.TextInput(attrs={'class':'codiva Ivaacq form-control fk l2', 'autocomplete': 'off', 'id': False}),
+            'codcat': forms.TextInput(attrs={'class':'codcat Catego form-control fk l2', 'autocomplete': 'off', 'id': False}),
+            'codzon': forms.TextInput(attrs={'class':'codzon Zone form-control fk l3', 'autocomplete': 'off', 'id': False}),
+            'codban': forms.TextInput(attrs={'class':'codban Banche form-control fk l3', 'autocomplete': 'off', 'id': False}),
             'storic': forms.CheckboxInput(attrs={'class':'storic form-control checkbox', 'autocomplete': 'off', 'id': False}),
             'staest': forms.TextInput(attrs={'class':'staest form-control l2', 'autocomplete': 'off', 'id': False}),
             'cognom': forms.TextInput(attrs={'class':'cognom form-control', 'autocomplete': 'off', 'id': False}),

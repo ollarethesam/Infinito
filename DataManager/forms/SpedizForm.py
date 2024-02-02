@@ -13,6 +13,6 @@ class SpedizForm(ModelForm):
             'desspe': 'Descrizione',
         }
         widgets = {
-            'codspe': forms.TextInput(attrs={'class':'codspe form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'desspe': forms.TextInput(attrs={'class':'desspe form-control', 'autocomplete': 'off', 'id': False})
+            'codspe': forms.TextInput(attrs={'class':'codspe Spediz form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'desspe': forms.TextInput(attrs={'class':'desspe Spediz form-control', 'autocomplete': 'off', 'id': False})
         }

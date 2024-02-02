@@ -11,6 +11,6 @@ class CategoForm(ModelForm):
             'descat': 'Descrizione Categoria',
         }
         widgets = {
-            'codcat': forms.TextInput(attrs={'class':'codcat form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'descat': forms.TextInput(attrs={'class':'descat form-control', 'autocomplete': 'off', 'id': False})
+            'codcat': forms.TextInput(attrs={'class':'codcat Catego form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'descat': forms.TextInput(attrs={'class':'descat Catego form-control', 'autocomplete': 'off', 'id': False})
         }

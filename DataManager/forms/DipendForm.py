@@ -24,8 +24,8 @@ class DipendForm(ModelForm):
             'tiptar': 'Tipo Tariffa',
         }
         widgets = {
-            'coddip': forms.TextInput(attrs={'class':'coddip form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'nome':   forms.TextInput(attrs={'class':'nome form-control long', 'autocomplete': 'off', 'id': False}),
+            'coddip': forms.TextInput(attrs={'class':'coddip Dipend form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'nome':   forms.TextInput(attrs={'class':'nome Dipend form-control long', 'autocomplete': 'off', 'id': False}),
             'assunt': forms.Select(attrs={'class':'assunt form-control', 'autocomplete': 'off', 'id': False}, choices=ASSUNT),
             'tiptar': forms.Select(attrs={'class':'tiptar form-control', 'autocomplete': 'off', 'id': False}, choices=TIPTAR),
         }

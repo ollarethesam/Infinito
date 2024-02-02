@@ -13,6 +13,6 @@ class NazionForm(ModelForm):
             'desnaz': 'Descrizione Nazione',
         }
         widgets = {
-            'codnaz': forms.TextInput(attrs={'class':'codnaz form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'desnaz': forms.TextInput(attrs={'class':'desnaz form-control', 'autocomplete': 'off', 'id': False})
+            'codnaz': forms.TextInput(attrs={'class':'codnaz Nazion form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'desnaz': forms.TextInput(attrs={'class':'desnaz Nazion form-control', 'autocomplete': 'off', 'id': False})
         }

@@ -13,6 +13,6 @@ class ZoneForm(ModelForm):
             'deszon': 'Descrizione Zona',
         }
         widgets = {
-            'codzon': forms.TextInput(attrs={'class':'codzon form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'deszon': forms.TextInput(attrs={'class':'deszon form-control', 'autocomplete': 'off', 'id': False})
+            'codzon': forms.TextInput(attrs={'class':'codzon Zone form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'deszon': forms.TextInput(attrs={'class':'deszon Zone form-control', 'autocomplete': 'off', 'id': False})
         }

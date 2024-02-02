@@ -4,6 +4,7 @@ from .client import Client
 from .valute import Valute
 from .modpag import Modpag
 from .banche import Banche
+from Infinito.settings import DECVAL, DECPRE, DECQUA
 
 class Scacli(models.Model):
     numpro = models.IntegerField(auto_created=True, primary_key=True)

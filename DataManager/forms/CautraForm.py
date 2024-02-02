@@ -18,7 +18,7 @@ class CautraForm(ModelForm):
             'stafat': 'Stampa Fattura',
         }
         widgets = {
-            'codcau': forms.TextInput(attrs={'class':'codcau form-control pk l3', 'autocomplete': 'off', 'id': False}),
-            'descau': forms.TextInput(attrs={'class':'descau form-control', 'autocomplete': 'off', 'id': False}),
+            'codcau': forms.TextInput(attrs={'class':'codcau Cautra form-control pk l3', 'autocomplete': 'off', 'id': False}),
+            'descau': forms.TextInput(attrs={'class':'descau Cautra form-control', 'autocomplete': 'off', 'id': False}),
             'stafat': forms.Select(attrs={'class':'stafat form-control', 'autocomplete': 'off', 'id': False}, choices=STAFAT)
         }

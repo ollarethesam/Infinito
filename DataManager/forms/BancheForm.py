@@ -18,8 +18,8 @@ class BancheForm(ModelForm):
             'bic':    'BIC',
         }
         widgets = {
-            'codban': forms.TextInput(attrs={'class':'codban form-control l3 pk', 'autocomplete': 'off', 'id': False}),
-            'desban': forms.TextInput(attrs={'class':'desban form-control l30', 'autocomplete': 'off', 'id': False}),
+            'codban': forms.TextInput(attrs={'class':'codban Banche form-control l3 pk', 'autocomplete': 'off', 'id': False}),
+            'desban': forms.TextInput(attrs={'class':'desban Banche form-control l30', 'autocomplete': 'off', 'id': False}),
             'codabi': forms.TextInput(attrs={'class':'codabi form-control l5', 'autocomplete': 'off', 'id': False}),
             'codcab': forms.TextInput(attrs={'class':'codcab form-control l5', 'autocomplete': 'off', 'id': False}),
             'codsia': forms.TextInput(attrs={'class':'codsia form-control l5', 'autocomplete': 'off', 'id': False}),

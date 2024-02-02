@@ -3,6 +3,7 @@ from Login.models import CustomUser
 from .ivaven import Ivaven
 from .ivaacq import Ivaacq
 from .piacon import Piacon
+from Infinito.settings import DECVAL, DECPRE, DECQUA
 
 class Ragsoc(models.Model):
     datini = models.DateField(primary_key=True)

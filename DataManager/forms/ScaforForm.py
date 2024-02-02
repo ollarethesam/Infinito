@@ -5,10 +5,10 @@ from django.forms import ModelForm
 from DataManager.models.scafor import Scafor
 
 class ScaforForm(ModelForm):
-    ragsoc = forms.CharField(required=False, label='Ragione Sociale', widget=forms.TextInput(attrs={'class':'ragsoc form-control', 'id': False}))
-    desval = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'desval form-control', 'id': False}))
-    despag = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'despag form-control', 'id': False}))
-    desban = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'desban form-control', 'id': False}))
+    ragsoc = forms.CharField(required=False, label='Ragione Sociale', widget=forms.TextInput(attrs={'class':'ragsoc Fornit form-control', 'id': False}))
+    desval = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'desval Valute form-control', 'id': False}))
+    despag = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'despag Modpag form-control', 'id': False}))
+    desban = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={'class':'desban Banche form-control', 'id': False}))
 
     class Meta:
         TIPPAG = [
@@ -73,22 +73,22 @@ class ScaforForm(ModelForm):
             'tippag': 'Tipo Pagamento',
         }
         widgets = {
-            'numpro': forms.TextInput(attrs={'class':'numpro form-control pk l7', 'autocomplete': 'off', 'id': False}),
-            'codfor': forms.TextInput(attrs={'class':'codfor form-control l5', 'autocomplete': 'off', 'id': False}),
+            'numpro': forms.TextInput(attrs={'class':'numpro Scafor form-control pk l7', 'autocomplete': 'off', 'id': False}),
+            'codfor': forms.TextInput(attrs={'class':'codfor Fornit form-control l5', 'autocomplete': 'off', 'id': False}),
             'tipdoc': forms.Select(attrs={'class':'tipdoc form-control l9', 'autocomplete': 'off', 'id': False}, choices=TIPDOC),
             'datdoc': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datdoc form-control l9', 'autocomplete': 'off', 'id': False}),
             'protoc': forms.NumberInput(attrs={'class':'protoc form-control l5', 'autocomplete': 'off', 'id': False}),
             'numfat': forms.NumberInput(attrs={'class':'numfat form-control l5', 'autocomplete': 'off', 'id': False}),
-            'descri': forms.TextInput(attrs={'class':'descri form-control l35', 'autocomplete': 'off', 'id': False}),
+            'descri': forms.TextInput(attrs={'class':'descri Scafor form-control l35', 'autocomplete': 'off', 'id': False}),
             'impfat': forms.NumberInput(attrs={'class':'impfat form-control l13', 'autocomplete': 'off', 'id': False}),
             'imppag': forms.NumberInput(attrs={'class':'imppag form-control l13', 'autocomplete': 'off', 'id': False}),
-            'codval': forms.TextInput(attrs={'class':'codval form-control l3', 'autocomplete': 'off', 'id': False}),
-            'codpag': forms.TextInput(attrs={'class':'codpag form-control l4', 'autocomplete': 'off', 'id': False}),
+            'codval': forms.TextInput(attrs={'class':'codval Valute form-control l3', 'autocomplete': 'off', 'id': False}),
+            'codpag': forms.TextInput(attrs={'class':'codpag Modpag form-control l4', 'autocomplete': 'off', 'id': False}),
             'modpag': forms.Select(attrs={'class':'modpag form-control l27', 'autocomplete': 'off', 'id': False}, choices=MODPAG),
             'cambio': forms.NumberInput(attrs={'class':'cambio form-control l11', 'autocomplete': 'off', 'id': False}),
             'datsca': forms.DateInput(format='%d-%m-%Y', attrs={'type':'date', 'class':'datsca form-control l9', 'autocomplete': 'off', 'id': False}),
             'pagato': forms.Select(attrs={'class':'pagato form-control l7', 'autocomplete': 'off', 'id': False}, choices=PAGATO),
-            'codban': forms.TextInput(attrs={'class':'codban form-control l3', 'autocomplete': 'off', 'id': False}),
+            'codban': forms.TextInput(attrs={'class':'codban Banche form-control l3', 'autocomplete': 'off', 'id': False}),
             'tippag': forms.Select(attrs={'class':'tippag form-control l11', 'autocomplete': 'off', 'id': False}, choices=TIPPAG),
         }
     def clean_numpro(self, *args, **kwargs):

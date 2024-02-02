@@ -60,3 +60,7 @@ export function filler(response, form, grid){
         }
     })
 }
+export function is_capitalized(string){
+    fl = string[0]
+    return fl == fl.toUpperCase
+}
