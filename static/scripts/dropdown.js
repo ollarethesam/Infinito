@@ -1,5 +1,3 @@
-import { is_capitalized } from "./utils.js";
-
 (document).ready(function(){
 
 
