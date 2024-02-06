@@ -19,10 +19,10 @@
                                 <ul class="dropdown-menu"></ul>
                             </button>
                         {% endif %}
-                        {% with next_field=form|get_next_field:field %}
-                            {% for f in next_field %}
+                        {% with next_fields=form|get_next_field:field %}
+                            {% for f in next_fields %}
                                 {{ f }}
-                                {% if next_field.name in ddfields %}
+                                {% if f.name in ddfields %}
                                     <button type="button" class="dropdown">
                                         <span id="left"></span>
                                         <span id="right"></span>
