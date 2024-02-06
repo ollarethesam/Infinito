@@ -6,6 +6,7 @@ class Caumag(models.Model):
     descau = models.CharField(max_length=40)
     abbrev = models.CharField(max_length=13)
     azione = models.CharField(max_length=1)
+    appart = models.CharField(max_length=1)
 
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
