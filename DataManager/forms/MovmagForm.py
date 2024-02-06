@@ -5,6 +5,12 @@ from django import forms
 from django.forms import ModelForm
 
 class MovmagForm(ModelForm):
+    nuorfo = forms.CharField(required = False,label='Numero Ordine', widget=forms.TextInput(attrs={'class':'nuorfo Ordfor form-control', 'readonly': True, 'id': False}))
+    anorfo = forms.CharField(required = False,label='Anno Ordine', widget=forms.TextInput(attrs={'class':'anorfo Ordfor form-control', 'readonly': True, 'id': False}))
+    nuorcl = forms.CharField(required = False,label='Numero Ordine', widget=forms.TextInput(attrs={'class':'nuorcl Ordcli form-control', 'readonly': True, 'id': False}))
+    anorcl = forms.CharField(required = False,label='Anno Ordine', widget=forms.TextInput(attrs={'class':'anorcl Ordcli form-control', 'readonly': True, 'id': False}))
+    nuorpr = forms.CharField(required = False,label='Numero Ordine', widget=forms.TextInput(attrs={'class':'nuorpr Ordpro form-control', 'readonly': True, 'id': False}))
+    anorpr = forms.CharField(required = False,label='Anno Ordine', widget=forms.TextInput(attrs={'class':'anorpr Ordpro form-control', 'readonly': True, 'id': False}))
     class Meta:
         ORDSAL = [
             ('S', 'Saldo'),
@@ -14,7 +20,7 @@ class MovmagForm(ModelForm):
         fields = [
             'anno', 'numpro', 'datmov', 'numdoc', 'codart', 'codcau',
             'quanti', 'prezzo', 'valore', 'codcli', 'codfor',
-            'idorfo', 'idorcl','idorpr', 'note', 'quamod',
+            'note', 'quamod', 'nuorfo', 'anorfo', 'nuorcl', 'anorcl', 'nuorpr', 'anorpr'
             'quakg', 'ordsal', 'numddt', 'annddt',
             'codco1', 'codco2', 'codco3', 'codco4', 'codco5', 'quaco1',
             'quaco2', 'quaco3', 'quaco4', 'quaco5'
