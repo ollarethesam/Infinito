@@ -17,14 +17,12 @@
         }, 100);
         var url = $(this).parents('.drag-container').attr('id')
         var id = $(this).siblings(".form-control").attr("name")
-        var model_name = $(this).siblings(".form-control").attr("class").split(' ')[1]
         $.ajax({
             url: url,
             type: 'GET',
             datatype: 'json',
             data: {
                 id: id,
-                model_name: model_name,
                 offset: 0
             },
             success: function(response){
