@@ -138,7 +138,7 @@ class ClientForm(ModelForm):
             'spese'  : forms.CheckboxInput(attrs={'class':'spese form-control checkbox', 'autocomplete': 'off', 'required': False, 'id': False}),
             'storic' : forms.CheckboxInput(attrs={'class':'storic form-control checkbox', 'autocomplete': 'off', 'required': False, 'id': False}),
             'codban' : forms.TextInput(attrs={'class':'codban Banche form-control fk l3', 'autocomplete': 'off', 'id': False}),
-            'staest' : forms.TextInput(attrs={'class':'staest form-control l2', 'autocomplete': 'off', 'id': False}),
+            'staest' : forms.TextInput(attrs={'class':'staest form-control l3', 'autocomplete': 'off', 'id': False}),
             'cognom' : forms.TextInput(attrs={'class':'cognom form-control', 'autocomplete': 'off', 'id': False}),
             'comnas' : forms.TextInput(attrs={'class':'comnas form-control', 'autocomplete': 'off', 'id': False}),
             'pronas' : forms.TextInput(attrs={'class':'pronas form-control', 'autocomplete': 'off', 'id': False}),
