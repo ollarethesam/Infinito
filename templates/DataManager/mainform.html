@@ -21,7 +21,7 @@
                         {% endif %}
                         {% with next_field=form|get_next_field:field %}
                             {% for f in next_field %}
-                                {{ next_field }}
+                                {{ f }}
                                 {% if next_field.name in ddfields %}
                                     <button type="button" class="dropdown">
                                         <span id="left"></span>
