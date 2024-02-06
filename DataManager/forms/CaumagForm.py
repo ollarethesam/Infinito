@@ -12,8 +12,8 @@ class CaumagForm(ModelForm):
         APPART = [
             ('F', 'Fornitori'),
             ('C', 'Clienti'),
-            ('P', 'Produzione')
-            ('N', 'Nessuna'),
+            ('P', 'Produzione'),
+            ('N', 'Nessuna')
         ]
         model = Caumag
         fields = ['codcau', 'descau', 'abbrev', 'azione', 'appart', 'valori', 'gesord']
