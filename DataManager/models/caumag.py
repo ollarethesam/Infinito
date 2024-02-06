@@ -7,6 +7,7 @@ class Caumag(models.Model):
     abbrev = models.CharField(max_length=13)
     azione = models.CharField(max_length=1)
     appart = models.CharField(max_length=1)
+    gesord = models.BooleanField()
     valori = models.BooleanField()
 
     user = models.ForeignKey(CustomUser, to_field='username', on_delete=models.CASCADE)
