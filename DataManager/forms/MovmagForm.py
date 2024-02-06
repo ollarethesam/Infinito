@@ -20,7 +20,7 @@ class MovmagForm(ModelForm):
         fields = [
             'anno', 'numpro', 'datmov', 'numdoc', 'codart', 'codcau',
             'quanti', 'prezzo', 'valore', 'codcli', 'codfor',
-            'note', 'quamod', 'nuorfo', 'anorfo', 'nuorcl', 'anorcl', 'nuorpr', 'anorpr'
+            'note', 'quamod', 'nuorfo', 'anorfo', 'nuorcl', 'anorcl', 'nuorpr', 'anorpr',
             'quakg', 'ordsal', 'numddt', 'annddt',
             'codco1', 'codco2', 'codco3', 'codco4', 'codco5', 'quaco1',
             'quaco2', 'quaco3', 'quaco4', 'quaco5'
